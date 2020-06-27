@@ -1,0 +1,96 @@
+<!-- <div fxLayout="column" style="height: 100%;">
+  <div style="height: 10%;">
+    <mat-toolbar class="menu-principal" fxLayout="row">
+      <mat-toolbar-row>
+
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
+  <div fxLayout="row">
+    <div class="menu-lateral">
+      <button mat-raised-button>
+        INICIO
+      </button>
+    </div>
+    <div class="painel-dias">
+      <ol class="list-unstyled" fxLayout="column">
+        <li *ngFor="let cols of rows" fxLayout="row" fxLayoutAlign="space-between start">
+          <mat-card *ngFor="let dia of cols" class="col-7 dia-mes">
+            <mat-card-content>
+              <mat-chip-list *ngFor="let evento of dia.listaEvento"  aria-label="Fish selection">
+                <mat-chip style="background-color: aqua;" selected>{{evento.descricao}}</mat-chip>
+              </mat-chip-list>
+            </mat-card-content>
+          </mat-card>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div> -->
+
+<div fxLayout="column">
+  <div fxFlex="grow">
+    <mat-toolbar class="menu-principal" fxLayout="row"
+    >
+      <mat-toolbar-row>
+
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
+  <div fxLayout="row" style="height: 94vh;"
+  >
+    <div class="menu-lateral">
+      <button mat-raised-button>
+        INICIO
+      </button>
+    </div>
+    <div class="painel-dias" >
+      <div fxLayout="row">
+        <div class="dia-semana" fxLayoutAlign="center center">
+          <span>DOMINGO</span>
+        </div>
+        <mat-divider vertical="true"></mat-divider>
+        <div class="dia-semana" fxLayoutAlign="center center">
+          <span>SEGUNDA</span>
+        </div>
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="dia-semana" fxLayoutAlign="center center">
+          <span>TERÇA</span>
+        </div>
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="dia-semana" fxLayoutAlign="center center">
+          <span>QUARTA</span>
+        </div>
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="dia-semana" fxLayoutAlign="center center">
+          <span>QUINTA</span>
+        </div>
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="dia-semana" fxLayoutAlign="center center">
+          <span>SEXTA</span>
+        </div>
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="dia-semana" fxLayoutAlign="center center">
+          <span>SABADO</span>
+        </div>
+      </div>
+      <ol class="list-unstyled" fxLayout="column">
+        <li *ngFor="let cols of rows" fxLayout="row" fxLayoutAlign="start stretch">
+          <mat-card *ngFor="let dia of cols" class="dia-mes">
+            <mat-card fxLayoutAlign="center center" class="dia">
+              <span>12</span>
+            </mat-card>
+            <mat-divider></mat-divider>
+            <mat-card class="lista-eventos">
+              <mat-card-content>
+                <mat-chip-list *ngFor="let evento of dia.listaEvento" aria-label="Fish selection">
+                  <mat-chip style="background-color: rgb(241, 235, 228);" selected>{{evento.descricao}}</mat-chip>
+                </mat-chip-list>
+              </mat-card-content>
+            </mat-card>
+          </mat-card>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>

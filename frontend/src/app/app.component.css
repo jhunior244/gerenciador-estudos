@@ -1,0 +1,105 @@
+.menu-principal {
+    background-image: linear-gradient(90deg, #0e023f, blue);
+}
+
+.mat-toolbar-multiple-rows {
+    height: 6vh;
+    min-height: 30px;
+}
+
+.menu-lateral {
+    position: relative;
+    background-image: linear-gradient(137deg, #0e023f, blue);
+    width: 10%;
+    min-width: 10%;
+}
+
+.menu-lateral button {
+    color: rgb(5, 4, 4);
+    background-color: rgb(168, 163, 163);
+    margin: 12px 0 12px 7px;
+    box-shadow: 0.5px 0px 0.5em black;
+}
+
+.painel-dias {
+    width: 90%;
+    min-width: 90%;
+    background-color: black;
+}
+
+li {
+    height: 20%;
+}
+
+
+.dia-mes {
+    background-color:  rgb(255, 255, 255);
+    margin: 1px;
+    border-radius: 1px;
+    width: 14.28%;
+}
+
+.dia-semana {
+    background-color:  rgb(255, 255, 255);
+    margin: 1px;
+    width: 14.28%;
+}
+
+ol {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+    height: 97.86%;
+}
+.dia {
+    height: 12%;
+}
+
+.lista-eventos {
+    overflow-y: auto;
+    height: 81%;
+    overflow-x: hidden;
+    padding: 2px;
+    margin: 2px;
+}
+
+mat-card {
+    padding: 0;
+}
+
+.mat-chip-list-wrapper {
+    opacity: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0px;
+}
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(214, 214, 214);
+    border-radius: 10px;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #c3bdbd;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #bababa;
+}
