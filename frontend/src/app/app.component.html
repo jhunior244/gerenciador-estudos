@@ -1,45 +1,12 @@
-<!-- <div fxLayout="column" style="height: 100%;">
-  <div style="height: 10%;">
+<!-- <div fxLayout="column">
+  <div fxFlex="grow">
     <mat-toolbar class="menu-principal" fxLayout="row">
       <mat-toolbar-row>
 
       </mat-toolbar-row>
     </mat-toolbar>
   </div>
-  <div fxLayout="row">
-    <div class="menu-lateral">
-      <button mat-raised-button>
-        INICIO
-      </button>
-    </div>
-    <div class="painel-dias">
-      <ol class="list-unstyled" fxLayout="column">
-        <li *ngFor="let cols of rows" fxLayout="row" fxLayoutAlign="space-between start">
-          <mat-card *ngFor="let dia of cols" class="col-7 dia-mes">
-            <mat-card-content>
-              <mat-chip-list *ngFor="let evento of dia.listaEvento"  aria-label="Fish selection">
-                <mat-chip style="background-color: aqua;" selected>{{evento.descricao}}</mat-chip>
-              </mat-chip-list>
-            </mat-card-content>
-          </mat-card>
-        </li>
-      </ol>
-    </div>
-  </div>
-</div> -->
-
-
-<div fxLayout="column">
-  <div fxFlex="grow">
-    <mat-toolbar class="menu-principal" fxLayout="row"
-    >
-      <mat-toolbar-row>
-
-      </mat-toolbar-row>
-    </mat-toolbar>
-  </div>
-  <div fxLayout="row" style="height: 94vh;"
-  >
+  <div fxLayout="row" style="height: 94vh;" >
     <div class="menu-lateral">
       <button mat-raised-button>
         INICIO
@@ -84,14 +51,143 @@
             <mat-divider></mat-divider>
             <mat-card class="lista-eventos">
               <mat-card-content>
-                <mat-chip-list *ngFor="let evento of dia.listaEvento" aria-label="Fish selection">
-                  <mat-chip style="background-color: rgb(241, 235, 228);" selected>{{evento.descricao}}</mat-chip>
-                </mat-chip-list>
+                <div style="margin: 3px; 
+                width: 90%;
+                display: flex;
+                justify-content: start;" *ngFor="let evento of dia.listaEvento">
+                  <span 
+                  fxLayoutAlign="space-between center"
+                  style="background-color: #d9d9de;
+                  border-radius: 16px;
+                  padding: 7px 12px;
+                  width: 65%;"
+                  >{{evento.descricao}}
+                  <button class="btn-primary">
+                    t
+                  </button>
+                </span>
+                </div>
               </mat-card-content>
             </mat-card>
+            <button  mat-mini-fab class="botao-adicionar" aria-label="Adicionar">
+              +
+            </button>
           </mat-card>
         </li>
       </ol>
     </div>
   </div>
-</div>
+</div> -->
+
+<header>
+  <nav>
+    <div>
+
+    </div>
+  </nav>
+</header>
+
+<div class="area-estudo" fxLayout="row">
+  <div class="menu-lateral">
+
+  </div>
+  <div class="calendario">
+    <div class="nome-dia-semana">
+      <div fxLayout="row">
+        <div class="col lable-nome-dia" fxLayoutAlign="center center">
+          <span>DOMINGO</span>
+        </div>
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="col lable-nome-dia" fxLayoutAlign="center center">
+          <span>SEGUNDA</span>
+        </div>
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="col lable-nome-dia" fxLayoutAlign="center center">
+          <span>TERÇA</span>
+        </div>
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="col lable-nome-dia" fxLayoutAlign="center center">
+          <span>QUARTA</span>
+        </div>
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="col lable-nome-dia" fxLayoutAlign="center center">
+          <span>QUINTA</span>
+        </div>
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="col lable-nome-dia" fxLayoutAlign="center center">
+          <span>SEXTA</span>
+        </div>
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="col lable-nome-dia" fxLayoutAlign="center center">
+          <span>SABADO</span>
+        </div>
+        <mat-divider [vertical]="true"></mat-divider>
+      </div>
+    </div>
+    <div class="dias-do-mes">
+      <div class="row semana-do-mes" *ngFor="let cols of rows">
+        <div style="margin-right: 1px;" class="col cartao-dia" *ngFor="let dia of cols">
+          <div fxLayoutAlign="center center">
+            <span>12</span>
+          </div>
+          <mat-divider style="color: rgb(0, 0, 0);"></mat-divider>
+          <div class="lista-eventos">
+            <div style=" 
+            display: flex;
+            margin: 3px 35px 3px 5px;
+            justify-content: start;" *ngFor="let evento of dia.listaEvento">
+              <span fxLayoutAlign="space-between center" style="background-color: #d9d9de;
+              border-radius: 16px;
+              padding: 3px 10px;
+              width: 100%;">{{evento.descricao}}
+                <button class="btn-primary">
+                  t
+                </button>
+              </span>
+            </div>
+          </div>
+
+
+          <button mat-mini-fab class="botao-adicionar" aria-label="Adicionar">
+            +
+          </button>
+        </div>
+        <div style="height: 1px;" class="w-100">
+        </div>
+      </div>
+
+      <!-- <ol class="list-unstyled">
+        <li *ngFor="let cols of rows" fxLayout="row" fxLayoutAlign="start stretch">
+          <mat-card *ngFor="let dia of cols" class="dia-mes">
+            <mat-card fxLayoutAlign="center center" class="dia">
+              <span>12</span>
+            </mat-card>
+            <mat-divider></mat-divider>
+            <mat-card class="lista-eventos">
+              <mat-card-content>
+                <div style="margin: 3px; 
+                width: 90%;
+                display: flex;
+                justify-content: start;" *ngFor="let evento of dia.listaEvento">
+                  <span 
+                  fxLayoutAlign="space-between center"
+                  style="background-color: #d9d9de;
+                  border-radius: 16px;
+                  padding: 7px 12px;
+                  width: 65%;"
+                  >{{evento.descricao}}
+                  <button class="btn-primary">
+                    t
+                  </button>
+                </span>
+                </div>
+              </mat-card-content>
+            </mat-card>
+            <button  mat-mini-fab class="botao-adicionar" aria-label="Adicionar">
+              +
+            </button>
+          </mat-card>
+        </li>
+      </ol> -->
+    </div>
+  </div>

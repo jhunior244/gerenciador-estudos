@@ -3,16 +3,16 @@
 }
 
 .mat-toolbar-multiple-rows {
-    height: 6vh;
+    height: 5vh;
     min-height: 30px;
 }
 
-.menu-lateral {
+/* .menu-lateral {
     position: relative;
     background-image: linear-gradient(137deg, #0e023f, blue);
     width: 10%;
     min-width: 10%;
-}
+} */
 
 .menu-lateral button {
     color: rgb(5, 4, 4);
@@ -31,16 +31,38 @@ li {
     height: 20%;
 }
 
-
 .dia-mes {
-    background-color:  rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
     margin: 1px;
     border-radius: 1px;
     width: 14.28%;
 }
 
+.dia-mes .botao-adicionar {
+    background-color: rgb(255, 255, 255);
+    width: 25px;
+    height: 25px;
+    color: rgb(2, 9, 25);
+    position: absolute;
+    right: 15px;
+    bottom: 6px;
+    align-items: center;
+    border-radius: 100%;
+    font-size: 30px;
+    justify-content: center;
+    display: flex;
+    box-shadow: 0.1px 0.1px 5px 0.1px grey;
+}
+
+.evento {
+    background-color: #d9d9de;
+    border-radius: 16px;
+    padding: 7px 12px;
+    width: 65%
+}
+
 .dia-semana {
-    background-color:  rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
     margin: 1px;
     width: 14.28%;
 }
@@ -53,13 +75,14 @@ ol {
     padding-inline-start: 0px;
     height: 97.86%;
 }
+
 .dia {
     height: 12%;
 }
 
 .lista-eventos {
     overflow-y: auto;
-    height: 81%;
+    height: 77%;
     overflow-x: hidden;
     padding: 2px;
     margin: 2px;
@@ -94,12 +117,92 @@ mat-card {
 /* Handle */
 
 ::-webkit-scrollbar-thumb {
-    background: #c3bdbd;
+    background: #5100ff;
     border-radius: 10px;
 }
 
 /* Handle on hover */
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #bababa;
+    background: #100089;
+}
+
+/* Inicio teste bootstrap */
+
+html,
+body {
+	height: 100%;
+}
+
+header {
+    height: 7%;
+    background-image: linear-gradient(90deg, #0e023f, blue);
+}
+
+.area-estudo {
+    height: 93%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.menu-lateral {
+    background-color: black;
+    height: 100%;
+    width: 10%;
+}
+
+.calendario {
+    background-color: rgb(0, 0, 0);
+    height: 100%;
+    width: 90%;
+    margin: 0;
+}
+
+.nome-dia-semana {
+    width: 100%;
+    height: 3%;
+    background-color: #bababa;
+}
+
+.nome-dia-semana div:first-child {
+    height: 100%;
+}
+
+.lable-nome-dia{
+    padding: 0;
+}
+
+.dias-do-mes {
+    height: 96.7%;
+}
+
+.semana-do-mes {
+    height: 20%;
+    margin: 0;
+}
+
+.dias-do-mes .semana-do-mes:first-child {
+    margin-top: 1px;
+}
+
+.cartao-dia {
+    padding: 0;
+    height: calc(100% - 1px);
+    background-color: #bababa;
+}
+
+.cartao-dia .botao-adicionar {
+    background-color: rgb(255, 255, 255);
+    width: 25px;
+    height: 25px;
+    color: rgb(2, 9, 25);
+    position: absolute;
+    right: 15px;
+    bottom: 6px;
+    align-items: center;
+    border-radius: 100%;
+    font-size: 30px;
+    justify-content: center;
+    display: flex;
+    box-shadow: 0.1px 0.1px 5px 0.1px grey;
 }

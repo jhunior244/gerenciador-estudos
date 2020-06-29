@@ -11,11 +11,13 @@ import { Evento } from './servico/evento/evento';
 export class AppComponent implements OnInit {
   
   rows: DiaCalendario[] = [];
+  
 
   constructor() { }
   ngOnInit(): void {
 
     const evento: Evento = { id: 1, nome: 'teste', descricao: 'teste' };
+    
     const listaEventos: Evento[] = [];
     listaEventos.push(evento);
     listaEventos.push(evento);
@@ -23,6 +25,7 @@ export class AppComponent implements OnInit {
     listaEventos.push(evento);
     listaEventos.push(evento);
     listaEventos.push(evento);
+    
 
     let diaCalendario: DiaCalendario = { data: moment(), listaEvento: listaEventos };
     const listaDiaCalendario: DiaCalendario[] = []; 
