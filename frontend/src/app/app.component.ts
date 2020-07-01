@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DiaCalendario } from './servico/dia-calendario/dia-calendario';
 import * as moment from 'moment';
 import { Evento } from './servico/evento/evento';
+import { DiaCalendarioService } from './servico/dia-calendario/dia-calendario.service';
 
 @Component({
   selector: 'app-root',
@@ -9,65 +10,17 @@ import { Evento } from './servico/evento/evento';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  
-  rows: DiaCalendario[] = [];
-  
 
-  constructor() { }
+  rows: DiaCalendario[] = [];
+  public exibeAdd = false;
+
+  constructor(private diaCalendarioService: DiaCalendarioService) { }
   ngOnInit(): void {
 
-    const evento: Evento = { id: 1, nome: 'teste', descricao: 'teste' };
-    
-    const listaEventos: Evento[] = [];
-    listaEventos.push(evento);
-    listaEventos.push(evento);
-    listaEventos.push(evento);
-    listaEventos.push(evento);
-    listaEventos.push(evento);
-    listaEventos.push(evento);
-    
-
-    let diaCalendario: DiaCalendario = { data: moment(), listaEvento: listaEventos };
-    const listaDiaCalendario: DiaCalendario[] = []; 
-
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario); 
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-    listaDiaCalendario.push(diaCalendario);
-
-    this.rows = this.groupColumns(listaDiaCalendario);
-    console.log(this.rows);
+    this.diaCalendarioService.lista(5, 2020).subscribe(lista => {
+      this.rows = this.groupColumns(lista);
+      console.log(this.rows[2][1].data.format('D'));
+    });
 
   }
 
@@ -78,5 +31,10 @@ export class AppComponent implements OnInit {
       newRows.push(lista.slice(index, index + 7));
     }
     return newRows;
+  }
+
+  teste(mostra: boolean){
+    this.exibeAdd = mostra;
+    console.log(mostra);
   }
 }

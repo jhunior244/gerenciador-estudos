@@ -14,29 +14,26 @@
     min-width: 10%;
 } */
 
-.menu-lateral button {
+/* .menu-lateral button {
     color: rgb(5, 4, 4);
     background-color: rgb(168, 163, 163);
     margin: 12px 0 12px 7px;
     box-shadow: 0.5px 0px 0.5em black;
-}
+} */
 
-.painel-dias {
+/* .painel-dias {
     width: 90%;
     min-width: 90%;
     background-color: black;
 }
 
-li {
-    height: 20%;
-}
 
 .dia-mes {
     background-color: rgb(255, 255, 255);
     margin: 1px;
     border-radius: 1px;
     width: 14.28%;
-}
+} */
 
 .dia-mes .botao-adicionar {
     background-color: rgb(255, 255, 255);
@@ -82,7 +79,7 @@ ol {
 
 .lista-eventos {
     overflow-y: auto;
-    height: 77%;
+    height: 75%;
     overflow-x: hidden;
     padding: 2px;
     margin: 2px;
@@ -129,9 +126,8 @@ mat-card {
 
 /* Inicio teste bootstrap */
 
-html,
-body {
-	height: 100%;
+html, body {
+    height: 100%;
 }
 
 header {
@@ -168,7 +164,7 @@ header {
     height: 100%;
 }
 
-.lable-nome-dia{
+.lable-nome-dia {
     padding: 0;
 }
 
@@ -177,7 +173,7 @@ header {
 }
 
 .semana-do-mes {
-    height: 20%;
+    height: 16.6%;
     margin: 0;
 }
 
@@ -191,18 +187,35 @@ header {
     background-color: #bababa;
 }
 
+.conteudo-evento {
+    display: flex;
+    margin: 3px 21px 3px 5px;
+    justify-content: start;
+}
+
+.evento {
+    background-color: #d9d9de;
+    border-radius: 5px;
+    padding: 3px 10px;
+    width: 100%;
+    height: 20px;
+    font-size: 13px;
+}
+
+.evento button{
+    text-decoration: none;
+    color: black;
+    padding: 0;
+}
+
 .cartao-dia .botao-adicionar {
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
     width: 25px;
     height: 25px;
-    color: rgb(2, 9, 25);
+    color: black;
     position: absolute;
     right: 15px;
-    bottom: 6px;
-    align-items: center;
-    border-radius: 100%;
-    font-size: 30px;
-    justify-content: center;
+    bottom: 3px;
     display: flex;
-    box-shadow: 0.1px 0.1px 5px 0.1px grey;
+    text-decoration: none;
 }

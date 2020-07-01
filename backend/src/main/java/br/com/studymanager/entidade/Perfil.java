@@ -1,13 +1,15 @@
 package br.com.studymanager.entidade;
 
 import lombok.Data;
+import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
-import java.time.ZonedDateTime;
 
 @Entity
 @Data
-public class Evento {
+public class Perfil implements GrantedAuthority {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,12 +18,8 @@ public class Evento {
     @Column(nullable = false)
     private String nome;
 
-    @Column
-    private String descricao;
-
-    @Column(nullable = false)
-    private ZonedDateTime data;
-
-    @ManyToOne
-    private TipoEvento tipoEvento;
+    @Override
+    public String getAuthority() {
+        return this.nome;
+    }
 }

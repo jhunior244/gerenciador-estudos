@@ -21,7 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {MatChipsModule} from '@angular/material/chips';
 import {ScrollingModule} from '@angular/cdk/scrolling';
-
+import { DiaCalendarioService } from './servico/dia-calendario/dia-calendario.service';
 
 @NgModule({
   declarations: [
@@ -50,9 +50,11 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     MatSelectModule,
     MatCardModule,
     MatChipsModule,
-    ScrollingModule
+    ScrollingModule,
   ],
-  providers: [],
+  providers: [
+    DiaCalendarioService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
