@@ -82,7 +82,31 @@
 <header>
   <nav>
     <div>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+        Launch demo modal
+      </button>
 
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </nav>
 </header>
@@ -126,8 +150,10 @@
     </div>
     <div class="dias-do-mes">
       <div class="row semana-do-mes" *ngFor="let cols of rows">
-        <div (mouseleave)="teste(false)" (mouseenter)="teste(true)"
-         style="margin-right: 1px;" class="col cartao-dia" *ngFor="let dia of cols">
+        <div (mouseenter)="exibeBotaoAdd(dia.data.format('D').toString() + dia.data.format('MM').toString())"
+        (mouseleave)="escondeBotaoAdd(dia.data.format('D').toString() + dia.data.format('MM').toString())"
+        style="margin-right: 1px;" class="col cartao-dia"
+          *ngFor="let dia of cols" #card>
           <div fxLayoutAlign="center center">
             <span>{{dia.data.format('D')}}</span>
           </div>
@@ -147,9 +173,10 @@
               </div>
             </div>
           </div>
-          <button *ngIf="exibeAdd" class="btn btn-link botao-adicionar">
-            <mat-icon style="font-size: 17px;">add</mat-icon>
-          </button>
+          <div fxShow="false" [id]="dia.data.format('D').toString() + dia.data.format('MM').toString()" >
+            <app-dialogo-edita-evento (emiteEventoFechar)="alteraExibeDialogo($event)">
+            </app-dialogo-edita-evento>
+          </div>
         </div>
         <div style="height: 1px;" class="w-100">
         </div>

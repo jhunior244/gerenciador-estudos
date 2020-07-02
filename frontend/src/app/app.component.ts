@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DiaCalendario } from './servico/dia-calendario/dia-calendario';
-import * as moment from 'moment';
-import { Evento } from './servico/evento/evento';
 import { DiaCalendarioService } from './servico/dia-calendario/dia-calendario.service';
 
 @Component({
@@ -13,13 +12,17 @@ export class AppComponent implements OnInit {
 
   rows: DiaCalendario[] = [];
   public exibeAdd = false;
+  public exibeDialogo = false;
+  closeResult: string;
 
-  constructor(private diaCalendarioService: DiaCalendarioService) { }
+  constructor(
+    private diaCalendarioService: DiaCalendarioService,
+    private modalService: NgbModal
+  ) { }
   ngOnInit(): void {
 
     this.diaCalendarioService.lista(5, 2020).subscribe(lista => {
       this.rows = this.groupColumns(lista);
-      console.log(this.rows[2][1].data.format('D'));
     });
 
   }
@@ -33,8 +36,37 @@ export class AppComponent implements OnInit {
     return newRows;
   }
 
-  teste(mostra: boolean){
-    this.exibeAdd = mostra;
-    console.log(mostra);
+  exibeBotaoAdd(id: string) {
+    const teste = document.getElementById(id.toString());
+    teste.style.display = 'block';
+  }
+
+  escondeBotaoAdd(id: DiaCalendario) {
+    const teste = document.getElementById(id.toString());
+    teste.style.display = 'none';
+  }
+
+  alteraExibeDialogo() {
+    this.exibeDialogo = true;
+  }
+
+
+  open(content) {
+    console.log(content);
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
   }
 }

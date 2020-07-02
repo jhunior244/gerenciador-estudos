@@ -22,10 +22,13 @@ import { AppComponent } from './app.component';
 import {MatChipsModule} from '@angular/material/chips';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { DiaCalendarioService } from './servico/dia-calendario/dia-calendario.service';
+import { DialogoEditaEventoComponent } from './componente/dialogo-edita-evento/dialogo-edita-evento.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DialogoEditaEventoComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ import { DiaCalendarioService } from './servico/dia-calendario/dia-calendario.se
     MatCardModule,
     MatChipsModule,
     ScrollingModule,
+    NgbModule
   ],
   providers: [
     DiaCalendarioService
