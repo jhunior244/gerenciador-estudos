@@ -3,8 +3,6 @@ package br.com.studymanager.servico;
 import br.com.studymanager.dto.DiaCalendarioDto;
 import br.com.studymanager.dto.EventoDto;
 import br.com.studymanager.dto.TipoEventoDto;
-import br.com.studymanager.entidade.Evento;
-import br.com.studymanager.entidade.TipoEvento;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -28,7 +26,7 @@ public class DiaCalendarioServico implements IDiaCalendarioServico{
 
         for(int i = 0; i < 42; i++){
             DiaCalendarioDto dia = new DiaCalendarioDto();
-            if(i == 15 ){
+            if(i == 0 ){
                 EventoDto eventoDto = new EventoDto();
                 eventoDto.setNome("Prova TDC");
                 eventoDto.setDescricao("Prova TDC - imagine aqui uma descrição");

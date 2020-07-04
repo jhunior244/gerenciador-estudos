@@ -52,8 +52,8 @@ export class Evento {
 
     paraBackend(): IEvento {
         const evento = Object.assign(Object.create(Evento.prototype), this, {
+            tipoEvento: (this.tipoEvento) ? this.tipoEvento.paraBackend() : null,
             data: (this.data) ? moment(this.data).toDate().toISOString() : null,
-            tipoEvento: (this.tipoEvento) ? this.tipoEvento.paraBackend() : null
         });
 
         return evento;

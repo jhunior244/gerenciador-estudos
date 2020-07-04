@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DiaCalendario } from './servico/dia-calendario/dia-calendario';
 import { DiaCalendarioService } from './servico/dia-calendario/dia-calendario.service';
+import { DialogoEditaEventoComponent } from './componente/dialogo-edita-evento/dialogo-edita-evento.component';
+import { Evento } from './servico/evento/evento';
 
 @Component({
   selector: 'app-root',
@@ -45,28 +47,15 @@ export class AppComponent implements OnInit {
     const teste = document.getElementById(id.toString());
     teste.style.display = 'none';
   }
-
-  alteraExibeDialogo() {
-    this.exibeDialogo = true;
-  }
-
-
-  open(content) {
-    console.log(content);
-    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+  
+  open(evento: Evento) {
+    const modalRef = this.modalService.open(DialogoEditaEventoComponent);
+    modalRef.componentInstance.evento = evento;
+    modalRef.componentInstance.eventoCriadoOuAtualizado.subscribe(() => {
+      this.diaCalendarioService.lista(5, 2020).subscribe(lista => {
+        this.rows = this.groupColumns(lista);
+        console.log(this.rows);
+      });
     });
-  }
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return `with: ${reason}`;
-    }
   }
 }

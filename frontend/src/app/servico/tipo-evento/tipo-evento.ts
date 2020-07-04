@@ -31,7 +31,7 @@ export class TipoEvento {
         return tipoEvento;
     }
 
-    paraBackend(): ITipoEvento {
+    public paraBackend(): ITipoEvento {
         const tipoEvento = Object.assign(Object.create(TipoEvento.prototype), this, {
         });
 

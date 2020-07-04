@@ -24,12 +24,18 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
 import { DiaCalendarioService } from './servico/dia-calendario/dia-calendario.service';
 import { DialogoEditaEventoComponent } from './componente/dialogo-edita-evento/dialogo-edita-evento.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { EventoService } from './servico/evento/evento.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     DialogoEditaEventoComponent
   ],
+  entryComponents: [
+    DialogoEditaEventoComponent
+  ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -47,18 +53,21 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MatToolbarModule,
     MatListModule,
     MatDividerModule,
-    HttpClientModule,
     MatCheckboxModule,
     MatRadioModule,
     MatSelectModule,
     MatCardModule,
     MatChipsModule,
     ScrollingModule,
-    NgbModule
+    NgbModule,
+    
   ],
   providers: [
-    DiaCalendarioService
+    DiaCalendarioService,
+    EventoService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

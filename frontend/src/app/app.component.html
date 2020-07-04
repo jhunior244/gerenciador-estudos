@@ -1,119 +1,12 @@
-<!-- <div fxLayout="column">
-  <div fxFlex="grow">
-    <mat-toolbar class="menu-principal" fxLayout="row">
-      <mat-toolbar-row>
-
-      </mat-toolbar-row>
-    </mat-toolbar>
-  </div>
-  <div fxLayout="row" style="height: 94vh;" >
-    <div class="menu-lateral">
-      <button mat-raised-button>
-        INICIO
-      </button>
-    </div>
-    <div class="painel-dias" >
-      <div fxLayout="row">
-        <div class="dia-semana" fxLayoutAlign="center center">
-          <span>DOMINGO</span>
-        </div>
-        <mat-divider vertical="true"></mat-divider>
-        <div class="dia-semana" fxLayoutAlign="center center">
-          <span>SEGUNDA</span>
-        </div>
-        <mat-divider [vertical]="true"></mat-divider>
-        <div class="dia-semana" fxLayoutAlign="center center">
-          <span>TERÇA</span>
-        </div>
-        <mat-divider [vertical]="true"></mat-divider>
-        <div class="dia-semana" fxLayoutAlign="center center">
-          <span>QUARTA</span>
-        </div>
-        <mat-divider [vertical]="true"></mat-divider>
-        <div class="dia-semana" fxLayoutAlign="center center">
-          <span>QUINTA</span>
-        </div>
-        <mat-divider [vertical]="true"></mat-divider>
-        <div class="dia-semana" fxLayoutAlign="center center">
-          <span>SEXTA</span>
-        </div>
-        <mat-divider [vertical]="true"></mat-divider>
-        <div class="dia-semana" fxLayoutAlign="center center">
-          <span>SABADO</span>
-        </div>
-      </div>
-      <ol class="list-unstyled" fxLayout="column">
-        <li *ngFor="let cols of rows" fxLayout="row" fxLayoutAlign="start stretch">
-          <mat-card *ngFor="let dia of cols" class="dia-mes">
-            <mat-card fxLayoutAlign="center center" class="dia">
-              <span>12</span>
-            </mat-card>
-            <mat-divider></mat-divider>
-            <mat-card class="lista-eventos">
-              <mat-card-content>
-                <div style="margin: 3px; 
-                width: 90%;
-                display: flex;
-                justify-content: start;" *ngFor="let evento of dia.listaEvento">
-                  <span 
-                  fxLayoutAlign="space-between center"
-                  style="background-color: #d9d9de;
-                  border-radius: 16px;
-                  padding: 7px 12px;
-                  width: 65%;"
-                  >{{evento.descricao}}
-                  <button class="btn-primary">
-                    t
-                  </button>
-                </span>
-                </div>
-              </mat-card-content>
-            </mat-card>
-            <button  mat-mini-fab class="botao-adicionar" aria-label="Adicionar">
-              +
-            </button>
-          </mat-card>
-        </li>
-      </ol>
-    </div>
-  </div>
-</div> -->
-
 <header>
   <nav>
-    <div>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-        Launch demo modal
-      </button>
 
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </nav>
 </header>
 
 <div class="area-estudo" fxLayout="row">
   <div class="menu-lateral">
-
+    
   </div>
   <div class="calendario">
     <div class="nome-dia-semana">
@@ -167,15 +60,16 @@
                     ...
                   </span>
                 </span>
-                <button class="btn btn-link">
+                <button class="btn btn-link" (click)="open(evento)">
                   <mat-icon style="font-size: 15px;">edit</mat-icon>
                 </button>
               </div>
             </div>
           </div>
-          <div fxShow="false" [id]="dia.data.format('D').toString() + dia.data.format('MM').toString()" >
-            <app-dialogo-edita-evento (emiteEventoFechar)="alteraExibeDialogo($event)">
-            </app-dialogo-edita-evento>
+          <div fxShow="false" [id]="dia.data.format('D').toString() + dia.data.format('MM').toString()">
+            <button class="btn btn-link botao-adicionar" (click)="open(null)">
+              <mat-icon style="font-size: 17px;">add</mat-icon>
+            </button>
           </div>
         </div>
         <div style="height: 1px;" class="w-100">
