@@ -19,7 +19,9 @@
         <div style="margin-bottom: 2px;" fxLayout="row" fxLayoutAlign="space-between start">
           <div fxFlex="48">
             <label>Tipo Evento</label>
-            <select class="form-control" [formControl]="tipoEvento">
+            <select class="form-control" 
+            [formControl]="tipoEvento" 
+            [compareWith]="comparaTipoEvento">
               <option *ngFor="let tipo of listaTipoEvento" [ngValue]="tipo">
                 {{tipo.nome}}
               </option>

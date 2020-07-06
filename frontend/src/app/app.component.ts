@@ -4,6 +4,8 @@ import { DiaCalendario } from './servico/dia-calendario/dia-calendario';
 import { DiaCalendarioService } from './servico/dia-calendario/dia-calendario.service';
 import { DialogoEditaEventoComponent } from './componente/dialogo-edita-evento/dialogo-edita-evento.component';
 import { Evento } from './servico/evento/evento';
+import * as moment from 'moment';
+import { CalendarioService } from './servico/calendario/calendario.service';
 
 @Component({
   selector: 'app-root',
@@ -16,46 +18,21 @@ export class AppComponent implements OnInit {
   public exibeAdd = false;
   public exibeDialogo = false;
   closeResult: string;
+  public mes: number;
+  public ano: number;
 
   constructor(
     private diaCalendarioService: DiaCalendarioService,
-    private modalService: NgbModal
-  ) { }
+    private modalService: NgbModal,
+    private calendarioService: CalendarioService
+  ) {
+
+    this.mes = Number.parseFloat(moment().utc().format('MM'));
+    this.ano = Number.parseFloat(moment().utc().format('YYYY'));
+    this.calendarioService.setMesEAno(this.mes, this.ano);
+  }
+
+
   ngOnInit(): void {
-
-    this.diaCalendarioService.lista(5, 2020).subscribe(lista => {
-      this.rows = this.groupColumns(lista);
-    });
-
-  }
-
-  groupColumns(lista: DiaCalendario[]) {
-    const newRows = [];
-
-    for (let index = 0; index < lista.length; index += 7) {
-      newRows.push(lista.slice(index, index + 7));
-    }
-    return newRows;
-  }
-
-  exibeBotaoAdd(id: string) {
-    const teste = document.getElementById(id.toString());
-    teste.style.display = 'block';
-  }
-
-  escondeBotaoAdd(id: DiaCalendario) {
-    const teste = document.getElementById(id.toString());
-    teste.style.display = 'none';
-  }
-  
-  open(evento: Evento) {
-    const modalRef = this.modalService.open(DialogoEditaEventoComponent);
-    modalRef.componentInstance.evento = evento;
-    modalRef.componentInstance.eventoCriadoOuAtualizado.subscribe(() => {
-      this.diaCalendarioService.lista(5, 2020).subscribe(lista => {
-        this.rows = this.groupColumns(lista);
-        console.log(this.rows);
-      });
-    });
   }
 }

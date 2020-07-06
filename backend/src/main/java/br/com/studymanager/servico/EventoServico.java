@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.time.ZoneOffset;
+import java.time.temporal.ChronoUnit;
 
 @Service
 @Transactional
@@ -22,6 +24,7 @@ public class EventoServico implements IEventoServico {
 
     @Override
     public Evento cria(EventoDto eventoDto) {
+        eventoDto.setData(eventoDto.getData().withZoneSameInstant(ZoneOffset.UTC).truncatedTo(ChronoUnit.DAYS));
         return eventoJpaRepository.save(eventoMapeador.doDto(eventoDto));
     }
 }

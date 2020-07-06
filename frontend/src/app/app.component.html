@@ -5,75 +5,10 @@
 </header>
 
 <div class="area-estudo" fxLayout="row">
-  <div class="menu-lateral">
-    
+<div class="area-menu"  fxLayoutAlign="start center" fxLayout="column">
+  <app-menu-lateral></app-menu-lateral>
+</div>
+  <div class="router-outlet">
+    <router-outlet></router-outlet>
   </div>
-  <div class="calendario">
-    <div class="nome-dia-semana">
-      <div fxLayout="row">
-        <div class="col lable-nome-dia" fxLayoutAlign="center center">
-          <span>DOMINGO</span>
-        </div>
-        <mat-divider [vertical]="true"></mat-divider>
-        <div class="col lable-nome-dia" fxLayoutAlign="center center">
-          <span>SEGUNDA</span>
-        </div>
-        <mat-divider [vertical]="true"></mat-divider>
-        <div class="col lable-nome-dia" fxLayoutAlign="center center">
-          <span>TERÇA</span>
-        </div>
-        <mat-divider [vertical]="true"></mat-divider>
-        <div class="col lable-nome-dia" fxLayoutAlign="center center">
-          <span>QUARTA</span>
-        </div>
-        <mat-divider [vertical]="true"></mat-divider>
-        <div class="col lable-nome-dia" fxLayoutAlign="center center">
-          <span>QUINTA</span>
-        </div>
-        <mat-divider [vertical]="true"></mat-divider>
-        <div class="col lable-nome-dia" fxLayoutAlign="center center">
-          <span>SEXTA</span>
-        </div>
-        <mat-divider [vertical]="true"></mat-divider>
-        <div class="col lable-nome-dia" fxLayoutAlign="center center">
-          <span>SABADO</span>
-        </div>
-        <mat-divider [vertical]="true"></mat-divider>
-      </div>
-    </div>
-    <div class="dias-do-mes">
-      <div class="row semana-do-mes" *ngFor="let cols of rows">
-        <div (mouseenter)="exibeBotaoAdd(dia.data.format('D').toString() + dia.data.format('MM').toString())"
-        (mouseleave)="escondeBotaoAdd(dia.data.format('D').toString() + dia.data.format('MM').toString())"
-        style="margin-right: 1px;" class="col cartao-dia"
-          *ngFor="let dia of cols" #card>
-          <div fxLayoutAlign="center center">
-            <span>{{dia.data.format('D')}}</span>
-          </div>
-          <mat-divider style="color: rgb(0, 0, 0);"></mat-divider>
-          <div class="lista-eventos">
-            <div class="conteudo-evento" *ngFor="let evento of dia.listaEvento">
-              <div fxLayoutAlign="space-between center" class="evento">
-                <span fxLayoutAlign="start center">
-                  {{evento?.nome  | slice:0:11}}
-                  <span *ngIf="evento?.nome?.length > 11">
-                    ...
-                  </span>
-                </span>
-                <button class="btn btn-link" (click)="open(evento)">
-                  <mat-icon style="font-size: 15px;">edit</mat-icon>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div fxShow="false" [id]="dia.data.format('D').toString() + dia.data.format('MM').toString()">
-            <button class="btn btn-link botao-adicionar" (click)="open(null)">
-              <mat-icon style="font-size: 17px;">add</mat-icon>
-            </button>
-          </div>
-        </div>
-        <div style="height: 1px;" class="w-100">
-        </div>
-      </div>
-    </div>
   </div>

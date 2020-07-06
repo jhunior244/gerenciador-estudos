@@ -1,0 +1,109 @@
+.nome-dia-semana {
+    width: 100%;
+    height: 2%;
+    background-color: #e0e0e0;
+}
+
+.nome-dia-semana div:first-child {
+    height: 100%;
+}
+
+.lable-nome-dia {
+    padding: 0;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.dias-do-mes {
+    height: 97.7%;
+}
+.dias-do-mes .semana-do-mes:first-child {
+    margin-top: 1px;
+}
+
+.semana-do-mes {
+    height: 16.6%;
+    margin: 0;
+}
+
+.cartao-dia {
+    padding: 0;
+    height: calc(100% - 1px);
+    background-color: #e0e0e0;
+    margin-right: 1px;
+}
+
+.cabecalho-cartao-dia {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.cartao-dia .botao-adicionar {
+    width: 25px;
+    height: 25px;
+    color: black;
+    position: absolute;
+    right: 15px;
+    bottom: 3px;
+    display: flex;
+    text-decoration: none;
+}
+
+.lista-eventos {
+    overflow-y: auto;
+    height: 75%;
+    overflow-x: hidden;
+    padding: 2px;
+    margin: 2px;
+}
+
+.evento {
+    background-color: #5a54ff;
+    color: white;
+    border-radius: 5px;
+    padding: 3px 10px;
+    width: 100%;
+    height: 20px;
+    font-size: 13px;
+}
+
+.evento:hover {
+    cursor: pointer;
+}
+
+.evento button {
+    text-decoration: none;
+    color: black;
+    padding: 0;
+}
+
+.conteudo-evento {
+    display: flex;
+    margin: 3px 21px 3px 5px;
+    justify-content: start;
+}
+
+
+/* inicio layout barra de rolagem */
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(214, 214, 214);
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #970001;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #290007;
+}

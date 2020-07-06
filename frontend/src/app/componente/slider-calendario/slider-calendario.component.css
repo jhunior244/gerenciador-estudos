@@ -1,0 +1,38 @@
+  /* setas mudar mes calendario */
+.round {
+    border-radius: 50%;
+    font-size: 17px;
+  }
+  a {
+    text-decoration: none;
+    padding: 0px 8px;
+  }
+  a:hover {
+    color: blue;
+    opacity: 1;
+    box-shadow: 0;
+  }
+
+  a:focus {
+    color: blue;
+    opacity: 1;
+    box-shadow: 0;
+  }
+  
+  /* Layout ancora exibe passador de meses calendario */
+  #exibe-slider-calendario[aria-expanded="false"] {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    color: rgb(14, 2, 2);
+    box-shadow: none;
+    transition: .3s;
+
+  }
+
+  #exibe-slider-calendario[aria-expanded="true"] {
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    color: rgb(14, 2, 2);
+    box-shadow: none;
+    transition: .6s;
+  }

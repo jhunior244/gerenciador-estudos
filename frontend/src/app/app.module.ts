@@ -25,12 +25,25 @@ import { DiaCalendarioService } from './servico/dia-calendario/dia-calendario.se
 import { DialogoEditaEventoComponent } from './componente/dialogo-edita-evento/dialogo-edita-evento.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { EventoService } from './servico/evento/evento.service';
+import { MenuLateralComponent } from './componente/menu-lateral/menu-lateral.component';
+import { PainelCalendarioComponent } from './componente/painel/painel-calendario/painel-calendario.component';
+import { CalendarioService } from './servico/calendario/calendario.service';
+import { SliderCalendarioComponent } from './componente/slider-calendario/slider-calendario.component';
+import { EditorTextoComponent } from './componente/editor-texto/editor-texto.component';
+import { QuillModule, QUILL_CONFIG_TOKEN } from 'ngx-quill';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DialogoEditaEventoComponent
+    DialogoEditaEventoComponent,
+    MenuLateralComponent,
+    PainelCalendarioComponent,
+    SliderCalendarioComponent,
+    MenuLateralComponent,
+    SliderCalendarioComponent,
+    PainelCalendarioComponent,
+    EditorTextoComponent
   ],
   entryComponents: [
     DialogoEditaEventoComponent
@@ -60,11 +73,12 @@ import { EventoService } from './servico/evento/evento.service';
     MatChipsModule,
     ScrollingModule,
     NgbModule,
-    
+    QuillModule.forRoot (QUILL_CONFIG_TOKEN.ngInjectableDef)
   ],
   providers: [
     DiaCalendarioService,
-    EventoService
+    EventoService,
+    CalendarioService
   ],
   bootstrap: [
     AppComponent

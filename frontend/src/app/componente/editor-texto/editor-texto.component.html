@@ -1,0 +1,19 @@
+<div>
+    <div style="margin-top: 25px;">
+        <div fxLayoutAlign="center start">
+            <form [formGroup]="editorForm" (ngSubmit)="onSubmit()" style="width: 85%;">
+                <div style="width: 90%; border: 1px solid black;">
+                    <quill-editor [styles]="editorStyle" (onContentChanged)="maxLength($event)"
+                        formControlName="editor"></quill-editor>
+                    <span
+                        *ngIf="editorForm.get('editor').value != null">{{editorForm.get('editor').value.length}}</span>
+                </div>
+                <button class="btn btn-primary mt-3">Submit</button>
+            </form>
+        </div>
+    </div>
+    <!-- <div class="col-md-4 bg-light p-4">
+        <h3>Output</h3>
+        <p class="my-5" [innerHTML]="editorContent"></p>
+    </div> -->
+</div>

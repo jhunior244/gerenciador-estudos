@@ -44,6 +44,14 @@ export class DiaCalendario {
         return diaCalendario;
     }
 
+    static groupColumns(lista: DiaCalendario[]) {
+        const newRows = [];
+        for (let index = 0; index < lista.length; index += 7) {
+          newRows.push(lista.slice(index, index + 7));
+        }
+        return newRows;
+      }
+
     paraBackend(): IDiaCalendario {
         const diaCalendario = Object.assign(Object.create(DiaCalendario.prototype), this, {
             data: (this.data) ? moment(this.data).toDate().toISOString() : null,

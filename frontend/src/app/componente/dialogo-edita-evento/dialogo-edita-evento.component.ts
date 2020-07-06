@@ -15,6 +15,7 @@ export class DialogoEditaEventoComponent implements OnInit {
 
   @Output() eventoCriadoOuAtualizado = new EventEmitter<void>();
   @Input() evento: Evento;
+  @Input() dataFormulario: moment.Moment;
   public formGroup: FormGroup;
   public listaTipoEvento: TipoEvento[] = [];
 
@@ -33,14 +34,14 @@ export class DialogoEditaEventoComponent implements OnInit {
     const tipo1 = new TipoEvento();
     tipo1.id = 1;
     tipo1.nome = 'Prova';
-    
+
     const tipo2 = new TipoEvento();
     tipo2.id = 2;
     tipo2.nome = 'Trabalho';
 
     const tipo3 = new TipoEvento();
     tipo3.id = 3;
-    tipo3.nome = 'Exercicio avaliativo';
+    tipo3.nome = 'Exercicio Avaliativo';
 
     this.listaTipoEvento.push(tipo1, tipo2, tipo3);
   }
@@ -51,12 +52,13 @@ export class DialogoEditaEventoComponent implements OnInit {
   get data(): AbstractControl { return this.formGroup.controls.data; }
 
   ngOnInit() {
+    this.preencheFormulario();
   }
 
   formularioParaEvento() {
     if (this.evento == null) {
       this.evento = new Evento();
-    }
+    } 
     this.evento.nome = this.nome.value;
     this.evento.descricao = this.descricao.value;
     this.evento.tipoEvento = this.tipoEvento.value;
@@ -70,6 +72,25 @@ export class DialogoEditaEventoComponent implements OnInit {
       this.activeModal.close('Close click');
       this.eventoCriadoOuAtualizado.emit();
     });
+  }
+
+  preencheFormulario() {
+    if (this.evento != null) {
+      this.nome.setValue(this.evento.nome);
+      this.descricao.setValue(this.evento.descricao);
+      this.tipoEvento.setValue(this.evento.tipoEvento);
+      this.data.setValue(this.evento.data.utc().format('YYYY-MM-DD'));
+    } else {
+      this.data.setValue(this.dataFormulario.utc().format('YYYY-MM-DD'));
+    }
+
+  }
+
+  comparaTipoEvento(tipo1: TipoEvento, tipo2: TipoEvento) {
+    if (tipo1 == null || tipo2 == null) {
+      return false;
+    }
+    return tipo1.id === tipo2.id;
   }
 
 }
