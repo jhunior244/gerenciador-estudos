@@ -24,11 +24,9 @@ export class DiaCalendarioService {
 
         if (ano) {
             httpParams = httpParams.append('ano', ano.toString());
-
-
-            // tslint:disable-next-line: max-line-length
-            return this.httpCliente.get<IDiaCalendario[]>(this.url + '/lista', { params: httpParams }).pipe(map((lista => DiaCalendario.listaDoBackend(lista))));
         }
+        // tslint:disable-next-line: max-line-length
+        return this.httpCliente.get<IDiaCalendario[]>(this.url + '/lista', { params: httpParams }).pipe(map((lista => DiaCalendario.listaDoBackend(lista))));
 
     }
 

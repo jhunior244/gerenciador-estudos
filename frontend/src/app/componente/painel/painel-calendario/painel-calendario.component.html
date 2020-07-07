@@ -45,14 +45,12 @@
             <div (click)="irParaEditor(evento.id)"
              fxLayoutAlign="space-between center" class="evento">
               <div>
-                <a style="color: black;">
                   <span>
                     {{evento?.nome  | slice:0:11}}
                     <span *ngIf="evento?.nome?.length > 11">
                       ...
                     </span>
                   </span>
-                </a>
               </div>
               <button class="btn btn-link" (click)="open(evento, dia.data)">
                 <mat-icon style="font-size: 15px;">edit</mat-icon>

@@ -1,0 +1,6 @@
+button {
+    box-shadow: 0px 0px 6px blue; 
+    padding: 7px 5px;
+    width: 100%;
+    min-height: 32px;
+  }

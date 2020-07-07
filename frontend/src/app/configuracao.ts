@@ -5,6 +5,7 @@ export const configuracao = {
     rotaLogin: 'login',
     rotaCadastra: 'cadastra',
     rotaCalendario: 'calendario',
+    rotaListaResumo: 'listaResumo',
     rotaResumoEvento: 'resumoEvento',
 
     parametroId: 'id',

@@ -5,6 +5,7 @@ import * as moment from 'moment';
 import { CalendarioService } from 'src/app/servico/calendario/calendario.service';
 import { forkJoin } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { configuracao } from 'src/app/configuracao';
 
 @Component({
   selector: 'app-menu-lateral',
@@ -13,6 +14,8 @@ import { map } from 'rxjs/operators';
 })
 export class MenuLateralComponent implements OnInit {
 
+  public rotaListaResumo = configuracao.rotaListaResumo;
+  
   constructor(
   ) {
    }

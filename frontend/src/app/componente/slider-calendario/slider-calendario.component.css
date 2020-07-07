@@ -1,19 +1,29 @@
+  button {
+    box-shadow: 0px 0px 6px blue; 
+    padding: 0px 5px;
+    min-height: 32px;
+  }
+  
   /* setas mudar mes calendario */
 .round {
     border-radius: 50%;
     font-size: 17px;
   }
-  a {
+
+  .altera-mes {
+    color: blue;
     text-decoration: none;
     padding: 0px 8px;
   }
-  a:hover {
+
+  .altera-mes:hover {
     color: blue;
     opacity: 1;
     box-shadow: 0;
+    cursor: pointer;
   }
 
-  a:focus {
+  .altera-mes:focus {
     color: blue;
     opacity: 1;
     box-shadow: 0;

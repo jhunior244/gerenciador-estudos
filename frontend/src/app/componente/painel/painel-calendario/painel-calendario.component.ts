@@ -65,7 +65,6 @@ export class PainelCalendarioComponent implements OnInit {
   }
 
   irParaEditor(id: number) {
-    console.log(id);
     this.router.navigate([configuracao.rotaResumoEvento]);
   }
 }

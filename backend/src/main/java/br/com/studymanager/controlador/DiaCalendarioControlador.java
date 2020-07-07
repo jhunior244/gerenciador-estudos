@@ -20,7 +20,6 @@ public class DiaCalendarioControlador {
 
     @GetMapping(path = "/lista")
     public List<DiaCalendarioDto> lista(Long mes, Long ano){
-
         return diaCalendarioServico.listaDiasMes(mes, ano);
     }
 }

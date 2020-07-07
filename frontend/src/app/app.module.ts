@@ -31,6 +31,9 @@ import { CalendarioService } from './servico/calendario/calendario.service';
 import { SliderCalendarioComponent } from './componente/slider-calendario/slider-calendario.component';
 import { EditorTextoComponent } from './componente/editor-texto/editor-texto.component';
 import { QuillModule, QUILL_CONFIG_TOKEN } from 'ngx-quill';
+import { ResumoService } from './servico/resumo/resumo.service';
+import { PainelListaResumoComponent } from './componente/painel-lista-resumo/painel-lista-resumo.component';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -43,7 +46,8 @@ import { QuillModule, QUILL_CONFIG_TOKEN } from 'ngx-quill';
     MenuLateralComponent,
     SliderCalendarioComponent,
     PainelCalendarioComponent,
-    EditorTextoComponent
+    EditorTextoComponent,
+    PainelListaResumoComponent
   ],
   entryComponents: [
     DialogoEditaEventoComponent
@@ -73,12 +77,14 @@ import { QuillModule, QUILL_CONFIG_TOKEN } from 'ngx-quill';
     MatChipsModule,
     ScrollingModule,
     NgbModule,
-    QuillModule.forRoot (QUILL_CONFIG_TOKEN.ngInjectableDef)
+    QuillModule.forRoot (QUILL_CONFIG_TOKEN.ngInjectableDef),
+    MatTableModule
   ],
   providers: [
     DiaCalendarioService,
     EventoService,
-    CalendarioService
+    CalendarioService,
+    ResumoService
   ],
   bootstrap: [
     AppComponent
