@@ -2,24 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ed85445-14ba-44a7-b526-b0e96a5bf1c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/controlador/ResumoControlador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/dto/ResumoDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/entidade/Resumo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/mapeador/ResumoMapeador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/repositorio/ResumoJpaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/repositorio/ResumoJpaRepositoryCustom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/repositorio/ResumoJpaRepositoryCustomImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/IResumoServico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/ResumoServico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/controlador/DiaCalendarioControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/controlador/DiaCalendarioControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/controlador/EventoControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/controlador/EventoControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/controlador/ResumoControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/controlador/ResumoControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/repositorio/ResumoJpaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/repositorio/ResumoJpaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/repositorio/ResumoJpaRepositoryCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/repositorio/ResumoJpaRepositoryCustom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/EventoServico.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/EventoServico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/IEventoServico.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/IEventoServico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/IResumoServico.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/IResumoServico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/ResumoServico.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/ResumoServico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/componente/editor-texto/editor-texto.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/componente/editor-texto/editor-texto.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/componente/menu-lateral/menu-lateral.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/componente/menu-lateral/menu-lateral.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/componente/menu-lateral/menu-lateral.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/componente/menu-lateral/menu-lateral.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/componente/painel-lista-resumo/painel-lista-resumo.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/componente/painel-lista-resumo/painel-lista-resumo.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/componente/painel-lista-resumo/painel-lista-resumo.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/componente/painel-lista-resumo/painel-lista-resumo.component.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/componente/painel/painel-calendario/painel-calendario.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/componente/painel/painel-calendario/painel-calendario.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/componente/painel/painel-calendario/painel-calendario.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/componente/painel/painel-calendario/painel-calendario.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/componente/slider-calendario/slider-calendario.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/componente/slider-calendario/slider-calendario.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/componente/slider-calendario/slider-calendario.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/componente/slider-calendario/slider-calendario.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/servico/resumo/resumo.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/servico/resumo/resumo.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -35,15 +35,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/controlador/ResumoControlador.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/ResumoServico.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="368">
+              <caret line="34" column="79" selection-start-line="34" selection-start-column="79" selection-end-line="34" selection-end-column="79" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#801#802#0" expanded="true" />
-                <element signature="e#867#868#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/controlador/ResumoControlador.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="97">
+              <caret line="31" selection-start-line="31" selection-end-line="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -52,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/controlador/EventoControlador.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="20" selection-start-line="20" selection-end-line="24" selection-end-column="5" />
+            <state relative-caret-position="225">
+              <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,36 +72,49 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/controlador/DiaCalendarioControlador.java">
+        <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/IEventoServico.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="20" selection-start-line="20" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="176">
+              <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#782#783#0" expanded="true" />
-                <element signature="e#848#849#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/EventoServico.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#992#993#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/IResumoServico.java">
+        <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/repositorio/ResumoJpaRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="11" column="19" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="19" />
+            <state relative-caret-position="80">
+              <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/ResumoServico.java">
+        <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/repositorio/ResumoJpaRepositoryCustom.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="80">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1090#1091#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -132,32 +155,33 @@
         <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/mapeador/TipoEventoMapeador.java" />
         <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/dto/DiaCalendarioDto.java" />
         <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/IDiaCalendarioServico.java" />
-        <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/IEventoServico.java" />
-        <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/controlador/EventoControlador.java" />
         <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/config/security/AutenticacaoFilter.java" />
         <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/repositorio/EventoJpaRepositoryCustom.java" />
         <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/mapeador/EventoMapeador.java" />
         <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/repositorio/EventoJpaRepository.java" />
         <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/repositorio/EventoJpaRepositoryCustomImpl.java" />
         <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/DiaCalendarioServico.java" />
-        <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/EventoServico.java" />
         <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/controlador/DiaCalendarioControlador.java" />
         <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/dto/ResumoDto.java" />
         <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/entidade/Resumo.java" />
         <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/repositorio/ResumoJpaRepositoryCustomImpl.java" />
         <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/mapeador/ResumoMapeador.java" />
-        <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/repositorio/ResumoJpaRepository.java" />
-        <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/controlador/ResumoControlador.java" />
         <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/IResumoServico.java" />
+        <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/controlador/ResumoControlador.java" />
+        <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/repositorio/ResumoJpaRepositoryCustom.java" />
+        <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/repositorio/ResumoJpaRepository.java" />
         <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/ResumoServico.java" />
+        <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/controlador/EventoControlador.java" />
+        <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/IEventoServico.java" />
+        <option value="$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/EventoServico.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="906" />
-    <option name="y" value="2" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="1978" />
+    <option name="y" value="145" />
     <option name="width" value="1018" />
-    <option name="height" value="757" />
+    <option name="height" value="806" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -165,6 +189,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -216,11 +241,19 @@
               <item name="studymanager" type="462c0819:PsiDirectoryNode" />
               <item name="entidade" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="gerenciador-estudos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="studymanager" type="462c0819:PsiDirectoryNode" />
+              <item name="repositorio" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -297,10 +330,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="906" y="2" width="1018" height="757" extended-state="0" />
-    <editor active="true" />
+    <frame x="1912" y="-8" width="1382" height="744" extended-state="7" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20146137" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16187595" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -310,14 +342,14 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32972974" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.35555556" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.43598056" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3295082" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32539684" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3241491" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -580,16 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/IEventoServico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/DiaCalendarioServico.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="640">
@@ -664,16 +686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/EventoServico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/entidade/Resumo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -694,23 +706,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/repositorio/ResumoJpaRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="7" column="134" selection-start-line="7" selection-start-column="134" selection-end-line="7" selection-end-column="134" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/repositorio/ResumoJpaRepositoryCustom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/repositorio/ResumoJpaRepositoryCustomImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
@@ -718,19 +713,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/controlador/EventoControlador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="20" selection-start-line="20" selection-end-line="24" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/controlador/DiaCalendarioControlador.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="192">
           <caret line="20" selection-start-line="20" selection-end-line="23" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -743,29 +728,77 @@
     <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/IResumoServico.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="19" />
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/ResumoServico.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="368">
+          <caret line="34" column="79" selection-start-line="34" selection-start-column="79" selection-end-line="34" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1090#1091#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/repositorio/ResumoJpaRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/repositorio/ResumoJpaRepositoryCustom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/controlador/ResumoControlador.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="97">
+          <caret line="31" selection-start-line="31" selection-end-line="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#801#802#0" expanded="true" />
-            <element signature="e#867#868#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/controlador/EventoControlador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/IEventoServico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../backend/src/main/java/br/com/studymanager/servico/EventoServico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#992#993#0" expanded="true" />
           </folding>
         </state>
       </provider>

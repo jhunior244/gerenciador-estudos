@@ -1,0 +1,28 @@
+<div>
+    <mat-table #table [dataSource]="lista">
+
+        <ng-container matColumnDef="titulo">
+            <mat-header-cell mat-header-cell *matHeaderCellDef> Titulo</mat-header-cell>
+            <mat-cell mat-cell *matCellDef="let element"> {{element.titulo}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="dataCriacao">
+            <mat-header-cell mat-header-cell *matHeaderCellDef>Data Criação</mat-header-cell>
+            <mat-cell mat-cell *matCellDef="let element"> {{element?.dataCriacao?.format('DD-MM-YYYY')}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="dataUltimaAtualizacao">
+            <mat-header-cell mat-header-cell *matHeaderCellDef>Data Última Atualização</mat-header-cell>
+            <mat-cell mat-cell *matCellDef="let element"> {{element?.dataUltimaAtualizacao?.format('DD-MM-YYYY')}}
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"
+            [ngClass]="{hovered: row.hovered, highlighted: row.highlighted}"
+            class="classe-teste"
+            (click)="teste(row)" (mouseover)="row.hovered = true"
+            (mouseout)="row.hovered = false">
+        </mat-row>
+    </mat-table>
+</div>

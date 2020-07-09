@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Resumo, IResumo } from './resumo';
+import { configuracao } from 'src/app/configuracao';
 
 @Injectable({ providedIn: 'root' })
 export class ResumoService {
@@ -22,13 +23,28 @@ export class ResumoService {
 
     }
 
-    public lista(): Observable<Resumo[]> {
+    public lista(idEvento: string): Observable<Resumo[]> {
+        let httpParams = new HttpParams();
 
-        const httpParams = new HttpParams();
-
-        // tslint:disable-next-line: max-line-length
-        return this.httpCliente.get<IResumo[]>(this.url + '/lista', { params: httpParams }).pipe(map((lista => Resumo.listaDoBackend(lista))));
+        if (idEvento) {
+            httpParams = httpParams.append(configuracao.parametroId, idEvento);
+        }
+        return this.httpCliente.get<IResumo[]>(this.url + '/lista', 
+        { params: httpParams }).pipe(map((lista => Resumo.listaDoBackend(lista))));
 
     }
+
+    public obtem(id: string): Observable<Resumo> {
+
+        let httpParams = new HttpParams();
+
+        if (id) {
+            httpParams = httpParams.append(configuracao.parametroId, id);
+        }
+
+        return this.httpCliente.get<Resumo>(this.url + '/obtem', { params: httpParams })
+            .pipe(map((objRetornado => Resumo.doBackend(objRetornado))));
+    }
+
 }
 

@@ -32,8 +32,8 @@ import { SliderCalendarioComponent } from './componente/slider-calendario/slider
 import { EditorTextoComponent } from './componente/editor-texto/editor-texto.component';
 import { QuillModule, QUILL_CONFIG_TOKEN } from 'ngx-quill';
 import { ResumoService } from './servico/resumo/resumo.service';
-import { PainelListaResumoComponent } from './componente/painel-lista-resumo/painel-lista-resumo.component';
 import {MatTableModule} from '@angular/material/table';
+import { PainelListaResumoComponent } from './componente/painel/painel-lista-resumo/painel-lista-resumo.component';
 
 
 @NgModule({

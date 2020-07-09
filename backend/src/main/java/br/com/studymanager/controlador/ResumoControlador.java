@@ -1,6 +1,5 @@
 package br.com.studymanager.controlador;
 
-import br.com.studymanager.dto.DiaCalendarioDto;
 import br.com.studymanager.dto.ResumoDto;
 import br.com.studymanager.mapeador.ResumoMapeador;
 import br.com.studymanager.servico.IResumoServico;
@@ -26,7 +25,14 @@ public class ResumoControlador {
     }
 
     @GetMapping(path = "/lista")
-    public List<ResumoDto> lista(){
-        return resumoServico.lista();
+    public List<ResumoDto> lista(Long id){
+        return resumoServico.lista(id);
     }
+
+    @GetMapping(path = "/obtem")
+    public ResumoDto obtem(Long id){
+
+        return resumoMapeador.paraDto(resumoServico.obtem(id));
+    }
+
 }

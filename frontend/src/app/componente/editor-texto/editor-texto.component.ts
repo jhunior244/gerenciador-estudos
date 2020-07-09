@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, AbstractControl, Validators } from '@angular/forms';
 import { Resumo } from 'src/app/servico/resumo/resumo';
 import { ResumoService } from 'src/app/servico/resumo/resumo.service';
+import { ActivatedRoute } from '@angular/router';
+import { configuracao } from 'src/app/configuracao';
+import { forkJoin } from 'rxjs';
+import { EventoService } from 'src/app/servico/evento/evento.service';
+import { Evento } from 'src/app/servico/evento/evento';
+import { ContentChange } from 'ngx-quill';
 
 @Component({
   selector: 'app-editor-texto',
@@ -12,10 +18,13 @@ export class EditorTextoComponent implements OnInit {
 
   public editorForm: FormGroup;
   public resumo: Resumo;
+  public evento: Evento;
   public editorContent: string;
+  private id: string;
+  private idEvento: string;
   editorStyle = {
-    maxHeight: '390px',
-    height: '390px',
+    maxHeight: '900px',
+    minheight: '80%',
     backgroundColor: 'white',
     margin: '20px'
   };
@@ -25,13 +34,31 @@ export class EditorTextoComponent implements OnInit {
   };
 
   constructor(
-    private resumoService: ResumoService
+    private activatedRoute: ActivatedRoute,
+    private resumoService: ResumoService,
+    private eventoService: EventoService,
+    private formBuilder: FormBuilder
   ) {
-    this.editorForm = new FormGroup({
-      editor: new FormControl(null)
+    this.editorForm = formBuilder.group({
+      editor: [null, Validators.required]
     });
-    this.editorForm.get('editor').setValue('<p>dsfsdfdsfsdfsdf</p><p>dsfsdfdsfsdfsdf</p>');
+
+    this.activatedRoute.queryParams.subscribe(queryParams => {
+      this.id = queryParams.id;
+      this.idEvento = queryParams.idEvento;
+      if (this.id != null && this.idEvento != null) {
+        const resumo$ = this.resumoService.obtem(this.id);
+        const evento$ = this.eventoService.obtem(this.idEvento);
+        forkJoin([resumo$, evento$]).subscribe(resultados => {
+          this.resumo = resultados[0];
+          this.evento = resultados[1];
+          this.setConteudoResumo(this.resumo);
+        });
+      }
+    });
   }
+
+  get editor(): AbstractControl { return this.editorForm.controls.editor; }
 
   ngOnInit() {
   }
@@ -42,20 +69,34 @@ export class EditorTextoComponent implements OnInit {
     }
     this.resumo.titulo = 'Titulo teste';
     this.resumo.conteudo = this.editorForm.get('editor').value;
+    this.resumo.evento = this.evento;
     this.resumoService.cria(this.resumo).subscribe(resumoCriado => {
       this.resumo = this.resumo;
-      console.log(this.resumo);
     });
 
 
     this.editorContent = this.editorForm.get('editor').value;
-    console.log(this.editorForm.get('editor').value);
   }
 
-  maxLength(event) {
-    if (event.editor.getLength() > 25) {
-      // event.editor.deleteText(25, event.editor.getLength());
+  maxLength(event: ContentChange) {
+    if (event.text.length > 25000) {
+      event.text.substring(0, 25000);
+      console.log(event.text.length);
+      // event.editor.deleteText(150, event.editor.getLength());
+
+
+      // let teste: string = this.editor.value;
+      // teste = teste.substring(0, 1500);
+      // this.editor.setValue(teste);
     }
+  }
+
+  setConteudoResumo(resumo: Resumo) {
+    if (resumo == null) {
+      return;
+    }
+
+    this.editor.setValue(resumo.conteudo);
   }
 
 }

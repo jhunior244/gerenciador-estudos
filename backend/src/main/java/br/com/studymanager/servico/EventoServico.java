@@ -27,4 +27,9 @@ public class EventoServico implements IEventoServico {
         eventoDto.setData(eventoDto.getData().withZoneSameInstant(ZoneOffset.UTC).truncatedTo(ChronoUnit.DAYS));
         return eventoJpaRepository.save(eventoMapeador.doDto(eventoDto));
     }
+
+    @Override
+    public Evento obtem(Long id) {
+        return eventoJpaRepository.findById(id).get();
+    }
 }

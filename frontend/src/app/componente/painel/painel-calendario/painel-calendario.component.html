@@ -42,7 +42,7 @@
         <mat-divider style="color: rgb(0, 0, 0);"></mat-divider>
         <div class="lista-eventos">
           <div class="conteudo-evento" *ngFor="let evento of dia.listaEvento">
-            <div (click)="irParaEditor(evento.id)"
+            <div (click)="listaResumoPorEvento(evento)"
              fxLayoutAlign="space-between center" class="evento">
               <div>
                   <span>

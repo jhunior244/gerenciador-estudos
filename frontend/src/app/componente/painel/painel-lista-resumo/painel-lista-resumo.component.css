@@ -1,0 +1,21 @@
+div {
+  margin: 12px;
+}
+
+mat-table {
+  border: 1px solid black;
+}
+
+mat-header-row {
+  background: #f1f1f1;
+}
+
+mat-row {
+  background: lightgray;
+  color: white;
+}
+
+mat-row:hover {
+  background: rgb(140, 136, 136);
+  cursor: pointer;
+}

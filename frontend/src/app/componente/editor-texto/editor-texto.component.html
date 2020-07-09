@@ -5,10 +5,10 @@
                 <div style="width: 90%; border: 1px solid black;">
                     <quill-editor [styles]="editorStyle" (onContentChanged)="maxLength($event)"
                         formControlName="editor"></quill-editor>
-                    <span
-                        *ngIf="editorForm.get('editor').value != null">{{editorForm.get('editor').value.length}}</span>
+                    <!-- <span
+                        *ngIf="editor.value != null">{{editor.value.length}}</span> -->
                 </div>
-                <button class="btn btn-primary mt-3">Submit</button>
+                <button [disabled]="!editorForm.valid" class="btn btn-primary mt-3">Salvar</button>
             </form>
         </div>
     </div>

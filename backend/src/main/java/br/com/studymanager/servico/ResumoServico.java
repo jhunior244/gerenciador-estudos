@@ -31,8 +31,13 @@ public class ResumoServico implements IResumoServico {
     }
 
     @Override
-    public List<ResumoDto> lista() {
-        return resumoMapeador.paraDto(resumoJpaRepository.findAll());
+    public List<ResumoDto> lista(Long id) {
+        return resumoMapeador.paraDto(resumoJpaRepository.findAllByEvento_id(id));
+    }
+
+    @Override
+    public Resumo obtem(Long id) {
+        return resumoJpaRepository.findById(id).get();
     }
 
 }
