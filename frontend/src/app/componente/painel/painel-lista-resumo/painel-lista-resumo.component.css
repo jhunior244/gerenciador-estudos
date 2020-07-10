@@ -1,6 +1,17 @@
 div {
   margin: 12px;
 }
+.titulo {
+  height: 7%;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+.lista-resumos {
+  height: 85%;
+}
 
 mat-table {
   border: 1px solid black;
@@ -18,4 +29,16 @@ mat-row {
 mat-row:hover {
   background: rgb(140, 136, 136);
   cursor: pointer;
+}
+
+.botao-adicionar {
+  width: 60px;
+    height: 60px;
+    /* color: black; */
+    position: absolute;
+    right: 35px;
+    bottom: 35px;
+    display: flex;
+    text-decoration: none;
+    border-radius: 50%;
 }

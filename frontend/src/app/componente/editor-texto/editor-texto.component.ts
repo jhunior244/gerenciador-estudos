@@ -23,10 +23,10 @@ export class EditorTextoComponent implements OnInit {
   private id: string;
   private idEvento: string;
   editorStyle = {
-    maxHeight: '900px',
     minheight: '80%',
     backgroundColor: 'white',
-    margin: '20px'
+    margin: '20px',
+    height: '80%'
   };
 
   config = {
@@ -46,15 +46,13 @@ export class EditorTextoComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(queryParams => {
       this.id = queryParams.id;
       this.idEvento = queryParams.idEvento;
-      if (this.id != null && this.idEvento != null) {
-        const resumo$ = this.resumoService.obtem(this.id);
-        const evento$ = this.eventoService.obtem(this.idEvento);
-        forkJoin([resumo$, evento$]).subscribe(resultados => {
-          this.resumo = resultados[0];
-          this.evento = resultados[1];
-          this.setConteudoResumo(this.resumo);
-        });
-      }
+      const resumo$ = this.resumoService.obtem(this.id);
+      const evento$ = this.eventoService.obtem(this.idEvento);
+      forkJoin([resumo$, evento$]).subscribe(resultados => {
+        this.resumo = resultados[0];
+        this.evento = resultados[1];
+        this.setConteudoResumo(this.resumo);
+      });
     });
   }
 
@@ -82,12 +80,6 @@ export class EditorTextoComponent implements OnInit {
     if (event.text.length > 25000) {
       event.text.substring(0, 25000);
       console.log(event.text.length);
-      // event.editor.deleteText(150, event.editor.getLength());
-
-
-      // let teste: string = this.editor.value;
-      // teste = teste.substring(0, 1500);
-      // this.editor.setValue(teste);
     }
   }
 

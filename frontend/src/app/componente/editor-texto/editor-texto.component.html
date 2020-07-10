@@ -1,14 +1,19 @@
-<div>
-    <div style="margin-top: 25px;">
-        <div fxLayoutAlign="center start">
-            <form [formGroup]="editorForm" (ngSubmit)="onSubmit()" style="width: 85%;">
-                <div style="width: 90%; border: 1px solid black;">
+<div style="height: 100%;">
+    <div style="width: 100%; height: 7%;" fxLayoutAlign="center start">
+        <div style="width: 80%;">
+            <h1>{{evento?.nome}}</h1>
+        </div>
+    </div>
+    <div style="margin-top: 25px;" style="height: 90%;">
+        <div fxLayoutAlign="center start" style="height: 100%;" class="mt-2">
+            <form [formGroup]="editorForm" (ngSubmit)="onSubmit()" style="width: 80%; height: 90%;">
+                <div style="width: 100%; border: 1px solid black; height: 100%;">
                     <quill-editor [styles]="editorStyle" (onContentChanged)="maxLength($event)"
                         formControlName="editor"></quill-editor>
                     <!-- <span
                         *ngIf="editor.value != null">{{editor.value.length}}</span> -->
                 </div>
-                <button [disabled]="!editorForm.valid" class="btn btn-primary mt-3">Salvar</button>
+                <button [disabled]="!editorForm.valid" class="btn btn-primary mt-1">Salvar</button>
             </form>
         </div>
     </div>

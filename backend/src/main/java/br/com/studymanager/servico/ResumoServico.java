@@ -7,6 +7,7 @@ import br.com.studymanager.mapeador.ResumoMapeador;
 import br.com.studymanager.repositorio.ResumoJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ObjectUtils;
 
 import javax.transaction.Transactional;
 import java.time.ZonedDateTime;
@@ -37,6 +38,9 @@ public class ResumoServico implements IResumoServico {
 
     @Override
     public Resumo obtem(Long id) {
+        if(ObjectUtils.isEmpty(id)){
+            return null;
+        }
         return resumoJpaRepository.findById(id).get();
     }
 

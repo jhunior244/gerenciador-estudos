@@ -34,6 +34,7 @@ import { QuillModule, QUILL_CONFIG_TOKEN } from 'ngx-quill';
 import { ResumoService } from './servico/resumo/resumo.service';
 import {MatTableModule} from '@angular/material/table';
 import { PainelListaResumoComponent } from './componente/painel/painel-lista-resumo/painel-lista-resumo.component';
+import { DialogoEditaTituloResumoComponent } from './component/dialogo-edita-titulo-resumo/dialogo-edita-titulo-resumo.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { PainelListaResumoComponent } from './componente/painel/painel-lista-res
     SliderCalendarioComponent,
     PainelCalendarioComponent,
     EditorTextoComponent,
-    PainelListaResumoComponent
+    PainelListaResumoComponent,
+    DialogoEditaTituloResumoComponent
   ],
   entryComponents: [
     DialogoEditaEventoComponent

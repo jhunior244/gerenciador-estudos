@@ -1,9 +1,17 @@
-<div>
+<div class="titulo">
+    <h1>Resumos</h1>
+</div>
+<div class="lista-resumos">
     <mat-table #table [dataSource]="lista">
 
         <ng-container matColumnDef="titulo">
             <mat-header-cell mat-header-cell *matHeaderCellDef> Titulo</mat-header-cell>
             <mat-cell mat-cell *matCellDef="let element"> {{element.titulo}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="evento">
+            <mat-header-cell mat-header-cell *matHeaderCellDef> Evento</mat-header-cell>
+            <mat-cell mat-cell *matCellDef="let element"> {{element?.evento?.nome}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="dataCriacao">
@@ -21,8 +29,11 @@
         <mat-row *matRowDef="let row; columns: displayedColumns;"
             [ngClass]="{hovered: row.hovered, highlighted: row.highlighted}"
             class="classe-teste"
-            (click)="teste(row)" (mouseover)="row.hovered = true"
+            (click)="editaResumo(row)" (mouseover)="row.hovered = true"
             (mouseout)="row.hovered = false">
         </mat-row>
     </mat-table>
+    <button (click)="criaResumo()" fxLayoutAlign="center center" class="botao-adicionar" mat-raised-button style="background-color: green;">
+        <mat-icon>add</mat-icon>
+    </button>
 </div>

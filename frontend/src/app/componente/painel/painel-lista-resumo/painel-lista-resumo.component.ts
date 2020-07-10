@@ -13,7 +13,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class PainelListaResumoComponent implements OnInit {
   public lista: Resumo[] = [];
   public idEvento: string;
-  displayedColumns: string[] = ['titulo', 'dataCriacao', 'dataUltimaAtualizacao'];
+  displayedColumns: string[] = ['titulo', 'evento', 'dataCriacao', 'dataUltimaAtualizacao'];
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -31,9 +31,14 @@ export class PainelListaResumoComponent implements OnInit {
   ngOnInit() {
   }
 
-  teste(resumo: Resumo) {
+  editaResumo(resumo: Resumo) {
     this.router.navigate([configuracao.rotaResumoEvento],
       { queryParams: { idEvento: this.idEvento, id: resumo.id, titulo: resumo.titulo } });
+  }
+
+  criaResumo(){
+    this.router.navigate([configuracao.rotaResumoEvento],
+      { queryParams: { idEvento: this.idEvento, } });
   }
 
 }
