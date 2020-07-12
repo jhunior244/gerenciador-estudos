@@ -1,8 +1,15 @@
 <div style="height: 100%;">
-    <div style="width: 100%; height: 7%;" fxLayoutAlign="center start">
-        <div style="width: 80%;">
-            <h1>{{evento?.nome}}</h1>
+    <div style="width: 100%; height: 7%; padding: 15px 0px; " fxLayoutAlign="center start">
+        <div fxLayoutAlign="start center" style="width: 80%;" fxLayout="row">
+            <input spellcheck="false" #tituloEvento type="text" autocomplete="off"
+                (keydown)="calculaTamanhoInputTitulos()" value="Evento sem título" tabindex="0" dir="ltr"
+                aria-label="Renomear" data-tooltip="Renomear">
+            <span>&nbsp;>&nbsp;</span>
+            <input style="margin-left: 10px;" spellcheck="false" #tituloResumo type="text" autocomplete="off"
+                (keydown)="calculaTamanhoInputTitulos()" value="Resumo sem título" tabindex="0" dir="ltr"
+                aria-label="Renomear" data-tooltip="Renomear">
         </div>
+
     </div>
     <div style="margin-top: 25px;" style="height: 90%;">
         <div fxLayoutAlign="center start" style="height: 100%;" class="mt-2">
@@ -17,8 +24,4 @@
             </form>
         </div>
     </div>
-    <!-- <div class="col-md-4 bg-light p-4">
-        <h3>Output</h3>
-        <p class="my-5" [innerHTML]="editorContent"></p>
-    </div> -->
 </div>

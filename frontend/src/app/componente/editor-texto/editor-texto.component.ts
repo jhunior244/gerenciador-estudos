@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, AbstractControl, Validators } from '@angular/forms';
 import { Resumo } from 'src/app/servico/resumo/resumo';
 import { ResumoService } from 'src/app/servico/resumo/resumo.service';
@@ -8,13 +8,15 @@ import { forkJoin } from 'rxjs';
 import { EventoService } from 'src/app/servico/evento/evento.service';
 import { Evento } from 'src/app/servico/evento/evento';
 import { ContentChange } from 'ngx-quill';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { DialogoEditaTituloResumoComponent } from '../dialogo-edita-titulo-resumo/dialogo-edita-titulo-resumo.component';
 
 @Component({
   selector: 'app-editor-texto',
   templateUrl: './editor-texto.component.html',
   styleUrls: ['./editor-texto.component.css']
 })
-export class EditorTextoComponent implements OnInit {
+export class EditorTextoComponent implements OnInit, AfterViewInit {
 
   public editorForm: FormGroup;
   public resumo: Resumo;
@@ -33,11 +35,16 @@ export class EditorTextoComponent implements OnInit {
     toolbar: ['bold', 'italic', 'underline']
   };
 
+  @ViewChild('tituloEvento', { read: ElementRef, static: true }) tituloEvento: ElementRef;
+  @ViewChild('tituloResumo', { read: ElementRef, static: true }) tituloResumo: ElementRef;
+  @ViewChild('teste', { read: ElementRef, static: true }) teste: HTMLSpanElement;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private resumoService: ResumoService,
     private eventoService: EventoService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private modalService: NgbModal,
   ) {
     this.editorForm = formBuilder.group({
       editor: [null, Validators.required]
@@ -55,15 +62,29 @@ export class EditorTextoComponent implements OnInit {
       });
     });
   }
+  ngAfterViewInit(): void {
+    // onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';";
+    this.calculaTamanhoInputTitulos();
+
+  }
+
+  calculaTamanhoInputTitulos() {
+    this.tituloEvento.nativeElement.style.width = ((this.tituloEvento.nativeElement.value.length + 1) * 10) + 'px';
+    this.tituloResumo.nativeElement.style.width = this.tituloResumo.nativeElement.value.length + 1 + 'ch';
+
+    console.log(this.teste);
+  }
 
   get editor(): AbstractControl { return this.editorForm.controls.editor; }
 
   ngOnInit() {
+
   }
 
   onSubmit() {
     if (this.resumo == null) {
       this.resumo = new Resumo();
+      this.abreDialogoTitulo(this.resumo);
     }
     this.resumo.titulo = 'Titulo teste';
     this.resumo.conteudo = this.editorForm.get('editor').value;
@@ -72,8 +93,21 @@ export class EditorTextoComponent implements OnInit {
       this.resumo = this.resumo;
     });
 
-
     this.editorContent = this.editorForm.get('editor').value;
+  }
+
+  abreDialogoTitulo(resumo: Resumo) {
+    // const modalRef = this.modalService.open(DialogoEditaTituloResumoComponent);
+    // modalRef.componentInstance.evento = evento;
+    // modalRef.componentInstance.eventoCriadoOuAtualizado.subscribe(() => {
+    //   this.calendarioService.getMesEAno().subscribe(observer => {
+    //     if (observer) {
+    //       this.diaCalendarioService.lista(observer.mes, observer.ano).subscribe(lista => {
+    //         this.rows = DiaCalendario.groupColumns(lista);
+    //       });
+    //     }
+    //   });
+    // });
   }
 
   maxLength(event: ContentChange) {

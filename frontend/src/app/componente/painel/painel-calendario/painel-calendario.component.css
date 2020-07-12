@@ -1,7 +1,7 @@
 .nome-dia-semana {
     width: 100%;
     height: 2%;
-    background-color: #e0e0e0;
+    background-color: #ffffff;
 }
 
 .nome-dia-semana div:first-child {
@@ -29,7 +29,7 @@
 .cartao-dia {
     padding: 0;
     height: calc(100% - 1px);
-    background-color: #e0e0e0;
+    background-color: #ffffff;
     margin-right: 1px;
 }
 
