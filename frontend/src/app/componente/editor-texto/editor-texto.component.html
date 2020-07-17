@@ -2,11 +2,17 @@
     <div style="width: 100%; height: 7%; padding: 15px 0px; " fxLayoutAlign="center start">
         <div fxLayoutAlign="start center" style="width: 80%;" fxLayout="row">
             <input spellcheck="false" #tituloEvento type="text" autocomplete="off"
-                (keydown)="calculaTamanhoInputTitulos()" value="Evento sem título" tabindex="0" dir="ltr"
+                (keydown)="calculaTamanhoInputTitulos()"
+                (blur)="salvaTitulos()"
+                [formControl]="tituloEventoControl"
+                 value="Evento sem título" tabindex="0" dir="ltr"
                 aria-label="Renomear" data-tooltip="Renomear">
             <span>&nbsp;>&nbsp;</span>
             <input style="margin-left: 10px;" spellcheck="false" #tituloResumo type="text" autocomplete="off"
-                (keydown)="calculaTamanhoInputTitulos()" value="Resumo sem título" tabindex="0" dir="ltr"
+                (keydown)="calculaTamanhoInputTitulos()" 
+                (blur)="salvaTitulos()"
+                [formControl]="tituloResumoControl"
+                value="Resumo sem título" tabindex="0" dir="ltr"
                 aria-label="Renomear" data-tooltip="Renomear">
         </div>
 
@@ -17,10 +23,15 @@
                 <div style="width: 100%; border: 1px solid black; height: 100%;">
                     <quill-editor [styles]="editorStyle" (onContentChanged)="maxLength($event)"
                         formControlName="editor"></quill-editor>
-                    <!-- <span
-                        *ngIf="editor.value != null">{{editor.value.length}}</span> -->
                 </div>
-                <button [disabled]="!editorForm.valid" class="btn btn-primary mt-1">Salvar</button>
+                <div fxLayout="space-between center">
+                    <div>
+                        <button [disabled]="!editorForm.valid" class="btn btn-primary mt-1">Salvar</button>
+                    </div>
+                    <div>
+                        <span style="margin-left: 50px; font-size: 18px;">{{mensagemSalvouResumo}}</span>
+                    </div>
+                </div>
             </form>
         </div>
     </div>

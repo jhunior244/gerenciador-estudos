@@ -65,6 +65,6 @@ export class PainelCalendarioComponent implements OnInit {
   }
 
   listaResumoPorEvento(evento: Evento) {
-    this.router.navigate([configuracao.rotaListaResumo + '/' + evento.id]);
+    this.router.navigate([configuracao.rotaVisualizaEvento + '/' + evento.id]);
   }
 }

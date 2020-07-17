@@ -10,4 +10,6 @@ public interface IEventoServico {
     Evento cria(EventoDto eventoDto);
 
     Evento obtem(Long id);
+
+    Evento atualiza(EventoDto evento);
 }

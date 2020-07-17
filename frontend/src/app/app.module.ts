@@ -34,7 +34,11 @@ import { QuillModule, QUILL_CONFIG_TOKEN } from 'ngx-quill';
 import { ResumoService } from './servico/resumo/resumo.service';
 import {MatTableModule} from '@angular/material/table';
 import { PainelListaResumoComponent } from './componente/painel/painel-lista-resumo/painel-lista-resumo.component';
-import { DialogoEditaTituloResumoComponent } from './componente/dialogo-edita-titulo-resumo/dialogo-edita-titulo-resumo.component';
+import { DialogoEditaCardComponent } from './componente/dialogo-edita-card/dialogo-edita-card.component';
+import { PainelListaCardComponent } from './componente/painel/painel-lista-card/painel-lista-card.component';
+import { PainelRevisaCardComponent } from './componente/painel/painel-revisa-card/painel-revisa-card.component';
+import { PainelEditaEventoComponent } from './componente/painel/painel-edita-evento/painel-edita-evento.component';
+import { PainelVisualisaEventoComponent } from './componente/painel/painel-visualisa-evento/painel-visualisa-evento.component';
 
 
 @NgModule({
@@ -49,10 +53,15 @@ import { DialogoEditaTituloResumoComponent } from './componente/dialogo-edita-ti
     PainelCalendarioComponent,
     EditorTextoComponent,
     PainelListaResumoComponent,
-    DialogoEditaTituloResumoComponent
+    PainelVisualisaEventoComponent,
+    DialogoEditaCardComponent,
+    PainelListaCardComponent,
+    PainelRevisaCardComponent,
+    PainelEditaEventoComponent
   ],
   entryComponents: [
-    DialogoEditaEventoComponent
+    DialogoEditaEventoComponent,
+    DialogoEditaCardComponent
   ],
 
   imports: [

@@ -32,4 +32,9 @@ public class EventoServico implements IEventoServico {
     public Evento obtem(Long id) {
         return eventoJpaRepository.findById(id).get();
     }
+
+    @Override
+    public Evento atualiza(EventoDto evento) {
+        return eventoJpaRepository.save(eventoMapeador.doDto(evento));
+    }
 }

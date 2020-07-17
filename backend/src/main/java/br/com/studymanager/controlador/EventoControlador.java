@@ -1,7 +1,6 @@
 package br.com.studymanager.controlador;
 
 import br.com.studymanager.dto.EventoDto;
-import br.com.studymanager.dto.ResumoDto;
 import br.com.studymanager.entidade.Evento;
 import br.com.studymanager.mapeador.EventoMapeador;
 import br.com.studymanager.servico.IEventoServico;
@@ -20,9 +19,15 @@ public class EventoControlador {
     private EventoMapeador eventoMapeador;
 
     @PostMapping(path = "/cria")
-    public void cria(@RequestBody EventoDto evento) throws Exception {
+    public EventoDto cria(@RequestBody EventoDto evento) throws Exception {
         Evento evento1 = eventoServico.cria(evento);
-        eventoMapeador.paraDto(evento1);
+       return eventoMapeador.paraDto(evento1);
+    }
+
+    @PutMapping(path = "/atualiza")
+    public EventoDto atualiza(@RequestBody EventoDto evento) throws Exception {
+        Evento evento1 = eventoServico.atualiza(evento);
+       return eventoMapeador.paraDto(evento1);
     }
 
     @GetMapping(path = "/obtem")

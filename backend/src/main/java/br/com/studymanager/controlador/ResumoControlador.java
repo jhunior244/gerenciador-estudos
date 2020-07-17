@@ -26,6 +26,7 @@ public class ResumoControlador {
 
     @GetMapping(path = "/lista")
     public List<ResumoDto> lista(Long id){
+        List<ResumoDto> lista = resumoServico.lista(id);
         return resumoServico.lista(id);
     }
 

@@ -6,6 +6,9 @@ export const configuracao = {
     rotaCadastra: 'cadastra',
     rotaCalendario: 'calendario',
     rotaListaResumo: 'listaResumo',
+    rotaListaCard: 'listaCard',
+    rotaRevisaCard: 'revisaCard',
+    rotaVisualizaEvento: 'visualizaEvento',
     rotaResumoEvento: 'resumoEvento',
 
     parametroId: 'id',

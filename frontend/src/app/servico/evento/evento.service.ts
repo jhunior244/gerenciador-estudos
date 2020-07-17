@@ -23,6 +23,13 @@ export class EventoService {
 
     }
 
+    public atualiza(evento: Evento): Observable<Evento> {
+        return this.httpCliente.put<Evento>(this.url + '/atualiza', evento.paraBackend(), { headers: this.httpHeader })
+            .pipe(map(eventoCriado => Evento.doBackend(eventoCriado) as Evento)
+            );
+
+    }
+
     public obtem(id: string): Observable<Evento> {
 
         let httpParams = new HttpParams();
