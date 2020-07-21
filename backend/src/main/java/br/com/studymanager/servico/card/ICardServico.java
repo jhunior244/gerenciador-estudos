@@ -14,4 +14,8 @@ public interface ICardServico {
     Card atualiza(CardDto obj);
 
     List<CardDto> lista(Long id);
+
+    List<CardDto> listaTodosPorEvento(Long id);
+
+    void calculaProximaRevisaoCard(Long idCard, Long idPesoResposta);
 }

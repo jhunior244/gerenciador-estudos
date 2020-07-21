@@ -43,4 +43,15 @@ public class CardControlador {
         List<CardDto> lista = cardServico.lista(id);
         return lista;
     }
+
+    @GetMapping(path = "/listaTodosPorEvento")
+    public List<CardDto> listaTodosPorEvento(Long id){
+        List<CardDto> lista = cardServico.listaTodosPorEvento(id);
+        return lista;
+    }
+
+    @GetMapping(path = "/calculaProximaRevisaoCard")
+    public void calculaProximaRevisaoCard(Long idCard, Long idPeso){
+        cardServico.calculaProximaRevisaoCard(idCard, idPeso);
+    }
 }

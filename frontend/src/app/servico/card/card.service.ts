@@ -52,5 +52,30 @@ export class CardService {
             { params: httpParams }).pipe(map((lista => Card.listaDoBackend(lista))));
 
     }
+
+    public listaTodosPorEvento(idEvento: string): Observable<Card[]> {
+        let httpParams = new HttpParams();
+
+        if (idEvento) {
+            httpParams = httpParams.append(configuracao.parametroId, idEvento);
+        }
+        return this.httpCliente.get<ICard[]>(this.url + '/listaTodosPorEvento',
+            { params: httpParams }).pipe(map((lista => Card.listaDoBackend(lista))));
+
+    }
+
+    public calculaProximaRevisaoCard(idCard: number, idPeso: number): Observable<void> {
+        let httpParams = new HttpParams();
+
+        if (idCard) {
+            httpParams = httpParams.append(configuracao.parametroIdCard, idCard.toString());
+        }
+
+        if (idPeso) {
+            httpParams = httpParams.append(configuracao.parametroIdPeso, idPeso.toString());
+        }
+        return this.httpCliente.get<void>(this.url + '/calculaProximaRevisaoCard',
+            { params: httpParams });
+    }
 }
 

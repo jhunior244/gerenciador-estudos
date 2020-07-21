@@ -57,7 +57,7 @@ import { PainelVisualisaEventoComponent } from './componente/painel/painel-visua
     DialogoEditaCardComponent,
     PainelListaCardComponent,
     PainelRevisaCardComponent,
-    PainelEditaEventoComponent
+    PainelEditaEventoComponent,
   ],
   entryComponents: [
     DialogoEditaEventoComponent,

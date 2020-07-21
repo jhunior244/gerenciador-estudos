@@ -5,6 +5,8 @@ export class ICard {
     id: number;
     textoFrente: string;
     textoTras: string;
+    diasRevisaoFacil: number;
+    diasRevisaoTranquilo: number;
     dataUltimaRevisao: moment.Moment;
     dataProximaRevisao: moment.Moment;
     evento: IEvento;
@@ -14,6 +16,8 @@ export class Card {
     id: number;
     textoFrente: string;
     textoTras: string;
+    diasRevisaoFacil: number;
+    diasRevisaoTranquilo: number;
     dataUltimaRevisao: moment.Moment;
     dataProximaRevisao: moment.Moment;
     evento: Evento;

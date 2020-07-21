@@ -33,7 +33,6 @@ export class DialogoEditaCardComponent implements OnInit {
 
   ngOnInit() {
     this.preencheFormulario();
-    console.log(this.evento);
   }
 
   formularioParaEntidade() {

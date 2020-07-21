@@ -14,11 +14,20 @@ export const configuracao = {
     parametroId: 'id',
     parametroToken: 'token',
     parametroEmail: 'email',
+    parametroIdCard: 'idCard',
+    parametroIdPeso: 'idPeso',
 
     tipoEvento: {
         PROVA: 1,
         TRABALHO: 2,
         EXERCICIO_AVALIATIVO: 3
+    },
+
+    pesoRespostaCard: {
+        ERREI: 1,
+        CONFUSO: 2,
+        FACIL: 3,
+        TRANQUILO: 4,
     },
 
 };

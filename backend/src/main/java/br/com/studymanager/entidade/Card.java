@@ -15,6 +15,14 @@ public class Card {
 
     private int numeroRevisaoFeita;
 
+    private int diasRevisaoErrei;
+
+    private int diasRevisaoConfuso;
+
+    private int diasRevisaoFacil;
+
+    private int diasRevisaoTranquilo;
+
     @Column(name="textoFrente", length=1000, nullable = false)
     private String textoFrente;
 

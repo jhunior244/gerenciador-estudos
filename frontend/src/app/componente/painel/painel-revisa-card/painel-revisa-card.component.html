@@ -1,8 +1,8 @@
-<div fxLayoutAlign="center center" style="width: 100%; height: 100%;">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 100%; height: 100%;"
+<!-- <div fxLayoutAlign="center center" style="width: 100%; height: 100%;">
+    <div *ngIf="lista && lista.length > 0" id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 100%; height: 100%;"
         fxLayout="row" fxLayoutAlign="center center" data-interval="false">
-        <div class="carousel-inner" style=" width: 80%; height: 100%;" fxLayoutAlign="center center" #flashCard>
-            <div class="carousel-item active" style="position: relative;height: 100%; width: 100%;">
+        <div  class="carousel-inner" style=" width: 80%; height: 100%;" fxLayoutAlign="center center" #flashCard>
+            <div id="teste" *ngIf="card != null" class="carousel-item active" style="position: relative;height: 100%; width: 100%;">
                 <div class="maincontainer">
                     <div id="{{card?.id}}" class="thecard" (click)="virar(card)">
                         <div class="thefront">
@@ -15,29 +15,30 @@
                         </div>
                     </div>
                     <div style="position: relative; top: 10px;" fxLayoutAlign="center start">
-                        <div fxLayout="column" fxLayoutAlign="center center">
-                            <span>1 Dia</span>
+                        <div (click)="errouCard(card)" class="botao-avalia-card" fxLayout="column" fxLayoutAlign="center center">
+                            <span>10 Minutos</span>
                             <img src="../../../../assets/icones/emoticons/sad.png" style="height: 30px; width: 30px;">
                         </div>
-                        <div fxLayout="column" style="margin-left: 45px;" fxLayoutAlign="center center">
-                            <span>4 Dias</span>
+                        <div class="botao-avalia-card" fxLayout="column" style="margin-left: 45px;" fxLayoutAlign="center center">
+                            <span>1 Dia</span>
                             <img src="../../../../assets/icones/emoticons/confuso.png"
                                 style="height: 30px; width: 30px;">
                         </div>
-                        <div fxLayout="column" style="margin-left: 45px;" fxLayoutAlign="center center">
-                            <span>7 Dias</span>
+                        <div class="botao-avalia-card" fxLayout="column" style="margin-left: 45px;" fxLayoutAlign="center center">
+                            <span>{{card?.diasRevisaoFacil}} Dias</span>
                             <img src="../../../../assets/icones/emoticons/happy.png"
                                 style="height: 30px; width: 30px;">
                         </div>
-                        <div fxLayout="column" style="margin-left: 45px;" fxLayoutAlign="center center">
-                            <span>14 Dias</span>
+                        <div class="botao-avalia-card" fxLayout="column" style="margin-left: 45px;" fxLayoutAlign="center center">
+                            <span>{{card?.diasRevisaoTranquilo}} Dias</span>
                             <img src="../../../../assets/icones/emoticons/super feliz.png"
                                 style="height: 30px; width: 30px; ">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="carousel-item" style="position: relative;height: 100%; width: 100%;" *ngFor="let obj of lista">
+            <div class="carousel-item" style="position: relative;height: 100%; width: 100%;" 
+            *ngFor="let obj of lista">
                 <div class="maincontainer" style="position: relative;">
                     <div id="{{obj?.id}}" class="thecard" (click)="virar(obj)">
                         <div class="thefront">
@@ -49,23 +50,23 @@
                             <p>{{obj?.textoTras}}</p>
                         </div>
                     </div>
-                    <div style="position: relative; top: 10px;" fxLayoutAlign="center start">
-                        <div fxLayout="column" fxLayoutAlign="center center">
-                            <span>1 Dia</span>
+                    <div (click)="errouCard(obj)" style="position: relative; top: 10px;" fxLayoutAlign="center start">
+                        <div class="botao-avalia-card" fxLayout="column" fxLayoutAlign="center center">
+                            <span>10 Minutos</span>
                             <img src="../../../../assets/icones/emoticons/sad.png" style="height: 30px; width: 30px;">
                         </div>
-                        <div fxLayout="column" style="margin-left: 45px;" fxLayoutAlign="center center">
-                            <span>4 Dias</span>
+                        <div class="botao-avalia-card" fxLayout="column" style="margin-left: 45px;" fxLayoutAlign="center center">
+                            <span>1 Dia</span>
                             <img src="../../../../assets/icones/emoticons/confuso.png"
                                 style="height: 30px; width: 30px;">
                         </div>
-                        <div fxLayout="column" style="margin-left: 45px;" fxLayoutAlign="center center">
-                            <span>7 Dias</span>
+                        <div class="botao-avalia-card" fxLayout="column" style="margin-left: 45px;" fxLayoutAlign="center center">
+                            <span>{{obj?.diasRevisaoFacil}} Dias</span>
                             <img src="../../../../assets/icones/emoticons/happy.png"
                                 style="height: 30px; width: 30px;">
                         </div>
-                        <div fxLayout="column" style="margin-left: 45px;" fxLayoutAlign="center center">
-                            <span>14 Dias</span>
+                        <div class="botao-avalia-card" fxLayout="column" style="margin-left: 45px;" fxLayoutAlign="center center">
+                            <span>{{obj?.diasRevisaoTranquilo}} Dias</span>
                             <img src="../../../../assets/icones/emoticons/super feliz.png"
                                 style="height: 30px; width: 30px; ">
                         </div>
@@ -73,15 +74,82 @@
                 </div>
             </div>
         </div>
-        <a style="color: black;" class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+        <a id="anterior" style="color: black;" class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
             data-slide="prev" style="width: 10%;">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next"
+        <a id="proximo" class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next"
             style="width: 10%;">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
+    </div>
+</div> -->
+
+<div fxLayoutAlign="space-between center" style="width: 100%; height: 100%; overflow: hidden;">
+    <div style="width: 10%;">
+        <div *ngIf="existeCard && exigeBotaoNavegacao"  fxLayoutAlign="center center">
+            <a (click)="prev()">
+                <img src="../../../../assets/icones/botoes/left.png"
+                style="height: 30px; width: 30px; ">
+            </a>
+        </div>
+    </div>
+
+    <div #flashCard  style="width: 80%; height: 100%;">
+        <div style="max-width: 900px;" *ngFor="let obj of lista" style="width: 100%; height: 100%; display: none;">
+            <div class="maincontainer">
+                <div id="{{obj?.id}}" class="thecard">
+                    <div class="thefront">
+                        <div class="vira-card" (click)="virar(obj)">
+                            <img src="../../../../assets/icones/botoes/return.png" width="30px" height="30px">
+                        </div>
+                        <h1>Frente</h1>
+                        <p>{{obj?.textoFrente}}</p>
+                    </div>
+                    <div class="theback">
+                        <div class="vira-card" (click)="virar(obj)">
+                            <img src="../../../../assets/icones/botoes/return.png" width="30px" height="30px">
+                        </div>
+                        <h1>Verso</h1>
+                        <p>{{obj?.textoTras}}</p>
+                    </div>
+                </div>
+                <div (click)="errouCard(obj)" style="position: relative; top: 10px;" fxLayoutAlign="center start">
+                    <div class="botao-avalia-card" fxLayout="column" fxLayoutAlign="center center">
+                        <span>10 Minutos</span>
+                        <img src="../../../../assets/icones/emoticons/sad.png" style="height: 30px; width: 30px;">
+                    </div>
+                    <div (click)="confusoCard(obj, 2)" class="botao-avalia-card" fxLayout="column" style="margin-left: 45px;" fxLayoutAlign="center center">
+                        <span>1 Dia</span>
+                        <img src="../../../../assets/icones/emoticons/confuso.png"
+                            style="height: 30px; width: 30px;">
+                    </div>
+                    <div (click)="confusoCard(obj, 3)" class="botao-avalia-card" fxLayout="column" style="margin-left: 45px;" fxLayoutAlign="center center">
+                        <span>{{obj?.diasRevisaoFacil}} Dias</span>
+                        <img src="../../../../assets/icones/emoticons/happy.png"
+                            style="height: 30px; width: 30px;">
+                    </div>
+                    <div (click)="confusoCard(obj, 4)" class="botao-avalia-card" fxLayout="column" style="margin-left: 45px;" fxLayoutAlign="center center">
+                        <span>{{obj?.diasRevisaoTranquilo}} Dias</span>
+                        <img src="../../../../assets/icones/emoticons/super feliz.png"
+                            style="height: 30px; width: 30px; ">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="!existeCard" fxLayoutAlign="center center" style="width: 100%; height: 100%;">
+            <h1 style="font-size: 25px;">Parabéns, todos os flash cards referentes a esse evento estão com a revisão em dia.</h1>
+        </div>
+    </div>
+
+    <div style="width: 10%;">
+        <div *ngIf="existeCard && exigeBotaoNavegacao" fxLayoutAlign="center center">
+            <a (click)="next()">
+                <img src="../../../../assets/icones/botoes/right.png"
+                style="height: 30px; width: 30px; ">
+            </a>
+        </div>
     </div>
 </div>

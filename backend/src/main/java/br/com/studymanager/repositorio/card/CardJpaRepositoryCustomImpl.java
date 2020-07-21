@@ -32,9 +32,8 @@ public class CardJpaRepositoryCustomImpl implements CardJpaRepositoryCustom {
         }
 
         predicado = predicado.and(card.dataProximaRevisao.eq(dataLimite)
-                .or(card.dataProximaRevisao.before(dataLimite)
+                        .or(card.dataProximaRevisao.before(dataLimite)
                         .or(card.evento.data.eq(dataLimite))
-                        .or(card.evento.data.eq(dataLimite.plusDays(1)))
         ));
 
         query.where(predicado);

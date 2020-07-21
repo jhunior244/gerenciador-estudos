@@ -41,5 +41,5 @@ mat-row:hover {
     display: flex;
     border-radius: 50%;
     font-size: 30px;
-    background: green;
+    background: rgb(140, 136, 136);
 }

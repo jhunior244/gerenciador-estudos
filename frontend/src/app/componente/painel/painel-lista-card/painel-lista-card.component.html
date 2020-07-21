@@ -12,13 +12,13 @@
 
             <ng-container matColumnDef="dataUltimaRevisao">
                 <mat-header-cell mat-header-cell *matHeaderCellDef>Data Ultima Revisão</mat-header-cell>
-                <mat-cell mat-cell *matCellDef="let element"> {{element?.dataUltimaRevisao?.format('DD-MM-YYYY')}}
+                <mat-cell mat-cell *matCellDef="let element"> {{element?.dataUltimaRevisao?.utc()?.format('DD-MM-YYYY')}}
                 </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="dataProximaRevisao">
                 <mat-header-cell mat-header-cell *matHeaderCellDef>Data Proxima Revisão</mat-header-cell>
-                <mat-cell mat-cell *matCellDef="let element"> {{element?.dataProximaRevisao?.format('DD-MM-YYYY')}}
+                <mat-cell mat-cell *matCellDef="let element"> {{element?.dataProximaRevisao?.utc()?.format('DD-MM-YYYY')}}
                 </mat-cell>
             </ng-container>
 

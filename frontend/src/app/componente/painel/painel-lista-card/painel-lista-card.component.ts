@@ -31,7 +31,7 @@ export class PainelListaCardComponent implements OnInit {
   ) {
     this.activatedRoute.params.subscribe(params => {
       this.idEvento = params[configuracao.parametroId];
-      const lista$ = this.cardService.lista(this.idEvento);
+      const lista$ = this.cardService.listaTodosPorEvento(this.idEvento);
       const evento$ = this.eventoService.obtem(this.idEvento);
       forkJoin([evento$, lista$]).subscribe(resultados => {
         this.evento = resultados[0];
@@ -48,7 +48,7 @@ export class PainelListaCardComponent implements OnInit {
     modalRef.componentInstance.card = obj;
     modalRef.componentInstance.evento = this.evento;
     modalRef.componentInstance.resumoCriadoOuAtualizado.subscribe(() => {
-      this.cardService.lista(this.idEvento).subscribe(lista => {
+      this.cardService.listaTodosPorEvento(this.idEvento).subscribe(lista => {
         this.lista = lista;
       });
     });

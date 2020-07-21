@@ -1,6 +1,5 @@
 package br.com.studymanager.servico;
 
-import br.com.studymanager.dto.DiaCalendarioDto;
 import br.com.studymanager.dto.ResumoDto;
 import br.com.studymanager.entidade.Resumo;
 import br.com.studymanager.mapeador.ResumoMapeador;
