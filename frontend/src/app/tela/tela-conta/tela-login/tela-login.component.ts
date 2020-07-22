@@ -10,6 +10,7 @@ export class TelaLoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('dfsdf');
   }
 
 }

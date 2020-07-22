@@ -11,6 +11,7 @@ export const configuracao = {
     rotaRevisaCard: 'revisaCard',
     rotaVisualizaEvento: 'visualizaEvento',
     rotaResumoEvento: 'resumoEvento',
+    rotaPainelEstudos: 'painel-estudos',
 
     parametroId: 'id',
     parametroToken: 'token',

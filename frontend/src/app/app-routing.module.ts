@@ -11,6 +11,7 @@ import { TelaInicioComponent } from './tela/tela-inicio/tela-inicio.component';
 import { TelaContaComponent } from './tela/tela-conta/tela-conta.component';
 import { TelaLoginComponent } from './tela/tela-conta/tela-login/tela-login.component';
 import { TelaCadastroComponent } from './tela/tela-conta/tela-cadastro/tela-cadastro.component';
+import { TelaEstudosComponent } from './tela/tela-estudos/tela-estudos.component';
 
 
 const routes: Routes = [
@@ -20,8 +21,29 @@ const routes: Routes = [
     component: TelaContaComponent,
     children: [
       {
+        path: '',
+        redirectTo: configuracao.rotaLogin,
+        pathMatch: 'full'
+      }, {
         path: configuracao.rotaLogin,
         component: TelaLoginComponent
+      }, {
+        path: configuracao.rotaCadastra,
+        component: TelaCadastroComponent
+      }
+    ]
+  }, {
+    path: configuracao.rotaPainelEstudos,
+    component: TelaEstudosComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: configuracao.rotaCalendario,
+        pathMatch: 'full'
+      },
+      {
+        path: configuracao.rotaCalendario,
+        component: PainelCalendarioComponent
       }, {
         path: configuracao.rotaCadastra,
         component: TelaCadastroComponent

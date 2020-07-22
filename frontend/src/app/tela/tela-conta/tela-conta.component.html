@@ -1,1 +1,15 @@
-<p>vazio</p>
+<div fxLayoutAlign="start center" style="margin-bottom: 150px;" style="height: 100%;" fxLayout="column">
+    <div style="width: 35%;">
+        <ul class="nav nav-tabs" style="width: 100%;">
+            <li class="nav-item" style="width: 50%;" fxLayoutAlign="center center">
+              <a fxLayoutAlign="center center" style="width: 100%; background-color: transparent;" class="nav-link active" [routerLink]="rotasSistema.rotaLogin">Entrar</a>
+            </li>
+            <li class="nav-item" style="width: 50%;" fxLayoutAlign="center center">
+              <a fxLayoutAlign="center center" style="width: 100%; background-color: transparent;" class="nav-link"  [routerLink]="rotasSistema.rotaCadastra">Cadastrar</a>
+            </li>
+          </ul>
+    </div>
+      <div style="width: 35%;">
+          <router-outlet></router-outlet>
+      </div>
+</div>

@@ -1,1 +1,32 @@
-<p>tela-cadastro works!</p>
+<div style="height: 100%; width: 100%;">
+    <form>
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center" style="margin-bottom: 10px; margin-top: 10px;">
+            <div fxLayoutAlign="space-between center" style="width: 48%; padding: 5px 15px; background-color: blue;border-radius: 5px;">
+                <img src="../../../../assets/icones/logo-empresas/facebook.png" width="20px" height="20px">
+                <span style="color: white;">Entrar com Facebook</span>
+            </div>
+            <div fxLayoutAlign="space-between center" style="width: 48%; padding: 5px 15px; background-color: white;border-radius: 5px;">
+                <img src="../../../../assets/icones/logo-empresas/google.png" width="20px" height="20px">
+                <span>Entrar com Gmail</span>
+            </div>
+        </div>
+        <div fxLayoutAlign="center center" style="margin-top: 10px; margin-bottom: 10px;">
+            <span>Ou cadastre-se usando seu e-mail:</span>
+        </div>
+        <div class="form-group">
+            <label for="nome">Email</label>
+            <input type="text" class="form-control" id="nome" aria-describedby="emailHelp"
+                placeholder="Nome e Sobrenome">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                placeholder="Exemplo meu-nome@studymanager.com">
+        </div>
+        <div class="form-group">
+            <label for="senha">Password</label>
+            <input type="password" class="form-control" id="senha" placeholder="Minimo 6 caracteres">
+        </div>
+        <button style="width: 100%; background-color: green;" type="submit" class="btn btn-primary">Entrar</button>
+    </form>
+</div>
