@@ -1,0 +1,19 @@
+.area-estudo {
+    height: 93%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.area-menu {
+    background-image: linear-gradient(143deg, #000050, #9a0000);
+    height: 100%;
+    width: 10%;
+    padding: 3px 6px;
+}
+
+.area-navegacao {
+    background-color: #e0e0e0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}

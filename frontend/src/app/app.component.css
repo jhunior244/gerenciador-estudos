@@ -6,28 +6,24 @@ header {
     height: 7%;
     background-image: linear-gradient(121deg, #000050, #9a0000);
 }
+nav {
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    height: 93%;
+    width: 100%; 
+}
 
 .mat-toolbar-multiple-rows {
     height: 5vh;
     min-height: 30px;
 }
 
-.area-estudo {
-    height: 93%;
-    width: 100%;
-    background-color: rgb(255, 255, 255);
-}
-
-.area-menu {
-    background-image: linear-gradient(143deg, #000050, #9a0000);
-    height: 100%;
-    width: 10%;
-    padding: 3px 6px;
-}
-
-.router-outlet {
+.area-navegacao {
     background-color: #e0e0e0;
     height: 100%;
-    width: 90%;
+    width: 100%;
     margin: 0;
 }

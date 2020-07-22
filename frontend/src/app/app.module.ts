@@ -39,6 +39,12 @@ import { PainelListaCardComponent } from './componente/painel/painel-lista-card/
 import { PainelRevisaCardComponent } from './componente/painel/painel-revisa-card/painel-revisa-card.component';
 import { PainelEditaEventoComponent } from './componente/painel/painel-edita-evento/painel-edita-evento.component';
 import { PainelVisualisaEventoComponent } from './componente/painel/painel-visualisa-evento/painel-visualisa-evento.component';
+import { TelaInicioComponent } from './tela/tela-inicio/tela-inicio.component';
+import { BarraMenuComponent } from './componente/barra-menu/barra-menu.component';
+import { TelaLoginComponent } from './tela/tela-conta/tela-login/tela-login.component';
+import { TelaCadastroComponent } from './tela/tela-conta/tela-cadastro/tela-cadastro.component';
+import { TelaContaComponent } from './tela/tela-conta/tela-conta.component';
+import { TelaEstudosComponent } from './tela/tela-estudos/tela-estudos.component';
 
 
 @NgModule({
@@ -58,6 +64,12 @@ import { PainelVisualisaEventoComponent } from './componente/painel/painel-visua
     PainelListaCardComponent,
     PainelRevisaCardComponent,
     PainelEditaEventoComponent,
+    TelaInicioComponent,
+    BarraMenuComponent,
+    TelaLoginComponent,
+    TelaCadastroComponent,
+    TelaContaComponent,
+    TelaEstudosComponent,
   ],
   entryComponents: [
     DialogoEditaEventoComponent,

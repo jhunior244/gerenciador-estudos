@@ -1,0 +1,14 @@
+<div style="height: 100%; width: 100%;">
+    <div style="width: 15%; height: 100%; margin-left: 15px;" fxLayoutAlign="start center">
+        <img src="../../../assets/icones/botoes/user.png" width="30px" height="30px" style="border-radius: 50%; background-color: white;">
+        <div>
+            <span *ngIf="(usuarioLogado$ | async) as usuario; else login"
+                style="margin: 10px; color: rgb(68, 66, 66);">{{usuario.nome}}</span>
+        </div>
+        <ng-template #login>
+            <span style="margin: 10px;">
+                <a [routerLink]="rotasSistema.rotaConta">Entrar</a>
+            </span>
+        </ng-template>
+    </div>
+</div>

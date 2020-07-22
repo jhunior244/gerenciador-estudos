@@ -1,14 +1,10 @@
 <header>
-  <nav>
-
+  <nav style="height: 100%;">
+    <app-barra-menu></app-barra-menu>
   </nav>
 </header>
-
-<div class="area-estudo" fxLayout="row">
-<div class="area-menu"  fxLayoutAlign="start center" fxLayout="column">
-  <app-menu-lateral></app-menu-lateral>
-</div>
-  <div class="router-outlet">
+<main>
+  <div class="area-navegacao">
     <router-outlet></router-outlet>
   </div>
-  </div>
+</main>
