@@ -4,7 +4,7 @@
 }
 
 .area-edita-evento {
-    border: 2px solid black;
+    box-shadow: 0px 1px 4px black;
     padding: 15px;
     border-radius: 10px;
 }

@@ -1,6 +1,14 @@
 button {
-    box-shadow: 0px 0px 6px blue; 
     padding: 7px 5px;
     width: 100%;
     min-height: 32px;
+    box-shadow: 0px 1px 4px black;
+    background-color: transparent;
+  }
+
+  span {
+    color: floralwhite;
+    font-family: sans-serif;
+    font-size: 16px;
+    padding: 0px 10px;
   }

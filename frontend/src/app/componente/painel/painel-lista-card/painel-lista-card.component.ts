@@ -55,7 +55,7 @@ export class PainelListaCardComponent implements OnInit {
   }
 
   revisaFlashCards() {
-    this.router.navigate([configuracao.rotaRevisaCard + '/' + this.idEvento]);
+    this.router.navigate([configuracao.rotaPainelEstudos + '/' + configuracao.rotaRevisaCard + '/' + this.idEvento]);
   }
 
 }

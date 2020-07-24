@@ -1,7 +1,7 @@
 .nome-dia-semana {
     width: 100%;
     height: 2%;
-    background-color: #ffffff;
+    background-color: white;
 }
 
 .nome-dia-semana div:first-child {
@@ -22,14 +22,14 @@
 }
 
 .semana-do-mes {
-    height: 16.6%;
+    height: 16.7%;
     margin: 0;
 }
 
 .cartao-dia {
     padding: 0;
     height: calc(100% - 1px);
-    background-color: #ffffff;
+    background-color: white;
     margin-right: 1px;
 }
 
@@ -58,7 +58,7 @@
 }
 
 .evento {
-    background-color: #5a54ff;
+    background-color: dimgray;
     color: white;
     border-radius: 5px;
     padding: 3px 10px;

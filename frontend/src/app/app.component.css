@@ -4,7 +4,8 @@ html, body {
 
 header {
     height: 7%;
-    background-image: linear-gradient(121deg, #000050, #9a0000);
+    /* background-image: linear-gradient(121deg, #d03800, #f3f646); */
+    background-color: dimgray;
 }
 nav {
     height: 100%;
@@ -22,7 +23,7 @@ main {
 }
 
 .area-navegacao {
-    background-color: #e0e0e0;
+    background-color: white;
     height: 100%;
     width: 100%;
     margin: 0;

@@ -32,12 +32,12 @@ export class PainelListaResumoComponent implements OnInit {
   }
 
   editaResumo(resumo: Resumo) {
-    this.router.navigate([configuracao.rotaResumoEvento],
+    this.router.navigate([configuracao.rotaPainelEstudos + '/' +  configuracao.rotaResumoEvento],
       { queryParams: { idEvento: this.idEvento, id: resumo.id, titulo: resumo.titulo } });
   }
 
   criaResumo(){
-    this.router.navigate([configuracao.rotaResumoEvento],
+    this.router.navigate([configuracao.rotaPainelEstudos + '/' +  configuracao.rotaResumoEvento],
       { queryParams: { idEvento: this.idEvento, } });
   }
 

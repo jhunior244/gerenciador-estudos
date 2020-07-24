@@ -34,8 +34,9 @@
   border-radius: 10px;
   backface-visibility: hidden;
   overflow: hidden;
-  background: #980001;
-  color: #fff;
+  background: dimgray;
+  color: floralwhite;
+  font-family: sans-serif;
 }
 
 /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
@@ -49,8 +50,8 @@
   border-radius: 10px;
   backface-visibility: hidden;
   overflow: hidden;
-  background: #03004f;
-  color: #fff;
+  background: rgb(177, 177, 177);
+  color: floralwhite;
   text-align: center;
   transform: rotateY(180deg);
 }

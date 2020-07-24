@@ -27,7 +27,7 @@ export class SessaoService {
         if (rota) {
             window.localStorage.setItem(rotaRedirecionarAposLogin, rota);
         } else {
-            window.localStorage.setItem(rotaRedirecionarAposLogin, configuracao.rotaInicio);
+            window.localStorage.setItem(rotaRedirecionarAposLogin, configuracao.rotaPainelEstudos);
         }
     }
 

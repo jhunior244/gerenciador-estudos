@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -45,6 +45,7 @@ import { TelaLoginComponent } from './tela/tela-conta/tela-login/tela-login.comp
 import { TelaCadastroComponent } from './tela/tela-conta/tela-cadastro/tela-cadastro.component';
 import { TelaContaComponent } from './tela/tela-conta/tela-conta.component';
 import { TelaEstudosComponent } from './tela/tela-estudos/tela-estudos.component';
+import { RequestInterceptor } from './core/auth/request.interceptor';
 
 
 @NgModule({
@@ -104,6 +105,11 @@ import { TelaEstudosComponent } from './tela/tela-estudos/tela-estudos.component
     MatTableModule
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestInterceptor,
+      multi: true
+    },
     DiaCalendarioService,
     EventoService,
     CalendarioService,

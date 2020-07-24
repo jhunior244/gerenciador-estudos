@@ -1,9 +1,21 @@
 <div style="height: 100%; width: 100%;">
-    <div style="width: 15%; height: 100%; margin-left: 15px;" fxLayoutAlign="start center">
-        <img src="../../../assets/icones/botoes/user.png" width="30px" height="30px" style="border-radius: 50%; background-color: white;">
+    <div style="width: 15%; height: 100%; margin-left: 15px;" fxLayoutAlign="start center" aria-haspopup="true" aria-expanded="false">
+        <div  class="nav-item dropdown">
+            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img class="menu-usuario" src="../../../assets/icones/botoes/user.png" width="30px" height="30px">
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item">Perfil</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" (click)="deslogar()">Sair</a>
+              </div>
+        </div>
         <div>
             <span *ngIf="(usuarioLogado$ | async) as usuario; else login"
-                style="margin: 10px; color: rgb(68, 66, 66);">{{usuario.nome}}</span>
+                style="margin: 10px; color: floralwhite;
+                font-family: sans-serif;
+                font-size: 16px;
+                padding: 0px 10px;">{{usuario.nome}}</span>
         </div>
         <ng-template #login>
             <span style="margin: 10px;">

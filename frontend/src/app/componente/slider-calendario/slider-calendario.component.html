@@ -2,7 +2,10 @@
     <button type="button" class="btn btn-default" fxFlex="grow"
     fxLayoutAlign="space-between center"
     [routerLink]="rotaCalendario">
-      <span style=" color: black;">Calendário</span>
+      <span style="color: floralwhite;
+      font-family: sans-serif;
+      font-size: 16px;
+      padding: 0px 10px;">Calendário</span>
       <a id="exibe-slider-calendario" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" class="btn">
         &#8250;
       </a>
@@ -11,7 +14,7 @@
   <div class="collapse" id="collapseExample" style="width: 100%; margin-top: 4px;">
     <div fxLayoutAlign="space-between center">
       <div (click)="retornaMes()" class="round altera-mes">&#8249;</div>
-      <span style="font-size: 12px; color: #e0e0e0;">{{mes}} / {{ano}}</span>
+      <span style="font-size: 12px; color: floralwhite;">{{mes}} / {{ano}}</span>
       <div (click)="avancaMes()" class="round altera-mes">&#8250;</div>
     </div>
   </div>

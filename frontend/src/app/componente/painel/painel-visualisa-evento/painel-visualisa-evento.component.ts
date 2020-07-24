@@ -103,11 +103,11 @@ export class PainelVisualisaEventoComponent implements OnInit {
   }
 
   listaResumos(){
-    this.router.navigate([configuracao.rotaListaResumo + '/' + this.idEvento]);
+    this.router.navigate([configuracao.rotaPainelEstudos + '/' +  configuracao.rotaListaResumo + '/' + this.idEvento]);
   }
 
   listaFlashCard(){
-    this.router.navigate([configuracao.rotaListaCard + '/' + this.idEvento]);
+    this.router.navigate([configuracao.rotaPainelEstudos + '/' +  configuracao.rotaListaCard + '/' + this.idEvento]);
   }
 
 }

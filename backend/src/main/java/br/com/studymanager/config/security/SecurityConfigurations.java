@@ -50,8 +50,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, "/usuario/*").permitAll()
                 .antMatchers(HttpMethod.GET,"/usuario").permitAll()
                 .antMatchers(HttpMethod.GET, "/usuario/*").permitAll()
-//                .anyRequest().authenticated()
-                .anyRequest().permitAll()
+                .anyRequest().authenticated()
                 .and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().addFilterBefore(new AutenticacaoFilter(tokenService, usuarioJpaRepository), UsernamePasswordAuthenticationFilter.class);

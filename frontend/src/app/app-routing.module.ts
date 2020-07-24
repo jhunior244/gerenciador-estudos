@@ -45,19 +45,30 @@ const routes: Routes = [
         path: configuracao.rotaCalendario,
         component: PainelCalendarioComponent
       }, {
-        path: configuracao.rotaCadastra,
-        component: TelaCadastroComponent
+        path: configuracao.rotaVisualizaEvento + '/:' + configuracao.parametroId,
+        component: PainelVisualisaEventoComponent,
+      }, {
+        path: configuracao.rotaListaCard + '/:' + configuracao.parametroId,
+        component: PainelListaCardComponent
+      }, {
+        path: configuracao.rotaRevisaCard + '/:' + configuracao.parametroId,
+        component: PainelRevisaCardComponent
+      }, {
+        path: configuracao.rotaListaResumo + '/:' + configuracao.parametroId,
+        component: PainelListaResumoComponent
+      }, {
+        path: configuracao.rotaResumoEvento,
+        component: EditorTextoComponent
+      }, {
+        path: configuracao.rotaResumoEvento + '/:' + configuracao.parametroId,
+        component: EditorTextoComponent
+      }, {
+        path: configuracao.rotaResumoEvento + '/:' + configuracao.parametroId,
+        component: EditorTextoComponent
       }
     ]
   },
 
-  { path: configuracao.rotaCalendario, component: PainelCalendarioComponent },
-  { path: configuracao.rotaResumoEvento, component: EditorTextoComponent },
-  { path: configuracao.rotaResumoEvento, component: EditorTextoComponent },
-  { path: configuracao.rotaListaResumo + '/:' + configuracao.parametroId, component: PainelListaResumoComponent },
-  { path: configuracao.rotaListaCard + '/:' + configuracao.parametroId, component: PainelListaCardComponent },
-  { path: configuracao.rotaRevisaCard + '/:' + configuracao.parametroId, component: PainelRevisaCardComponent },
-  { path: configuracao.rotaVisualizaEvento + '/:' + configuracao.parametroId, component: PainelVisualisaEventoComponent },
   { path: configuracao.rotaInicio, component: TelaInicioComponent },
 
   { path: '**', redirectTo: configuracao.rotaInicio, pathMatch: 'full', },
