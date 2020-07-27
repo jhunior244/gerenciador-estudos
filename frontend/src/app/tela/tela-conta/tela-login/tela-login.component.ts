@@ -8,6 +8,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { MatSnackBarConfig } from '@angular/material';
 import { configuracao } from 'src/app/configuracao';
 import { Md5 } from 'ts-md5/dist/md5';
+import { ErroService } from 'src/app/core/erro/erro.service';
+import { Toaster } from 'ngx-toast-notifications';
 
 @Component({
   selector: 'app-tela-login',
@@ -23,7 +25,9 @@ export class TelaLoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private sessaoService: SessaoService,
-    private router: Router) { 
+    private erroService: ErroService,
+    private toaster: Toaster,
+    private router: Router) {
     this.formGroup = this.formBuilder.group({
       email: [null, Validators.compose([Validators.required, Validators.email])],
       senha: [null, Validators.required]
@@ -44,7 +48,11 @@ export class TelaLoginComponent implements OnInit {
       this.router.navigate([configuracao.rotaPainelEstudos]);
     }, (erro: HttpErrorResponse) => {
       console.log(erro);
+      this.erroService.exibeMensagemErro(erro.error.message, this.toaster);
     });
+  }
+
+  teste(){
   }
 
 }

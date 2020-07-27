@@ -2,18 +2,18 @@ package br.com.studymanager.servico;
 
 import br.com.studymanager.dto.DiaCalendarioDto;
 import br.com.studymanager.dto.EventoDto;
+import br.com.studymanager.entidade.Usuario;
 import br.com.studymanager.mapeador.EventoMapeador;
 import br.com.studymanager.repositorio.EventoJpaRepositoryCustom;
+import br.com.studymanager.repositorio.UsuarioJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 
 import javax.transaction.Transactional;
-import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,8 +28,13 @@ public class DiaCalendarioServico implements IDiaCalendarioServico{
     @Autowired
     private EventoMapeador eventoMapeador;
 
+    @Autowired
+    private UsuarioJpaRepository usuarioJpaRepository;
+
     @Override
-    public List<DiaCalendarioDto> listaDiasMes(Long mes, Long ano) {
+    public List<DiaCalendarioDto> listaDiasMes(long idUsuario, Long mes, Long ano) {
+
+        Usuario usuario = usuarioJpaRepository.getOne(idUsuario);
 
         ZonedDateTime primeiroDiaMes = ZonedDateTime.of(ano.intValue(), mes.intValue(), 1,
                 0,0,0,0, ZoneOffset.UTC);
@@ -38,7 +43,7 @@ public class DiaCalendarioServico implements IDiaCalendarioServico{
 
         List<DiaCalendarioDto> listaDiaCalendario = new ArrayList<>();
         List<EventoDto> listaEvento =
-                eventoMapeador.paraDto(eventoJpaRepository.lista(primeiroDiaCalendario, primeiroDiaCalendario.plusDays(41)));
+                eventoMapeador.paraDto(eventoJpaRepository.lista(usuario, primeiroDiaCalendario, primeiroDiaCalendario.plusDays(41)));
 
         for(int i = 0; i < 42; i++){
             DiaCalendarioDto dia = new DiaCalendarioDto();

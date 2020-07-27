@@ -8,6 +8,8 @@ import { Usuario } from 'src/app/core/usuario/usuario';
 import { Md5 } from 'ts-md5';
 import { UsuarioService } from 'src/app/core/usuario/usuario.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ErroService } from 'src/app/core/erro/erro.service';
+import { Toaster } from 'ngx-toast-notifications';
 
 @Component({
   selector: 'app-tela-cadastro',
@@ -25,7 +27,9 @@ export class TelaCadastroComponent implements OnInit {
     private authService: AuthService,
     private sessaoService: SessaoService,
     private router: Router,
-    private usuarioService: UsuarioService) { 
+    private usuarioService: UsuarioService,
+    private toaster: Toaster,
+    private erroService: ErroService) {
     this.formGroup = this.formBuilder.group({
       nome: [null, Validators.required],
       email: [null, Validators.compose([Validators.required, Validators.email])],
@@ -41,22 +45,23 @@ export class TelaCadastroComponent implements OnInit {
   }
 
   formularioParaEntidade() {
-      this.usuario.nome = this.nome.value;
-      this.usuario.email = this.email.value;
-      this.usuario.senha = Md5.hashStr(this.senha.value).toString();
+    this.usuario.nome = this.nome.value;
+    this.usuario.email = this.email.value;
+    this.usuario.senha = Md5.hashStr(this.senha.value).toString();
   }
 
   cadastrar() {
     this.formularioParaEntidade();
     this.usuarioService.cria(this.usuario).subscribe(() => {
-        this.authService.autenticar(this.usuario).subscribe(retorno => {
-            this.router.navigate([configuracao.rotaPainelEstudos]);
-        }, (erro: HttpErrorResponse) => {
-            console.log(erro);
-        });
-    }, (erro: HttpErrorResponse) => {
+      this.authService.autenticar(this.usuario).subscribe(retorno => {
+        this.router.navigate([configuracao.rotaPainelEstudos]);
+      }, (erro: HttpErrorResponse) => {
         console.log(erro);
+      });
+    }, (erro: HttpErrorResponse) => {
+      console.log(erro);
+      this.erroService.exibeMensagemErro(erro.error.message, this.toaster);
     });
-}
+  }
 
 }

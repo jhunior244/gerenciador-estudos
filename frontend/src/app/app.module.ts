@@ -7,7 +7,7 @@ import {
   MatListModule,
   MatSelectModule, MatSidenavModule,
   MatToolbarModule,
-  MatCardModule
+  MatCardModule,
 } from '@angular/material';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -19,11 +19,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {MatChipsModule} from '@angular/material/chips';
-import {ScrollingModule} from '@angular/cdk/scrolling';
+import { MatChipsModule } from '@angular/material/chips';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { DiaCalendarioService } from './servico/dia-calendario/dia-calendario.service';
 import { DialogoEditaEventoComponent } from './componente/dialogo-edita-evento/dialogo-edita-evento.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EventoService } from './servico/evento/evento.service';
 import { MenuLateralComponent } from './componente/menu-lateral/menu-lateral.component';
 import { PainelCalendarioComponent } from './componente/painel/painel-calendario/painel-calendario.component';
@@ -32,7 +32,7 @@ import { SliderCalendarioComponent } from './componente/slider-calendario/slider
 import { EditorTextoComponent } from './componente/editor-texto/editor-texto.component';
 import { QuillModule, QUILL_CONFIG_TOKEN } from 'ngx-quill';
 import { ResumoService } from './servico/resumo/resumo.service';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { PainelListaResumoComponent } from './componente/painel/painel-lista-resumo/painel-lista-resumo.component';
 import { DialogoEditaCardComponent } from './componente/dialogo-edita-card/dialogo-edita-card.component';
 import { PainelListaCardComponent } from './componente/painel/painel-lista-card/painel-lista-card.component';
@@ -45,7 +45,10 @@ import { TelaLoginComponent } from './tela/tela-conta/tela-login/tela-login.comp
 import { TelaCadastroComponent } from './tela/tela-conta/tela-cadastro/tela-cadastro.component';
 import { TelaContaComponent } from './tela/tela-conta/tela-conta.component';
 import { TelaEstudosComponent } from './tela/tela-estudos/tela-estudos.component';
-import { RequestInterceptor } from './core/auth/request.interceptor';
+import { RequestInterceptor, ErroInterceptor } from './core/auth/request.interceptor';
+import { ErroService } from './core/erro/erro.service';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ToastNotificationsModule } from 'ngx-toast-notifications';
 
 
 @NgModule({
@@ -101,19 +104,26 @@ import { RequestInterceptor } from './core/auth/request.interceptor';
     MatChipsModule,
     ScrollingModule,
     NgbModule,
-    QuillModule.forRoot (QUILL_CONFIG_TOKEN.ngInjectableDef),
-    MatTableModule
+    QuillModule.forRoot(QUILL_CONFIG_TOKEN.ngInjectableDef),
+    MatTableModule,
+    MatSnackBarModule,
+    ToastNotificationsModule,
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: RequestInterceptor,
       multi: true
+    }, {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErroInterceptor,
+      multi: true
     },
     DiaCalendarioService,
     EventoService,
     CalendarioService,
-    ResumoService
+    ResumoService,
+    ErroService,
   ],
   bootstrap: [
     AppComponent

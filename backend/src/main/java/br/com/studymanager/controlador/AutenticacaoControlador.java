@@ -1,6 +1,7 @@
 package br.com.studymanager.controlador;
 
 import br.com.studymanager.config.security.TokenService;
+import br.com.studymanager.config.validacao.LancadorExcessao;
 import br.com.studymanager.dto.UsuarioDto;
 import br.com.studymanager.dto.UsuarioSaidaDto;
 import br.com.studymanager.entidade.Usuario;
@@ -11,7 +12,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -29,7 +29,7 @@ public class AutenticacaoControlador {
     private UsuarioJpaRepository usuarioJpaRepository;
 
     @PostMapping(path = "/login")
-    public ResponseEntity<UsuarioSaidaDto> logar(@RequestBody UsuarioDto usuario){
+    public ResponseEntity<UsuarioSaidaDto> logar(@RequestBody UsuarioDto usuario) throws LancadorExcessao{
         UsernamePasswordAuthenticationToken dadosLogin = usuario.converter();
 
         try {
@@ -44,7 +44,7 @@ public class AutenticacaoControlador {
             usuarioJpaRepository.save(usuarioLogado);
             return ResponseEntity.ok(usuarioSaidaDto);
         } catch (AuthenticationException e){
-            throw new UsernameNotFoundException("Dados inválidos");
+            throw new LancadorExcessao("Dados inválidos");
         }
     }
 }

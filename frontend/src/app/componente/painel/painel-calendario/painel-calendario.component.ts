@@ -24,7 +24,7 @@ export class PainelCalendarioComponent implements OnInit {
     private diaCalendarioService: DiaCalendarioService,
     private modalService: NgbModal,
     private calendarioService: CalendarioService,
-    private router: Router
+    private router: Router,
   ) {
   }
 

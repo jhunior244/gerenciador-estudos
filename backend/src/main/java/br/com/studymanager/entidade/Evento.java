@@ -23,5 +23,8 @@ public class Evento {
     private ZonedDateTime data;
 
     @ManyToOne
+    private Usuario usuario;
+
+    @ManyToOne
     private TipoEvento tipoEvento;
 }

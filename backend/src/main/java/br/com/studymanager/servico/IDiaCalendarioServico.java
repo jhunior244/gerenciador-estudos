@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface IDiaCalendarioServico {
 
-    List<DiaCalendarioDto> listaDiasMes(Long mes, Long ano);
+    List<DiaCalendarioDto> listaDiasMes(long idUsuario, Long mes, Long ano);
 }

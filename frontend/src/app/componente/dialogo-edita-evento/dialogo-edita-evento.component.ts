@@ -5,6 +5,7 @@ import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/fo
 import { EventoService } from 'src/app/servico/evento/evento.service';
 import { TipoEvento } from 'src/app/servico/tipo-evento/tipo-evento';
 import * as moment from 'moment';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 @Component({
   selector: 'app-dialogo-edita-evento',

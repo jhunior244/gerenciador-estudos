@@ -2,8 +2,10 @@ package br.com.studymanager.servico;
 
 import br.com.studymanager.dto.EventoDto;
 import br.com.studymanager.entidade.Evento;
+import br.com.studymanager.entidade.Usuario;
 import br.com.studymanager.mapeador.EventoMapeador;
 import br.com.studymanager.repositorio.EventoJpaRepository;
+import br.com.studymanager.repositorio.UsuarioJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,11 +23,17 @@ public class EventoServico implements IEventoServico {
     @Autowired
     private EventoMapeador eventoMapeador;
 
+    @Autowired
+    private UsuarioJpaRepository usuarioJpaRepository;
+
 
     @Override
-    public Evento cria(EventoDto eventoDto) {
-        eventoDto.setData(eventoDto.getData().withZoneSameInstant(ZoneOffset.UTC).truncatedTo(ChronoUnit.DAYS));
-        return eventoJpaRepository.save(eventoMapeador.doDto(eventoDto));
+    public Evento cria(EventoDto eventoDto, long idUsuario) {
+        Usuario usuario = usuarioJpaRepository.getOne(idUsuario);
+        Evento evento = eventoMapeador.doDto(eventoDto);
+        evento.setUsuario(usuario);
+        evento.setData(eventoDto.getData().withZoneSameInstant(ZoneOffset.UTC).truncatedTo(ChronoUnit.DAYS));
+        return eventoJpaRepository.save(evento);
     }
 
     @Override

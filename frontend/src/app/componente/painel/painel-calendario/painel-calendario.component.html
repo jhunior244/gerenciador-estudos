@@ -42,9 +42,9 @@
         <mat-divider style="color: rgb(0, 0, 0);"></mat-divider>
         <div class="lista-eventos">
           <div class="conteudo-evento" *ngFor="let evento of dia.listaEvento">
-            <div
+            <div (click)="listaResumoPorEvento(evento)"
              fxLayoutAlign="space-between center" style="position: relative;" class="evento">
-              <div (click)="listaResumoPorEvento(evento)">
+              <div>
                   <span>
                     {{evento?.nome  | slice:0:15}}
                     <span *ngIf="evento?.nome?.length > 15">
@@ -52,11 +52,11 @@
                     </span>
                   </span>
               </div>
-              <div style="position: absolute; right: 0px; top: -2px;">
+              <!-- <div style="position: absolute; right: 0px; top: -2px;">
                 <button class="btn btn-link" (click)="open(evento, dia.data)">
                   <mat-icon style="font-size: 15px;">edit</mat-icon>
                 </button>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ import br.com.studymanager.entidade.Card;
 import br.com.studymanager.mapeador.CardMapeador;
 import br.com.studymanager.servico.card.ICardServico;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

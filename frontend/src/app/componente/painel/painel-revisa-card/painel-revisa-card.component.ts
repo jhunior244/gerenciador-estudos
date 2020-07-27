@@ -31,11 +31,11 @@ export class PainelRevisaCardComponent implements AfterViewChecked {
       this.cardService.lista(this.id).subscribe(lista => {
         this.lista = lista;
         if(this.lista.length === 0){
-          this.existeCard = false;
-          this.exigeBotaoNavegacao = false;
+          this.existeCard = true;
+          this.exigeBotaoNavegacao = true;
         } else if(this.lista.length === 1) {
           this.existeCard = true;
-          this.exigeBotaoNavegacao = false;
+          this.exigeBotaoNavegacao = true;
         } else {
           this.existeCard = true;
           this.exigeBotaoNavegacao = true;
