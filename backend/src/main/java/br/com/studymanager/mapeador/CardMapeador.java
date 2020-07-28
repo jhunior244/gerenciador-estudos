@@ -20,7 +20,7 @@ public interface CardMapeador {
 
     List<CardDto> paraDto(List<Card> lista);
 
-    default Page<CardDto> kitToKitDto(Page<Card> page){
+    default Page<CardDto> paraDto(Page<Card> page){
         return page.map(this::paraDto);
     }
 }

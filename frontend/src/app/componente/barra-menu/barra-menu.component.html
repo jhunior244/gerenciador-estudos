@@ -1,18 +1,19 @@
-<div style="height: 100%; width: 100%;">
-    <div style="width: 15%; height: 100%; margin-left: 15px;" fxLayoutAlign="start center" aria-haspopup="true" aria-expanded="false">
-        <div  class="nav-item dropdown">
-            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<div style="height: 100%; width: 100%;" fxLayoutAlign="start center">
+    <div style="width: 15%; height: 100%; margin-left: 15px;" fxLayoutAlign="start center" aria-haspopup="true"
+        aria-expanded="false">
+        <div class="nav-item dropdown">
+            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
                 <img class="menu-usuario" src="../../../assets/icones/botoes/user.png" width="30px" height="30px">
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item">Perfil</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" (click)="deslogar()">Sair</a>
-              </div>
+            </div>
         </div>
         <div>
-            <span *ngIf="(usuarioLogado$ | async) as usuario; else login"
-                style="margin: 10px; color: floralwhite;
+            <span *ngIf="(usuarioLogado$ | async) as usuario; else login" style="margin: 10px; color: floralwhite;
                 font-family: sans-serif;
                 font-size: 16px;
                 padding: 0px 10px;">{{usuario.nome}}</span>
@@ -22,5 +23,8 @@
                 <a [routerLink]="rotasSistema.rotaConta">Entrar</a>
             </span>
         </ng-template>
+    </div>
+    <div style="width: 50%; height: 100%;">
+        <button class="btn btn-primary">Cronograma</button>
     </div>
 </div>

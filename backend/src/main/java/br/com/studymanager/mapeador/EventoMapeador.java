@@ -21,7 +21,7 @@ public interface EventoMapeador {
 
     List<EventoDto> paraDto(List<Evento> lista);
 
-    default Page<EventoDto> kitToKitDto(Page<Evento> page){
+    default Page<EventoDto> paraDto(Page<Evento> page){
         return page.map(this::paraDto);
     }
 

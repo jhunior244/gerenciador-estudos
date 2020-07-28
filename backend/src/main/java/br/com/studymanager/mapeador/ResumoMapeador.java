@@ -22,7 +22,7 @@ public interface ResumoMapeador {
 
     List<ResumoDto> paraDto(List<Resumo> lista);
 
-    default Page<ResumoDto> kitToKitDto(Page<Resumo> page){
+    default Page<ResumoDto> paraDto(Page<Resumo> page){
         return page.map(this::paraDto);
     }
 }
