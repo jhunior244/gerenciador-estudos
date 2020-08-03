@@ -1,0 +1,37 @@
+<div class="modal-header" ngbAutofocus>
+    <h4 class="modal-title">Cadastro de tópico</h4>
+    <a type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </a>
+</div>
+<div class="container">
+    <div fxLayout="column" class="mb-1">
+        <form [formGroup]="formGroup">
+            <div class="mt-1" fxLayout="column">
+                <div>
+                    <mat-form-field fxFlex="grow">
+                        <input matInput placeholder="Nome" [formControl]="nome">
+                    </mat-form-field>
+                </div>
+                <div fxLayoutAlign="space-between center">
+                    <mat-form-field fxFlex="48">
+                        <input type="number" matInput placeholder="Horas estimadas estudo" [formControl]="horasEstimadasEstudo" fxFlex="grow">
+                    </mat-form-field>
+                    <mat-form-field fxFlex="48">
+                        <input type="number" matInput placeholder="Questoes estimadas estudo" [formControl]="questoesEstimadasEstudo" fxFlex="grow">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <button [disabled]="!formGroup.valid" mat-raised-button (click)="salva()"
+                        style="background-color:green; color: floralwhite; width: 100%;">Salvar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button mat-raised-button (click)="activeModal.close('Close click')">
+        Voltar
+    </button>
+</div>

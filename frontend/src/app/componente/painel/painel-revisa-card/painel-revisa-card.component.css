@@ -34,7 +34,7 @@
   border-radius: 10px;
   backface-visibility: hidden;
   overflow: hidden;
-  background: dimgray;
+  background: orangered;
   color: floralwhite;
   font-family: sans-serif;
 }
@@ -50,7 +50,7 @@
   border-radius: 10px;
   backface-visibility: hidden;
   overflow: hidden;
-  background: rgb(177, 177, 177);
+  background: navy;
   color: floralwhite;
   text-align: center;
   transform: rotateY(180deg);

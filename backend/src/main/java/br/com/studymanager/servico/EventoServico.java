@@ -29,9 +29,7 @@ public class EventoServico implements IEventoServico {
 
     @Override
     public Evento cria(EventoDto eventoDto, long idUsuario) {
-        Usuario usuario = usuarioJpaRepository.getOne(idUsuario);
         Evento evento = eventoMapeador.doDto(eventoDto);
-        evento.setUsuario(usuario);
         evento.setData(eventoDto.getData().withZoneSameInstant(ZoneOffset.UTC).truncatedTo(ChronoUnit.DAYS));
         return eventoJpaRepository.save(evento);
     }

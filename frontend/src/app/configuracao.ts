@@ -4,6 +4,7 @@ export const configuracao = {
     rotaInicio: 'inicio',
     rotaLogin: 'login',
     rotaCadastra: 'cadastra',
+    rotaEditaCronograma: 'editaCronograma',
     rotaConta: 'conta',
     rotaCalendario: 'calendario',
     rotaListaResumo: 'listaResumo',

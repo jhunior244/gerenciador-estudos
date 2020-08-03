@@ -61,7 +61,6 @@ export class PainelCalendarioComponent implements OnInit {
         }
       });
     });
-
   }
 
   listaResumoPorEvento(evento: Evento) {

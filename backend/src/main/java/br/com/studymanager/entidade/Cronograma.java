@@ -18,4 +18,7 @@ public class Cronograma {
 
     @ManyToMany
     private List<Materia> listaMateria;
+
+    @ManyToOne
+    private Usuario usuario;
 }

@@ -23,7 +23,7 @@ public class Evento {
     private ZonedDateTime data;
 
     @ManyToOne
-    private Usuario usuario;
+    private Cronograma cronograma;
 
     @ManyToOne
     private TipoEvento tipoEvento;

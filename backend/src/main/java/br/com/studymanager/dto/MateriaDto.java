@@ -1,5 +1,6 @@
 package br.com.studymanager.dto;
 
+import br.com.studymanager.entidade.Topico;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -11,6 +12,8 @@ public class MateriaDto implements Serializable {
     private Long id;
 
     private String nome;
+
+    private List<TopicoDto> listaTopico;
 
     private List<CronogramaDto> listaCronograma;
 }

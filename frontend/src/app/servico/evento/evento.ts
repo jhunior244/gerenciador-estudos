@@ -1,5 +1,6 @@
 import * as moment from 'moment';
 import { ITipoEvento, TipoEvento } from '../tipo-evento/tipo-evento';
+import { ICronograma, Cronograma } from '../cronograma/cronograma';
 
 export class IEvento {
     id: number;
@@ -7,6 +8,7 @@ export class IEvento {
     descricao: string;
     data: moment.Moment;
     tipoEvento: ITipoEvento;
+    cronograma: ICronograma;
 }
 
 export class Evento {
@@ -15,6 +17,7 @@ export class Evento {
     descricao: string;
     data: moment.Moment;
     tipoEvento: TipoEvento;
+    cronograma: Cronograma;
 
     static listaDoBackend(response: IEvento[]): Evento[] {
         const lista: Evento[] = [];
@@ -45,7 +48,8 @@ export class Evento {
 
         evento = Object.assign(evento, response, {
             data: (response.data) ? moment(response.data) : null,
-            tipoEvento: (response.tipoEvento) ? TipoEvento.doBackend(response.tipoEvento) : null
+            tipoEvento: (response.tipoEvento) ? TipoEvento.doBackend(response.tipoEvento) : null,
+            cronograma: (response.cronograma) ? Cronograma.doBackend(response.cronograma) : null
         });
         return evento;
     }
@@ -54,6 +58,7 @@ export class Evento {
         const evento = Object.assign(Object.create(Evento.prototype), this, {
             tipoEvento: (this.tipoEvento) ? this.tipoEvento.paraBackend() : null,
             data: (this.data) ? moment(this.data).toDate().toISOString() : null,
+            cronograma: (this.cronograma) ? this.cronograma.paraBackend() : null
         });
 
         return evento;

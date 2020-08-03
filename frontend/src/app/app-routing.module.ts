@@ -12,6 +12,7 @@ import { TelaContaComponent } from './tela/tela-conta/tela-conta.component';
 import { TelaLoginComponent } from './tela/tela-conta/tela-login/tela-login.component';
 import { TelaCadastroComponent } from './tela/tela-conta/tela-cadastro/tela-cadastro.component';
 import { TelaEstudosComponent } from './tela/tela-estudos/tela-estudos.component';
+import { TelaEditaCronogramaComponent } from './tela/tela-edita-cronograma/tela-edita-cronograma.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,12 @@ const routes: Routes = [
         component: TelaCadastroComponent
       }
     ]
+  }, {
+    path: configuracao.rotaEditaCronograma,
+    component: TelaEditaCronogramaComponent
+  }, {
+    path: configuracao.rotaEditaCronograma + '/:' + configuracao.parametroId,
+    component: TelaEditaCronogramaComponent
   }, {
     path: configuracao.rotaPainelEstudos,
     component: TelaEstudosComponent,

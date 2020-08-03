@@ -4,8 +4,8 @@ html, body {
 
 header {
     height: 7%;
-    /* background-image: linear-gradient(121deg, #d03800, #f3f646); */
-    background-color: dimgray;
+    background-color: orangered;
+    border: 1px solid black;
 }
 nav {
     height: 100%;

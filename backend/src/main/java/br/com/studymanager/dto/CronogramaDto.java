@@ -13,4 +13,6 @@ public class CronogramaDto implements Serializable {
     private String nome;
 
     private List<MateriaDto> listaMateria;
+
+    private UsuarioDto usuario;
 }

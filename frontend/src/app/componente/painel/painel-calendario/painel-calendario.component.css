@@ -58,8 +58,8 @@
 }
 
 .evento {
-    background-color: dimgray;
-    color: white;
+    background-color: navy;
+    color: floralwhite;
     border-radius: 5px;
     padding: 3px 10px;
     width: 100%;
@@ -80,7 +80,7 @@
 .conteudo-evento {
     display: flex;
     margin: 3px 21px 3px 5px;
-    justify-content: start;
+    justify-content: flex-start;
 }
 
 

@@ -46,17 +46,12 @@
              fxLayoutAlign="space-between center" style="position: relative;" class="evento">
               <div>
                   <span>
-                    {{evento?.nome  | slice:0:15}}
-                    <span *ngIf="evento?.nome?.length > 15">
+                    {{evento?.nome  | slice:0:18}}
+                    <span *ngIf="evento?.nome?.length > 18">
                       ...
                     </span>
                   </span>
               </div>
-              <!-- <div style="position: absolute; right: 0px; top: -2px;">
-                <button class="btn btn-link" (click)="open(evento, dia.data)">
-                  <mat-icon style="font-size: 15px;">edit</mat-icon>
-                </button>
-              </div> -->
             </div>
           </div>
         </div>

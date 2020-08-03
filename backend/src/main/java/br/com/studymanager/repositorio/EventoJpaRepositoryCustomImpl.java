@@ -28,7 +28,7 @@ public class EventoJpaRepositoryCustomImpl implements EventoJpaRepositoryCustom 
         predicado = predicado.and(evento.data.eq(inicio).or(evento.data.after(inicio)
                                     .and(evento.data.before(fim.plusDays(1)))));
 
-        predicado = predicado.and(evento.usuario.eq(usuario));
+        predicado = predicado.and(evento.cronograma.usuario.eq(usuario));
 
         query.where(predicado);
 

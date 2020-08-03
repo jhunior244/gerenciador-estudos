@@ -1,0 +1,29 @@
+<div fxLayoutAlign="start center" class="mt-2">
+    <mat-form-field fxFlex="grow">
+        <input matInput placeholder="Materia" [matAutocomplete]="autoCompleteMateria"
+            [formControl]="controladorFormulario" [errorStateMatcher]="exibeErroMateria">
+        <mat-autocomplete #autoCompleteMateria="matAutocomplete" [displayWith]="exibeMateria">
+            <mat-option *ngFor="let materia of listaMateriaFiltrada | async" [value]="materia">
+                {{materia.nome}}
+            </mat-option>
+            <mat-option style="color: steelblue">
+                <mat-icon color="primary">add</mat-icon>Nova Matéria
+            </mat-option>
+        </mat-autocomplete>
+
+        <!-- <mat-hint *ngIf="obrigatorio">{{'CampoObrigatorio'| translate}}</mat-hint>
+        <mat-error
+            *ngIf="controladorFormulario.parent.hasError('compraObrigatoria') || controladorFormulario.hasError('required')">
+            {{'CampoObrigatorio'| translate}}
+        </mat-error>
+        <mat-error *ngIf="controladorFormulario.parent.hasError('compraNaoIdentificada')">
+            {{'ContratoNaoIdentificado'| translate}}
+        </mat-error>
+        <mat-error *ngIf="controladorFormulario.parent.hasError('compraNaoPodeSerAditivadaOuReajustada')">
+            {{'CompraNaoPodeSerAditivadaOuReajustada'| translate}}
+        </mat-error> -->
+    </mat-form-field>
+    <button fxFlex="10" mat-icon-button (click)="adicionaMateria()">
+        <mat-icon color="primary">add</mat-icon>
+    </button>
+</div>

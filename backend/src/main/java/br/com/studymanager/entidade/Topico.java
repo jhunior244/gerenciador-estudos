@@ -3,7 +3,6 @@ package br.com.studymanager.entidade;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @Entity
@@ -16,6 +15,12 @@ public class Topico {
     @Column(nullable = false)
     private String nome;
 
-    @ManyToMany
-    private List<Materia> listaMateria;
+    @Column
+    private Long horasEstimadasEstudo;
+
+    @Column
+    private Long questoesEstimadasEstudo;
+
+    @ManyToOne
+    private Materia materia;
 }
