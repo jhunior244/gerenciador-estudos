@@ -37,8 +37,8 @@ public class TopicoControlador {
     }
 
     @GetMapping(path = "/lista")
-    public List<TopicoDto> lista(@RequestHeader(name="Authorization") String token,@RequestParam("id") Long idMateria){
+    public List<TopicoDto> lista(@RequestHeader(name="Authorization") String token, Long id){
 //        long idUsuario = tokenService.getIdUsuario(token.substring(7));
-        return topicoMapeador.paraDto(topicoServico.lista(idMateria));
+        return topicoMapeador.paraDto(topicoServico.lista(id));
     }
 }

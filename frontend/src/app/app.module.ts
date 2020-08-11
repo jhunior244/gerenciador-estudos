@@ -55,6 +55,9 @@ import { MateriaService } from './servico/materia/materia.service';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { DialogoEditaTopicoComponent } from './componente/dialogo-edita-topico/dialogo-edita-topico.component';
 import { TopicoService } from './servico/topico/topico.service';
+import { AutoCompleteTopicoComponent } from './componente/auto-complete-topico/auto-complete-topico.component';
+import { TopicoMateriaCronogramaService } from './servico/cronograma/topico-materia-cronograma.service';
+import { EditorTopicoMateriaCronogramaComponent } from './componente/editor-topico-materia-cronograma/editor-topico-materia-cronograma.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,7 +83,9 @@ import { TopicoService } from './servico/topico/topico.service';
     TelaEstudosComponent,
     TelaEditaCronogramaComponent,
     AutoCompleteMateriaComponent,
-    DialogoEditaTopicoComponent
+    DialogoEditaTopicoComponent,
+    AutoCompleteTopicoComponent,
+    EditorTopicoMateriaCronogramaComponent
   ],
   entryComponents: [
     DialogoEditaEventoComponent,
@@ -135,7 +140,8 @@ import { TopicoService } from './servico/topico/topico.service';
     ErroService,
     CronogramaService,
     MateriaService,
-    TopicoService
+    TopicoService,
+    TopicoMateriaCronogramaService
   ],
   bootstrap: [
     AppComponent

@@ -17,8 +17,5 @@ public class Materia {
     private String nome;
 
     @ManyToMany(mappedBy = "listaMateria")
-    private List<Cronograma> listaCronograma;
-
-    @OneToMany(mappedBy = "materia")
     private List<Topico> listaTopico;
 }

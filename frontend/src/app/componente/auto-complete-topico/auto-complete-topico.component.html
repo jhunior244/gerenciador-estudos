@@ -1,18 +1,18 @@
 <div fxLayoutAlign="start center" class="mt-2">
     <mat-form-field fxFlex="grow">
-        <input matInput placeholder="Materia" [matAutocomplete]="autoCompleteMateria"
-            [formControl]="controladorFormulario" [errorStateMatcher]="exibeErroMateria">
-        <mat-autocomplete #autoCompleteMateria="matAutocomplete" [displayWith]="exibeMateria">
-            <mat-option *ngFor="let materia of listaMateriaFiltrada | async" [value]="materia">
-                {{materia.nome}}
+        <input matInput placeholder="Topico" [matAutocomplete]="autoCompleteTopico"
+            [formControl]="controladorFormulario" [errorStateMatcher]="exibeErroTopico">
+        <mat-autocomplete #autoCompleteTopico="matAutocomplete" [displayWith]="exibeTopico">
+            <mat-option *ngFor="let topico of listaTopicoFiltrado | async" [value]="topico">
+                {{topico.nome}}
             </mat-option>
             <mat-option style="color: steelblue">
-                <mat-icon color="primary">add</mat-icon>Nova Matéria
+                <mat-icon color="primary">add</mat-icon>Novo Tópico
             </mat-option>
         </mat-autocomplete>
 
-        <mat-error *ngIf="controladorFormulario.parent.hasError('materiaNaoIdentificada')">
-            Materia inválida
+        <mat-error *ngIf="controladorFormulario.hasError('topicoNaoIdentificado')">
+           Topico Inválido
         </mat-error>
         <!-- <mat-hint *ngIf="obrigatorio">{{'CampoObrigatorio'| translate}}</mat-hint>
         <mat-error
@@ -23,7 +23,7 @@
             {{'CompraNaoPodeSerAditivadaOuReajustada'| translate}}
         </mat-error> -->
     </mat-form-field>
-    <button [disabled]="!habilitaBotaoAdicionar()" fxFlex="10" mat-icon-button (click)="adicionaMateria()">
+    <button [disabled]="!habilitaBotaoAdicionar()" fxFlex="10" mat-icon-button (click)="adicionaTopico()">
         <mat-icon color="primary">add</mat-icon>
     </button>
 </div>

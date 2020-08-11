@@ -149,7 +149,6 @@ export class EditorTextoComponent implements OnInit, AfterViewInit {
   }
 
   atualizaRota() {
-    console.log(this.resumo.id);
     if (this.evento != null && this.resumo != null) {
       this.router.navigate([],
         { queryParams: { idEvento: this.idEvento, id: this.resumo.id, titulo: this.resumo.titulo } });

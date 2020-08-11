@@ -1,8 +1,6 @@
 package br.com.studymanager.mapeador;
 
-import br.com.studymanager.dto.MateriaDto;
 import br.com.studymanager.dto.TopicoDto;
-import br.com.studymanager.entidade.Materia;
 import br.com.studymanager.entidade.Topico;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

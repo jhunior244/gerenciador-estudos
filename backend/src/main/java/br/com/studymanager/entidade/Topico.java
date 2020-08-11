@@ -3,6 +3,7 @@ package br.com.studymanager.entidade;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -15,12 +16,9 @@ public class Topico {
     @Column(nullable = false)
     private String nome;
 
-    @Column
-    private Long horasEstimadasEstudo;
-
-    @Column
-    private Long questoesEstimadasEstudo;
-
-    @ManyToOne
-    private Materia materia;
+    @ManyToMany
+    @JoinTable(name = "topico_materia", joinColumns =
+    @JoinColumn(name = "topico_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "materia_id", referencedColumnName = "id"))
+    private List<Materia> listaMateria;
 }

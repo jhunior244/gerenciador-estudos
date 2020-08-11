@@ -13,12 +13,12 @@ public class Cronograma {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column
     private String nome;
-
-    @ManyToMany
-    private List<Materia> listaMateria;
 
     @ManyToOne
     private Usuario usuario;
+
+    @OneToMany(mappedBy = "cronograma")
+    private List<MateriaCronograma> listaMateriaCronograma;
 }

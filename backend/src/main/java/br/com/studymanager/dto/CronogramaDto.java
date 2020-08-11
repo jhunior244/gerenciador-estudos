@@ -12,7 +12,7 @@ public class CronogramaDto implements Serializable {
 
     private String nome;
 
-    private List<MateriaDto> listaMateria;
+    private List<MateriaCronogramaDto> listaMateriaCronograma;
 
     private UsuarioDto usuario;
 }

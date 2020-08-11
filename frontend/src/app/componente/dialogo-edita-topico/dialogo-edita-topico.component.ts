@@ -8,6 +8,8 @@ import { SessaoService } from 'src/app/core/sessao/sessao.service';
 import { Toaster } from 'ngx-toast-notifications';
 import { ErroService } from 'src/app/core/erro/erro.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { MateriaCronograma } from 'src/app/servico/cronograma/materia-cronograma';
+import { TopicoMateriaCronograma } from 'src/app/servico/cronograma/topico-materia-cronograma';
 
 @Component({
   selector: 'app-dialogo-edita-topico',
@@ -16,9 +18,11 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class DialogoEditaTopicoComponent implements OnInit {
 
-  @Input() materia: Materia;
-  @Input() topico: Topico;
-  @Output() topicoCriadoOuAtualizado = new EventEmitter<Materia>();
+  @Input() materiaCronograma: MateriaCronograma;
+  public materia = new Materia();
+  public topico = new Topico();
+  public topicoMateriaCronograma: TopicoMateriaCronograma;
+  @Output() topicoCriadoOuAtualizado = new EventEmitter<MateriaCronograma>();
   public formGroup: FormGroup;
 
   constructor(
@@ -43,14 +47,10 @@ export class DialogoEditaTopicoComponent implements OnInit {
   }
 
   formularioParaTopico() {
-    if (this.topico == null) {
-      this.topico = new Topico();
-    }
-
     this.topico.nome = this.nome.value;
     this.topico.horasEstimadasEstudo = this.horasEstimadasEstudo.value;
     this.topico.questoesEstimadasEstudo = this.questoesEstimadasEstudo.value;
-    this.topico.materia = this.materia;
+    this.topico.materia = this.materiaCronograma.materia;
   }
 
   salva() {
@@ -61,7 +61,7 @@ export class DialogoEditaTopicoComponent implements OnInit {
           this.materia.listaTopico = new Array();
         }
         this.materia.listaTopico.push(topico);
-        this.topicoCriadoOuAtualizado.emit(this.materia);
+        this.topicoCriadoOuAtualizado.emit(this.materiaCronograma);
         this.activeModal.close('Close click');
       }, (erro: HttpErrorResponse) => {
         console.log(erro);
@@ -74,7 +74,7 @@ export class DialogoEditaTopicoComponent implements OnInit {
           this.materia.listaTopico = new Array();
         }
         this.materia.listaTopico.push(topico);
-        this.topicoCriadoOuAtualizado.emit(this.materia);
+        this.topicoCriadoOuAtualizado.emit(this.materiaCronograma);
         this.activeModal.close('Close click');
       }, (erro: HttpErrorResponse) => {
         console.log(erro);

@@ -28,4 +28,18 @@ export class CronogramaService {
         return this.httpClient.get<Cronograma>(this.url + '/obtem', { params: httpParams })
             .pipe(map((objRetornado => Cronograma.doBackend(objRetornado))));
     }
+
+    public cria(objeto: Cronograma): Observable<Cronograma> {
+        return this.httpClient.post<Cronograma>(this.url + '/cria', objeto.paraBackend(), { headers: this.httpHeader })
+            .pipe(map(objCriado => Cronograma.doBackend(objCriado) as Cronograma)
+            );
+
+    }
+
+    public atualiza(objeto: Cronograma): Observable<Cronograma> {
+        return this.httpClient.put<Cronograma>(this.url + '/atualiza', objeto.paraBackend(), { headers: this.httpHeader })
+            .pipe(map(objCriado => Cronograma.doBackend(objCriado) as Cronograma)
+            );
+
+    }
 }

@@ -1,0 +1,21 @@
+<div fxLayout="row" fxLayoutAlign="space-between end">
+    <div fxFlex="30">
+        <span>{{topicoMateriaCronograma?.topico?.nome}}</span>
+    </div>
+    <div fxFlex="30">
+        <!-- <span>{{topicoMateria?.horasEstimadasEstudo}}</span> -->
+        <mat-form-field style="width: 100px; height: 40px;">
+            <input matInput type="number"
+                (blur)="salvaHorasEstimadas($event, topicoMateriaCronograma)"
+                [formControl]="formControlHoras">
+        </mat-form-field>
+    </div>
+    <div fxFlex="30">
+        <!-- <span>{{topicoMateria.questoesEstimadasEstudo}}</span> -->
+        <mat-form-field style="width: 100px; height: 40px;">
+            <input matInput type="number"
+                (blur)="salvaQuestoesEstimadas($event, topicoMateriaCronograma)"
+                [formControl]="formControlQuestoes">
+        </mat-form-field>
+    </div>
+</div>

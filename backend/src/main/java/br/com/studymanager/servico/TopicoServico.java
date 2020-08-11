@@ -2,7 +2,7 @@ package br.com.studymanager.servico;
 
 import br.com.studymanager.entidade.Topico;
 import br.com.studymanager.mapeador.TopicoMapeador;
-import br.com.studymanager.repositorio.TopicoJpaRepository;
+import br.com.studymanager.repositorio.cronograma.TopicoJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +26,6 @@ public class TopicoServico implements ITopicoServico {
 
     @Override
     public List<Topico> lista(Long idMateria) {
-        return topicoJpaRepository.findAllByMateriaId(idMateria);
+        return topicoJpaRepository.listaPorMateria(idMateria);
     }
 }

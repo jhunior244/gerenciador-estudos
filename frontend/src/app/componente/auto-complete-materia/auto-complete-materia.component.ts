@@ -62,7 +62,17 @@ export class AutoCompleteMateriaComponent implements OnInit {
     return objeto != null ? objeto.nome : '';
   }
 
-  adicionaMateria(){
+  habilitaBotaoAdicionar(): boolean {
+    return this.controladorFormulario.value != null && this.controladorFormulario.value.id != null;
+  }
+
+  adicionaMateria() {
     this.materiaAdicionadaEmitter.emit(this.controladorFormulario.value);
+    const index = this.listaMateria.findIndex((materia: Materia) => {
+      return materia.id === this.controladorFormulario.value.id;
+    });
+
+    this.listaMateria.splice(index, 1);
+    this.controladorFormulario.setValue(null);
   }
 }

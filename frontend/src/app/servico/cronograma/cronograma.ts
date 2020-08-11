@@ -1,17 +1,18 @@
 import * as moment from 'moment';
 import { ITipoEvento, TipoEvento } from '../tipo-evento/tipo-evento';
 import { IMateria, Materia } from '../materia/materia';
+import { IMateriaCronograma, MateriaCronograma } from './materia-cronograma';
 
 export class ICronograma {
     id: number;
     nome: string;
-    listaMateria: IMateria[];
+    listaMateriaCronograma: IMateriaCronograma[];
 }
 
 export class Cronograma {
     id: number;
     nome: string;
-    listaMateria: Materia[];
+    listaMateriaCronograma: MateriaCronograma[];
 
     static listaDoBackend(response: ICronograma[]): Cronograma[] {
         const lista: Cronograma[] = [];
@@ -41,16 +42,19 @@ export class Cronograma {
         }
 
         obj = Object.assign(obj, response, {
-            listaMateria: (response.listaMateria) ? Materia.listaDoBackend(response.listaMateria) : null,
+            listaMateriaCronograma: (response.listaMateriaCronograma) ?
+                MateriaCronograma.listaDoBackend(response.listaMateriaCronograma) : null,
         });
         return obj;
     }
 
     paraBackend(): ICronograma {
         const obj = Object.assign(Object.create(Cronograma.prototype), this, {
-            listaMateria: (this.listaMateria) ? Materia.listaParaBackend(this.listaMateria) : null,
+            listaMateriaCronograma: (this.listaMateriaCronograma) ?
+                MateriaCronograma.listaParaBackend(this.listaMateriaCronograma) : null,
         });
 
         return obj;
     }
 }
+

@@ -9,7 +9,8 @@ import org.springframework.data.domain.Page;
 import java.util.List;
 
 @Mapper(componentModel = "spring",uses =
-        {MateriaMapeador.class},
+        {MateriaCronogramaMapeador.class,
+        UsuarioMapeador.class},
         unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface CronogramaMapeador {
 

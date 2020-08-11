@@ -1,4 +1,4 @@
-package br.com.studymanager.repositorio;
+package br.com.studymanager.repositorio.cronograma;
 
 import br.com.studymanager.entidade.Evento;
 import br.com.studymanager.entidade.QEvento;
@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.time.ZonedDateTime;
 import java.util.List;
 
-public class EventoJpaRepositoryCustomImpl implements EventoJpaRepositoryCustom {
+public class CronogramaJpaRepositoryCustomImpl implements CronogramaJpaRepositoryCustom {
 
     @Autowired
     private JPAQueryFactory jpaQueryFactory;
@@ -27,8 +27,8 @@ public class EventoJpaRepositoryCustomImpl implements EventoJpaRepositoryCustom 
 
         predicado = predicado.and(evento.data.eq(inicio).or(evento.data.after(inicio)
                                     .and(evento.data.before(fim.plusDays(1)))));
-        //TODO: ajustar query futuramente
-//        predicado = predicado.and(evento.cronograma.usuario.eq(usuario));
+
+        predicado = predicado.and(evento.cronograma.usuario.eq(usuario));
 
         query.where(predicado);
 

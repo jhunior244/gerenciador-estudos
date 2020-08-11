@@ -44,13 +44,11 @@ export class MateriaService {
 
     public lista(): Observable<Materia[]> {
 
-        let httpParams = new HttpParams();
+        const httpParams = new HttpParams();
 
         // tslint:disable-next-line: max-line-length
         return this.httpCliente.get<IMateria[]>(this.url + '/lista').pipe(map((lista => Materia.listaDoBackend(lista))));
 
     }
-
-
 }
 

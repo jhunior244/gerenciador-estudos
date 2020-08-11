@@ -42,19 +42,17 @@ export class TopicoService {
             .pipe(map((objRetornado => Topico.doBackend(objRetornado))));
     }
 
-    public lista(idMateria): Observable<Topico[]> {
+    public lista(idMateria: number): Observable<Topico[]> {
 
         let httpParams = new HttpParams();
-
+        
         if (idMateria) {
-            httpParams = httpParams.append(configuracao.parametroId, idMateria);
+            httpParams = httpParams.append(configuracao.parametroId, idMateria.toString());
         }
 
         // tslint:disable-next-line: max-line-length
-        return this.httpCliente.get<ITopico[]>(this.url + '/lista').pipe(map((lista => Topico.listaDoBackend(lista))));
+        return this.httpCliente.get<ITopico[]>(this.url + '/lista', {params: httpParams}).pipe(map((lista => Topico.listaDoBackend(lista))));
 
     }
-
-
 }
 

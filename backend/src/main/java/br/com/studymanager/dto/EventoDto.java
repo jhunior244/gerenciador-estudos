@@ -1,6 +1,5 @@
 package br.com.studymanager.dto;
 
-import br.com.studymanager.entidade.Cronograma;
 import lombok.Data;
 
 import java.io.Serializable;
