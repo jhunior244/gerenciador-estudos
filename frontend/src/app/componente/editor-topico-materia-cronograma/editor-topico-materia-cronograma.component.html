@@ -5,17 +5,20 @@
     <div fxFlex="30">
         <!-- <span>{{topicoMateria?.horasEstimadasEstudo}}</span> -->
         <mat-form-field style="width: 100px; height: 40px;">
-            <input matInput type="number"
-                (blur)="salvaHorasEstimadas($event, topicoMateriaCronograma)"
+            <input matInput type="number" (blur)="salvaHorasEstimadas($event, topicoMateriaCronograma)"
                 [formControl]="formControlHoras">
         </mat-form-field>
     </div>
     <div fxFlex="30">
         <!-- <span>{{topicoMateria.questoesEstimadasEstudo}}</span> -->
         <mat-form-field style="width: 100px; height: 40px;">
-            <input matInput type="number"
-                (blur)="salvaQuestoesEstimadas($event, topicoMateriaCronograma)"
+            <input matInput type="number" (blur)="salvaQuestoesEstimadas($event, topicoMateriaCronograma)"
                 [formControl]="formControlQuestoes">
         </mat-form-field>
+    </div>
+    <div fxFlex="10">
+        <button mat-icon-button (click)="deleta(topicoMateriaCronograma)">
+            <mat-icon color="primary">delete</mat-icon>
+        </button>
     </div>
 </div>

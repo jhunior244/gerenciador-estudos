@@ -36,7 +36,7 @@ export class TelaContaComponent implements OnInit {
     if (rota === this.rotasSistema.rotaLogin) {
       document.getElementById('entrar').classList.add('active');
       document.getElementById('cadastrar').classList.remove('active');
-    } else {
+    } else if (rota === this.rotasSistema.rotaCadastra) {
       document.getElementById('cadastrar').classList.add('active');
       document.getElementById('entrar').classList.remove('active');
     }

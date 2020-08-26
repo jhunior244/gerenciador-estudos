@@ -76,5 +76,11 @@ export class AutoCompleteTopicoComponent implements OnInit, OnChanges {
 
   adicionaTopico() {
     this.topicoAdicionadoEmitter.emit(this.controladorFormulario.value);
+    // const index = this.listaTopico.findIndex((topico: Topico) => {
+    //   return topico.id === this.controladorFormulario.value.id;
+    // });
+
+    // this.listaTopico.splice(index, 1);
+    this.controladorFormulario.setValue(null);
   }
 }

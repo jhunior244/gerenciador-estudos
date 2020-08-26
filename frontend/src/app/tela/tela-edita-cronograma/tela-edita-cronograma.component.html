@@ -20,7 +20,7 @@
                 <mat-accordion style="width: 100%;">
                     <div *ngFor="let materiaCronograma of cronograma.listaMateriaCronograma" fxLayout="row"
                         fxLayoutAlign="center center" style="margin: 1px;">
-                        <mat-expansion-panel fxFlex="grow">
+                        <mat-expansion-panel id="{{materiaCronograma.materia.nome}}" fxFlex="grow">
                             <mat-expansion-panel-header style="max-height: 40px;">
                                 <mat-panel-title>
                                     {{materiaCronograma?.materia?.nome}}
@@ -31,7 +31,7 @@
                                 (topicoAdicionadoEmitter)="adicionaTopico($event, materiaCronograma)">
                             </app-auto-complete-topico>
                             <mat-divider></mat-divider>
-                            <div class="mt-3" fxLayoutAlign="space-between center"
+                            <div class="mt-3" fxLayoutAlign="start center"
                                 style="font-weight: bold; font-size: 14px;">
                                 <div fxFlex="30"><span>Nome</span></div>
                                 <div fxFlex="30"><span>Horas Estimadas</span></div>
@@ -40,15 +40,21 @@
                             <div *ngFor="let topicoMateria of materiaCronograma?.listaTopicoMateriaCronograma">
                                 <app-editor-topico-materia-cronograma fxFlex="grow"
                                 [topicoMateriaCronograma]="topicoMateria"
-                                (topicoEditadoEmmiter)="buscaCronogramaAtualizado($event)"></app-editor-topico-materia-cronograma>
+                                (topicoEditadoEmmiter)="buscaCronogramaAtualizado($event)"
+                                (topicoDeletadoEmmiter)="deletaTopico($event)"></app-editor-topico-materia-cronograma>
                             </div>
                         </mat-expansion-panel>
+                        <div fxFlex="10">
+                            <button mat-icon-button (click)="deletaMateria(materiaCronograma)">
+                                <mat-icon color="primary">delete</mat-icon>
+                            </button>
+                        </div>
                     </div>
                 </mat-accordion>
             </div>
         </div>
         <div style="bottom: 10px; left: 10px;">
-            <button style="background-color: green; color: floralwhite;" mat-raised-button
+            <button [disabled]="!formGroup.valid" style="background-color: green; color: floralwhite;" mat-raised-button
                 (click)="salva()">Salvar</button>
         </div>
     </form>

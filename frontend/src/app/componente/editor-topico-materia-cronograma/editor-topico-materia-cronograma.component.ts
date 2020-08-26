@@ -17,6 +17,7 @@ export class EditorTopicoMateriaCronogramaComponent implements OnChanges {
   public formControlQuestoes: FormControl;
   @Input() topicoMateriaCronograma: TopicoMateriaCronograma;
   @Output() topicoEditadoEmmiter = new EventEmitter<TopicoMateriaCronograma>();
+  @Output() topicoDeletadoEmmiter = new EventEmitter<TopicoMateriaCronograma>();
 
   constructor(
     private topicoMateriaCronogramaService: TopicoMateriaCronogramaService,
@@ -30,18 +31,20 @@ export class EditorTopicoMateriaCronogramaComponent implements OnChanges {
     if (changes && changes.topicoMateriaCronograma && changes.topicoMateriaCronograma.currentValue != null) {
       this.formControlHoras.setValue(this.topicoMateriaCronograma.horasEstimadasEstudo);
       this.formControlQuestoes.setValue(this.topicoMateriaCronograma.questoesEstimadasEstudo);
-      console.log(this.topicoMateriaCronograma);
     }
   }
-
 
   salvaHorasEstimadas($event: any, topicoMateria: TopicoMateriaCronograma) {
     topicoMateria.horasEstimadasEstudo = $event.srcElement.value;
     this.topicoEditadoEmmiter.emit(topicoMateria);
   }
+
   salvaQuestoesEstimadas($event: any, topicoMateria: TopicoMateriaCronograma) {
     topicoMateria.questoesEstimadasEstudo = $event.srcElement.value;
     this.topicoEditadoEmmiter.emit(topicoMateria);
   }
 
+  deleta(topico: TopicoMateriaCronograma){
+    this.topicoDeletadoEmmiter.emit(topico);
+  }
 }

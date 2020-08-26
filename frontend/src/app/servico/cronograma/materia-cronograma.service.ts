@@ -40,5 +40,17 @@ export class MateriaCronogramaService {
             .pipe(map(objCriado => MateriaCronograma.doBackend(objCriado) as MateriaCronograma)
             );
 
+    }    
+    
+    public apaga(id: string) {
+
+        let httpParams = new HttpParams();
+
+        if (id) {
+            httpParams = httpParams.append(configuracao.parametroId, id);
+        }
+
+        return this.httpClient.delete<void>(this.url + '/apaga', { params: httpParams });
     }
 }
+

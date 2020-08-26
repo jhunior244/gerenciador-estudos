@@ -68,11 +68,11 @@ export class AutoCompleteMateriaComponent implements OnInit {
 
   adicionaMateria() {
     this.materiaAdicionadaEmitter.emit(this.controladorFormulario.value);
-    const index = this.listaMateria.findIndex((materia: Materia) => {
-      return materia.id === this.controladorFormulario.value.id;
-    });
+    // const index = this.listaMateria.findIndex((materia: Materia) => {
+    //   return materia.id === this.controladorFormulario.value.id;
+    // });
 
-    this.listaMateria.splice(index, 1);
+    // this.listaMateria.splice(index, 1);
     this.controladorFormulario.setValue(null);
   }
 }

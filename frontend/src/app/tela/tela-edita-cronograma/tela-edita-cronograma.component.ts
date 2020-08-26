@@ -17,6 +17,7 @@ import { Materia } from 'src/app/servico/materia/materia';
 import { Topico } from 'src/app/servico/topico/topico';
 import { TopicoMateriaCronogramaService } from 'src/app/servico/cronograma/topico-materia-cronograma.service';
 import { TopicoMateriaCronograma } from 'src/app/servico/cronograma/topico-materia-cronograma';
+import { MateriaCronogramaService } from 'src/app/servico/cronograma/materia-cronograma.service';
 
 @Component({
     selector: 'app-tela-edita-cronograma',
@@ -39,6 +40,7 @@ export class TelaEditaCronogramaComponent {
         private erroService: ErroService,
         private toaster: Toaster,
         private router: Router,
+        private materiaCronogramaService: MateriaCronogramaService,
         private topicoMateriaCronogramaService: TopicoMateriaCronogramaService
     ) {
         this.formGroup = this.formBuilder.group({
@@ -52,8 +54,6 @@ export class TelaEditaCronogramaComponent {
         });
         this.activatedRoute.params.subscribe(params => {
             this.id = params[configuracao.parametroId];
-            this.id = 69;
-            console.log(params);
             if (this.id != null) {
                 this.cronogramaService.obtem(this.id.toString()).subscribe(cronograma => {
                     this.cronograma = cronograma;
@@ -62,7 +62,7 @@ export class TelaEditaCronogramaComponent {
             } else {
                 this.cronogramaService.cria(this.cronograma).subscribe(cronogramaCriado => {
                     this.cronograma = cronogramaCriado;
-                    this.router.navigate([], { queryParams: { id: this.cronograma.id } });
+
                 }, (erro: HttpErrorResponse) => {
                     console.log(erro);
                     this.erroService.exibeMensagemErro(erro.error.message, this.toaster);
@@ -112,6 +112,9 @@ export class TelaEditaCronogramaComponent {
                     materiaLista = materiaCronograma;
                 }
             });
+            // this.cronogramaService.atualiza(this.cronograma).subscribe(cronogramaAtualizado => {
+            //     this.cronograma = cronogramaAtualizado;
+            // });
 
         }, (erro: HttpErrorResponse) => {
             console.log(erro);
@@ -121,8 +124,10 @@ export class TelaEditaCronogramaComponent {
 
     salva() {
         this.cronograma.nome = this.nome.value;
+        console.log(this.cronograma);
         this.cronogramaService.atualiza(this.cronograma).subscribe(cronogramaAtualizado => {
             this.cronograma = cronogramaAtualizado;
+            this.router.navigate([configuracao.rotaEditaCronograma + '/' + this.cronograma.id]);
             this.erroService.exibeMensagemSucesso('Cronograma atualizado com sucesso', this.toaster);
         }, (erro: HttpErrorResponse) => {
             console.log(erro);
@@ -138,6 +143,33 @@ export class TelaEditaCronogramaComponent {
                     }
                 });
             }
+        });
+    }
+
+    deletaTopico(topicoMateria: TopicoMateriaCronograma) {
+        let index = -1;
+        this.cronograma.listaMateriaCronograma.forEach((materiaLista: MateriaCronograma) => {
+            if (materiaLista != null && materiaLista.listaTopicoMateriaCronograma != null) {
+                index = materiaLista.listaTopicoMateriaCronograma.findIndex(topico => {
+                    return topicoMateria.topico.id === topico.topico.id;
+                });
+            }
+            if (index !== -1) {
+                materiaLista.listaTopicoMateriaCronograma.splice(index, 1);
+            }
+        });
+    }
+
+    deletaMateria(materiaCronograma: MateriaCronograma) {
+        const index = this.cronograma.listaMateriaCronograma.findIndex(materia => {
+            return materia.id === materiaCronograma.id;
+        });
+
+        if (index !== -1) {
+            this.cronograma.listaMateriaCronograma.splice(index, 1);
+        }
+        this.materiaCronogramaService.apaga(materiaCronograma.id.toString()).subscribe(() => {
+            
         });
     }
 }
