@@ -1,16 +1,14 @@
 package br.com.studymanager.controlador;
 
 import br.com.studymanager.config.security.TokenService;
-import br.com.studymanager.dto.CardDto;
 import br.com.studymanager.dto.CronogramaDto;
-import br.com.studymanager.dto.EventoDto;
-import br.com.studymanager.entidade.Evento;
+import br.com.studymanager.dto.DiaCalendarioDto;
 import br.com.studymanager.mapeador.CronogramaMapeador;
-import br.com.studymanager.mapeador.EventoMapeador;
-import br.com.studymanager.servico.IEventoServico;
 import br.com.studymanager.servico.cronograma.ICronogramaServico;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -43,5 +41,11 @@ public class CronogramaControlador {
     public CronogramaDto obtem(Long id){
 
         return cronogramaMapeador.paraDto(cronogramaServico.obtem(id));
+    }
+
+    @GetMapping(path = "/lista")
+    public List<CronogramaDto> lista(@RequestHeader(name="Authorization") String token, Long mes, Long ano){
+        long idUsuario = tokenService.getIdUsuario(token.substring(7));
+        return cronogramaMapeador.paraDto(cronogramaServico.listaPorUsuario(idUsuario));
     }
 }

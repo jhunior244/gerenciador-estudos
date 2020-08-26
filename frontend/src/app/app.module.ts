@@ -58,6 +58,7 @@ import { TopicoService } from './servico/topico/topico.service';
 import { AutoCompleteTopicoComponent } from './componente/auto-complete-topico/auto-complete-topico.component';
 import { TopicoMateriaCronogramaService } from './servico/cronograma/topico-materia-cronograma.service';
 import { EditorTopicoMateriaCronogramaComponent } from './componente/editor-topico-materia-cronograma/editor-topico-materia-cronograma.component';
+import { SelectCronogramaComponent } from './componente/select-cronograma/select-cronograma.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,7 +86,8 @@ import { EditorTopicoMateriaCronogramaComponent } from './componente/editor-topi
     AutoCompleteMateriaComponent,
     DialogoEditaTopicoComponent,
     AutoCompleteTopicoComponent,
-    EditorTopicoMateriaCronogramaComponent
+    EditorTopicoMateriaCronogramaComponent,
+    SelectCronogramaComponent
   ],
   entryComponents: [
     DialogoEditaEventoComponent,

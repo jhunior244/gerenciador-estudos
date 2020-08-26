@@ -1,0 +1,15 @@
+<mat-form-field  style="width:100%;">
+    <mat-select style="width:100%;" id="{{idSelect}}" placeholder="Cronograma"
+        [formControl]="controladorFormulario" [compareWith]="comparaCronograma" multiple={{multiplo}}
+        [errorStateMatcher]="exibeErro">
+        <mat-option *ngFor=" let cronograma of listaCronograma" [value]="cronograma">
+            {{cronograma.nome}}</mat-option>
+    </mat-select>
+    <mat-hint *ngIf="obrigatorio">Campo obrigátorio</mat-hint>
+    <!-- <mat-error
+        *ngIf="controladorFormulario.hasError('required') || 
+        controladorFormulario.parent.hasError('gestorContratoObrigatorio') ||
+        controladorFormulario.parent.hasError('fiscalContratoObrigatorio')">
+        {{'CampoObrigatorio'| translate}}
+    </mat-error> -->
+</mat-form-field>

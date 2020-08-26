@@ -1,6 +1,7 @@
 package br.com.studymanager.servico.cronograma;
 
 import br.com.studymanager.dto.CronogramaDto;
+import br.com.studymanager.dto.DiaCalendarioDto;
 import br.com.studymanager.entidade.Cronograma;
 
 import java.util.List;
@@ -11,4 +12,6 @@ public interface ICronogramaServico {
     Cronograma atualiza(CronogramaDto dto, long idUsuario);
 
     Cronograma obtem(Long id);
+
+    List<Cronograma> listaPorUsuario(long idUsuario);
 }

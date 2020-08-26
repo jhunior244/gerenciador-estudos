@@ -1,4 +1,7 @@
 <div fxLayout="column" fxLayoutAlign="center start" style="width: 100%;">
+  <div fxLayout="row" style="width: 100%;">
+    <app-select-cronograma style="width: 100%;" [multiplo]="true" [controladorFormulario]="cronograma"></app-select-cronograma>
+  </div>
     <app-slider-calendario style="margin-bottom: 7px; margin-top: 4px; width: 100%"></app-slider-calendario>
     <button type="button" class="btn btn-default" fxFlex="100"
     fxLayoutAlign="space-between center" [routerLink]="rotaListaResumo">

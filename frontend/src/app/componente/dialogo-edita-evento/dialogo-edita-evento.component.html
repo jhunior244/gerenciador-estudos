@@ -10,11 +10,14 @@
       <form class="login-form" [formGroup]="formGroup">
         <div style="margin-bottom: 2px;">
           <label>Evento</label>
-          <input type="text" class="form-control" [formControl]="nome">
+          <mat-form-field>
+            <input type="text" matInput [formControl]="nome" placeholder="Nome">
+          </mat-form-field>
         </div>
         <div style="margin-bottom: 2px;">
-          <label>Descrição</label>
-          <textarea class="form-control" [formControl]="descricao" rows="2"></textarea>
+          <mat-form-field>
+            <textarea matInput placeholder="Descrição" class="form-control" [formControl]="descricao" rows="2"></textarea>
+          </mat-form-field>
         </div>
         <div style="margin-bottom: 2px;" fxLayout="row" fxLayoutAlign="space-between start">
           <div fxFlex="48">

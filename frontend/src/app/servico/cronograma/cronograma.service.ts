@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { configuracao } from 'src/app/configuracao';
 import { Evento } from '../evento/evento';
 import { map } from 'rxjs/operators';
-import { Cronograma } from './cronograma';
+import { Cronograma, ICronograma } from './cronograma';
 
 @Injectable({ providedIn: 'root' })
 export class CronogramaService {
@@ -42,4 +42,10 @@ export class CronogramaService {
             );
 
     }
+
+    public lista(): Observable<Cronograma[]> {
+        return this.httpClient.get<ICronograma[]>(this.url + '/lista',).pipe(map((lista => Cronograma.listaDoBackend(lista))));
+
+    }
 }
+

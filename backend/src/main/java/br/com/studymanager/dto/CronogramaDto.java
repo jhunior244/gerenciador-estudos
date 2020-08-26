@@ -14,5 +14,5 @@ public class CronogramaDto implements Serializable {
 
     private List<MateriaCronogramaDto> listaMateriaCronograma;
 
-    private UsuarioDto usuario;
+    private UsuarioSaidaDto usuario;
 }

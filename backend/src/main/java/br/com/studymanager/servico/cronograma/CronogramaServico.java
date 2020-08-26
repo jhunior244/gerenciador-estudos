@@ -76,4 +76,10 @@ public class CronogramaServico implements ICronogramaServico {
     public Cronograma obtem(Long id) {
         return cronogramaJpaRepository.findById(id).get();
     }
+
+    @Override
+    public List<Cronograma> listaPorUsuario(long idUsuario) {
+        Usuario usuario = usuarioJpaRepository.findById(idUsuario).get();
+        return cronogramaJpaRepository.findAllByUsuario(usuario);
+    }
 }

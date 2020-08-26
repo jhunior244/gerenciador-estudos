@@ -12,8 +12,11 @@
                 <form class="login-form" [formGroup]="formGroup" fxLayout="row wrap">
                     <div class="area-edita-evento" fxLayout="row wrap">
                         <div style="margin-bottom: 10px;" fxFlex="100">
-                            <label>Evento</label>
-                            <input type="text" class="form-control" [formControl]="nome">
+                            <mat-form-field fxFlex>
+                                <input matInput type="text" 
+                                placeholder="Evento"
+                                [formControl]="nome">
+                            </mat-form-field>
                         </div>
                         <div style="margin-bottom: 10px;" fxFlex="100">
                             <label>Descrição</label>

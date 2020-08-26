@@ -14,20 +14,25 @@
             <span>Ou cadastre-se usando seu e-mail:</span>
         </div>
         <div class="form-group">
-            <label for="nome">Email</label>
-            <input type="text" class="form-control" id="nome" aria-describedby="emailHelp"
-                placeholder="Nome e Sobrenome" [formControl]="nome">
+            <mat-form-field style="width: 100%;">
+                <input matInput type="text"  id="nome" aria-describedby="emailHelp"
+                    placeholder="Nome e Sobrenome" [formControl]="nome">
+            </mat-form-field>
         </div>
         <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                placeholder="Exemplo meu-nome@studymanager.com" [formControl]="email">
+            <mat-form-field style="width: 100%;">
+                <input matInput type="email" id="email" aria-describedby="emailHelp"
+                    placeholder="E-mail" [formControl]="email">
+            </mat-form-field>
         </div>
         <div class="form-group">
-            <label for="senha">Password</label>
-            <input type="password" class="form-control" id="senha" placeholder="Minimo 6 caracteres"
-            [formControl]="senha">
+            <mat-form-field style="width: 100%;">
+                <input matInput type="password" id="senha" placeholder="Senha"
+                [formControl]="senha">
+            </mat-form-field>
         </div>
-        <button [disabled]="!formGroup.valid" (click)="cadastrar()" style="width: 100%; background-color: green;" type="submit" class="btn btn-primary">Cadastrar</button>
+        <div fxLayoutAlign="center center" style="width: 100%;">
+            <button mat-raised-button [disabled]="!formGroup.valid" (click)="cadastrar()" style="width: 40%; background-color: green; color: floralwhite;" type="submit" >Cadastrar</button>
+        </div>
     </form>
 </div>
