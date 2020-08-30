@@ -1,7 +1,7 @@
 <mat-form-field  style="width:100%;">
     <mat-select style="width:100%;" id="{{idSelect}}" placeholder="Cronograma"
         [formControl]="controladorFormulario" [compareWith]="comparaCronograma" multiple={{multiplo}}
-        [errorStateMatcher]="exibeErro">
+        [errorStateMatcher]="exibeErro" (selectionChange)="teste($event)">
         <mat-option *ngFor=" let cronograma of listaCronograma" [value]="cronograma">
             {{cronograma.nome}}</mat-option>
     </mat-select>

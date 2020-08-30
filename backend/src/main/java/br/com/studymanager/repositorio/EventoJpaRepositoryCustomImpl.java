@@ -7,6 +7,8 @@ import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.JPQLQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.CollectionUtils;
+import org.springframework.util.ObjectUtils;
 
 import java.time.ZonedDateTime;
 import java.util.List;
@@ -17,7 +19,7 @@ public class EventoJpaRepositoryCustomImpl implements EventoJpaRepositoryCustom 
     private JPAQueryFactory jpaQueryFactory;
 
     @Override
-    public List<Evento> lista(Usuario usuario, ZonedDateTime inicio, ZonedDateTime fim){
+    public List<Evento> lista(Usuario usuario, ZonedDateTime inicio, ZonedDateTime fim, Long[] listaIdCronograma){
 
         QEvento evento = QEvento.evento;
 
@@ -27,8 +29,10 @@ public class EventoJpaRepositoryCustomImpl implements EventoJpaRepositoryCustom 
 
         predicado = predicado.and(evento.data.eq(inicio).or(evento.data.after(inicio)
                                     .and(evento.data.before(fim.plusDays(1)))));
-        //TODO: ajustar query futuramente
-//        predicado = predicado.and(evento.cronograma.usuario.eq(usuario));
+
+        if(!ObjectUtils.isEmpty(listaIdCronograma)){
+            predicado = predicado.and(evento.cronograma.id.in(listaIdCronograma));
+        }
 
         query.where(predicado);
 

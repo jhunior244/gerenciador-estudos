@@ -7,5 +7,5 @@ import java.time.ZonedDateTime;
 import java.util.List;
 
 public interface EventoJpaRepositoryCustom {
-    List<Evento> lista(Usuario usuario, ZonedDateTime inicio, ZonedDateTime fim);
+    List<Evento> lista(Usuario usuario, ZonedDateTime inicio, ZonedDateTime fim, Long[] listaIdCronograma);
 }

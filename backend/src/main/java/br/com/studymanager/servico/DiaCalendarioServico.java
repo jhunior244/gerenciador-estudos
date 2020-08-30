@@ -32,7 +32,7 @@ public class DiaCalendarioServico implements IDiaCalendarioServico{
     private UsuarioJpaRepository usuarioJpaRepository;
 
     @Override
-    public List<DiaCalendarioDto> listaDiasMes(long idUsuario, Long mes, Long ano) {
+    public List<DiaCalendarioDto> listaDiasMes(long idUsuario, Long mes, Long ano, Long[] listaIdCronograma) {
 
         Usuario usuario = usuarioJpaRepository.getOne(idUsuario);
 
@@ -43,7 +43,13 @@ public class DiaCalendarioServico implements IDiaCalendarioServico{
 
         List<DiaCalendarioDto> listaDiaCalendario = new ArrayList<>();
         List<EventoDto> listaEvento =
-                eventoMapeador.paraDto(eventoJpaRepository.lista(usuario, primeiroDiaCalendario, primeiroDiaCalendario.plusDays(41)));
+                eventoMapeador.paraDto(
+                        eventoJpaRepository.lista(
+                                usuario,
+                                primeiroDiaCalendario,
+                                primeiroDiaCalendario.plusDays(41),
+                                listaIdCronograma)
+                );
 
         for(int i = 0; i < 42; i++){
             DiaCalendarioDto dia = new DiaCalendarioDto();

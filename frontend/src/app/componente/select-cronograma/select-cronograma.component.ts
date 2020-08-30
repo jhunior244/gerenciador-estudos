@@ -1,12 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material';
-import { Usuario } from 'src/app/core/usuario/usuario';
-import { UsuarioService } from 'src/app/core/usuario/usuario.service';
 import { SessaoService } from 'src/app/core/sessao/sessao.service';
-import { HttpErrorResponse } from '@angular/common/http';
-import { CronogramaService } from 'src/app/servico/cronograma/cronograma.service';
 import { Cronograma } from 'src/app/servico/cronograma/cronograma';
+import { CronogramaService } from 'src/app/servico/cronograma/cronograma.service';
 
 @Component({
   selector: 'app-select-cronograma',
@@ -42,4 +39,7 @@ export class SelectCronogramaComponent implements OnInit {
     return cronograma1 && cronograma2 && cronograma1.id === cronograma2.id;
   }
 
+  teste(event){
+    this.sessaoService.setListaCronograma(event.value);
+  }
 }

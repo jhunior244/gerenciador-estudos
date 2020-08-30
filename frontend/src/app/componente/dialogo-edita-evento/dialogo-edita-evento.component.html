@@ -1,22 +1,76 @@
-<div class="modal-header">
+<mat-card class="container">
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <mat-card-header>
+      <mat-card-title>Cadastro de evento</mat-card-title>
+    </mat-card-header>
+    <mat-card-actions style="margin-right: 10px">
+      <a type="button" class="close" aria-label="Close" (click)="fecha()">
+        <span aria-hidden="true">&times;</span>
+      </a>
+    </mat-card-actions>
+  </div>
+  <mat-card-content class="container">
+    <form [formGroup]="formGroup">
+      <div>
+        <mat-form-field fxFlex>
+          <input type="text" matInput [formControl]="nome" placeholder="Nome">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field fxFlex>
+          <textarea matInput placeholder="Descrição" [formControl]="descricao" rows="2"></textarea>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between start">
+        <div fxFlex="48">
+          <mat-form-field fxFlex>
+            <mat-select placeholder="Tipo Evento" [formControl]="tipoEvento" [compareWith]="comparaTipoEvento">
+              <mat-option *ngFor=" let tipo of listaTipoEvento" [value]="tipo">
+                {{tipo.nome}}</mat-option>
+            </mat-select>
+            <mat-hint>Campo obrigátorio</mat-hint>
+          </mat-form-field>
+        </div>
+        <div style="max-width: 48%;">
+          <mat-form-field style="width: 100%;">
+            <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Data"
+              [formControl]="dataEvento">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+      <div>
+        <app-select-cronograma 
+        style="width: 100%;" 
+        [multiplo]="false" 
+        [obrigatorio]="false" 
+        [controladorFormulario]="cronograma"
+        ></app-select-cronograma>
+      </div>
+      <div>
+        <button class="mt-1" [disabled]="!formGroup.valid" style="background-color: green; color: floralwhite;" mat-raised-button
+          (click)="cria(null)">Salvar</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<!-- <div class="modal-header">
   <h4 class="modal-title">Cadastro de evento</h4>
-  <a type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-    <span aria-hidden="true">&times;</span>
-  </a>
 </div>
 <div class="container">
   <div fxLayout="column">
     <div class="login-sec">
       <form class="login-form" [formGroup]="formGroup">
-        <div style="margin-bottom: 2px;">
-          <label>Evento</label>
-          <mat-form-field>
+        <div class="mb-1">
+          <mat-form-field fxFlex>
             <input type="text" matInput [formControl]="nome" placeholder="Nome">
           </mat-form-field>
         </div>
         <div style="margin-bottom: 2px;">
-          <mat-form-field>
-            <textarea matInput placeholder="Descrição" class="form-control" [formControl]="descricao" rows="2"></textarea>
+          <mat-form-field fxFlex>
+            <textarea matInput placeholder="Descrição"  [formControl]="descricao" rows="2"></textarea>
           </mat-form-field>
         </div>
         <div style="margin-bottom: 2px;" fxLayout="row" fxLayoutAlign="space-between start">
@@ -47,4 +101,4 @@
 <div class="modal-footer">
   <a style="color: grey;" type="button" class="btn btn-outline-dark"
     (click)="activeModal.close('Close click')">Voltar</a>
-</div>
+</div> -->

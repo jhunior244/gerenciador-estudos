@@ -21,7 +21,7 @@ export class MenuLateralComponent implements OnInit {
       cronograma: [null]
     });
     this.cronogramaService.lista().subscribe(lista => {
-      console.log(lista);
+      
     });
   }
 

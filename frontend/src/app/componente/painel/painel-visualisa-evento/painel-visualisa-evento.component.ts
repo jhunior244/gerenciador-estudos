@@ -6,6 +6,7 @@ import { configuracao } from 'src/app/configuracao';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { TipoEvento } from 'src/app/servico/tipo-evento/tipo-evento';
 import * as moment from 'moment';
+import { DateAdapter } from '@angular/material';
 
 @Component({
   selector: 'app-painel-visualisa-evento',
@@ -13,6 +14,9 @@ import * as moment from 'moment';
   styleUrls: ['./painel-visualisa-evento.component.css']
 })
 export class PainelVisualisaEventoComponent implements OnInit {
+
+  public minDate = new Date(1960, 0, 1);
+  public maxDate = new Date(2999, 0, 1);
 
   public evento: Evento;
   private idEvento: string;
@@ -24,8 +28,12 @@ export class PainelVisualisaEventoComponent implements OnInit {
     private formBuilder: FormBuilder,
     private activatedRoute: ActivatedRoute,
     private eventoService: EventoService,
-    private router: Router
+    private router: Router,
+    private dateAdapter: DateAdapter<Date>
   ) {
+
+    this.dateAdapter.setLocale('br');
+
     this.formGroup = this.formBuilder.group({
       nome: [null, Validators.compose([Validators.required])],
       descricao: [null],

@@ -19,6 +19,7 @@ export const configuracao = {
     parametroEmail: 'email',
     parametroIdCard: 'idCard',
     parametroIdPeso: 'idPeso',
+    parametroListaIdCronograma: 'listaIdCronograma',
 
     tipoEvento: {
         PROVA: 1,

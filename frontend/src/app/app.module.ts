@@ -7,7 +7,8 @@ import {
   MatCardModule, MatCheckboxModule, MatDividerModule,
   MatListModule,
   MatSelectModule, MatSidenavModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatNativeDateModule
 } from '@angular/material';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
@@ -59,6 +60,8 @@ import { AutoCompleteTopicoComponent } from './componente/auto-complete-topico/a
 import { TopicoMateriaCronogramaService } from './servico/cronograma/topico-materia-cronograma.service';
 import { EditorTopicoMateriaCronogramaComponent } from './componente/editor-topico-materia-cronograma/editor-topico-materia-cronograma.component';
 import { SelectCronogramaComponent } from './componente/select-cronograma/select-cronograma.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -111,6 +114,8 @@ import { SelectCronogramaComponent } from './componente/select-cronograma/select
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
+    MatDatepickerModule,
+    MatNativeDateModule ,
     MatDividerModule,
     MatCheckboxModule,
     MatRadioModule,
@@ -123,7 +128,8 @@ import { SelectCronogramaComponent } from './componente/select-cronograma/select
     MatTableModule,
     ToastNotificationsModule,
     MatAutocompleteModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatDialogModule
   ],
   providers: [
     {
@@ -143,7 +149,8 @@ import { SelectCronogramaComponent } from './componente/select-cronograma/select
     CronogramaService,
     MateriaService,
     TopicoService,
-    TopicoMateriaCronogramaService
+    TopicoMateriaCronogramaService,
+    MatDatepickerModule,
   ],
   bootstrap: [
     AppComponent

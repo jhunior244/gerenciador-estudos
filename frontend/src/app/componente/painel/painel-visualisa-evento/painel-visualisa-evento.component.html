@@ -1,7 +1,11 @@
 <div id="painel">
     <div style="width: 100%; height: 10%;" fxLayout="row" fxLayoutAlign="center center">
-        <button (click)="listaResumos()" style="margin-right: 4px; background-color: transparent; box-shadow: 0px 1px 2px black; color: black;" class="btn btn-primary">Resumos</button>
-        <button (click)="listaFlashCard()" style="background-color: transparent; box-shadow: 0px 1px 2px black; color: black;" class="btn btn-primary">Flash Card</button>
+        <button (click)="listaResumos()"
+            style="margin-right: 4px; background-color: transparent; box-shadow: 0px 1px 2px black; color: black;"
+            class="btn btn-primary">Resumos</button>
+        <button (click)="listaFlashCard()"
+            style="background-color: transparent; box-shadow: 0px 1px 2px black; color: black;"
+            class="btn btn-primary">Flash Card</button>
     </div>
     <div class="container" fxLayout="column" style="height: 90%;">
         <div fxLayoutAlign="center start">
@@ -13,29 +17,34 @@
                     <div class="area-edita-evento" fxLayout="row wrap">
                         <div style="margin-bottom: 10px;" fxFlex="100">
                             <mat-form-field fxFlex>
-                                <input matInput type="text" 
-                                placeholder="Evento"
-                                [formControl]="nome">
+                                <input matInput type="text" placeholder="Evento" [formControl]="nome">
                             </mat-form-field>
                         </div>
                         <div style="margin-bottom: 10px;" fxFlex="100">
-                            <label>Descrição</label>
-                            <textarea class="form-control" [formControl]="descricao" rows="2"></textarea>
+                            <mat-form-field fxFlex>
+                                <textarea matInput placeholder="Descrição" [formControl]="descricao"
+                                    rows="2"></textarea>
+                            </mat-form-field>
                         </div>
                         <div style="margin-bottom: 10px;" fxLayout="row" fxLayoutAlign="space-between start"
                             fxFlex="100">
                             <div fxFlex="48">
-                                <label>Tipo Evento</label>
-                                <select class="form-control" [formControl]="tipoEvento"
-                                    [compareWith]="comparaTipoEvento">
-                                    <option *ngFor="let tipo of listaTipoEvento" [ngValue]="tipo">
-                                        {{tipo.nome}}
-                                    </option>
-                                </select>
+                                <mat-form-field fxFlex>
+                                    <mat-select placeholder="Tipo Evento" [formControl]="tipoEvento"
+                                        [compareWith]="comparaTipoEvento">
+                                        <mat-option *ngFor=" let tipo of listaTipoEvento" [value]="tipo">
+                                            {{tipo.nome}}</mat-option>
+                                    </mat-select>
+                                    <mat-hint>Campo obrigátorio</mat-hint>
+                                </mat-form-field>
                             </div>
                             <div style="margin-bottom: 2px;" fxFlex="48">
-                                <label>Data</label>
-                                <input type="date" class="form-control" [formControl]="data">
+                                <mat-form-field fxFlex>
+                                    <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker"
+                                        placeholder="Data" [formControl]="data">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
                             </div>
                         </div>
                         <div>

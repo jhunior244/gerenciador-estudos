@@ -20,8 +20,8 @@ public class DiaCalendarioControlador {
     private TokenService tokenService;
 
     @GetMapping(path = "/lista")
-    public List<DiaCalendarioDto> lista(@RequestHeader(name="Authorization") String token, Long mes, Long ano){
+    public List<DiaCalendarioDto> lista(@RequestHeader(name="Authorization") String token, Long mes, Long ano, Long[] listaIdCronograma){
         long idUsuario = tokenService.getIdUsuario(token.substring(7));
-        return diaCalendarioServico.listaDiasMes(idUsuario, mes, ano);
+        return diaCalendarioServico.listaDiasMes(idUsuario, mes, ano, listaIdCronograma);
     }
 }
